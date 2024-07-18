@@ -11,16 +11,31 @@ const Home = () => {
     })
 
     const list = [
-        {name:"arjun",code:"2982480924",place:"uttp"},
-        {name:"baroon",code:"654654",place:"maniktala"},
-        {name:"robi",code:"arj43456456141",place:"bhadrakali"},
-    
-        {name:"suor",code:"5654654654",place:"jani na"},
-        {name
-            :"m bhai",code:"56454654",place:"station"},
-        {name:"dj",
-            code:"65465456454",place:"makhla"},
-    ]
+        { "name": "Alice Johnson", "place": "New York", "code": "NY001" },
+        { "name": "Bob Smith", "place": "Los Angeles", "code": "LA002" },
+        { "name": "Carol Davis", "place": "Chicago", "code": "CH003" },
+        { "name": "David Wilson", "place": "Houston", "code": "HS004" },
+        { "name": "Eve Brown", "place": "Phoenix", "code": "PH005" },
+        { "name": "Frank Thomas", "place": "Philadelphia", "code": "PA006" },
+        { "name": "Grace Taylor", "place": "San Antonio", "code": "SA007" },
+        { "name": "Henry White", "place": "San Diego", "code": "SD008" },
+        { "name": "Ivy Harris", "place": "Dallas", "code": "DA009" },
+        { "name": "Jack Martin", "place": "San Jose", "code": "SJ010" },
+        { "name": "Kathy Clark", "place": "Austin", "code": "AU011" },
+        { "name": "Leo Lewis", "place": "Jacksonville", "code": "JA012" },
+        { "name": "Mia Lee", "place": "Fort Worth", "code": "FW013" },
+        { "name": "Noah Walker", "place": "Columbus", "code": "CO014" },
+        { "name": "Olivia Hall", "place": "Charlotte", "code": "CH015" },
+        { "name": "Paul Young", "place": "San Francisco", "code": "SF016" },
+        { "name": "Quinn Allen", "place": "Indianapolis", "code": "IN017" },
+        { "name": "Rachel King", "place": "Seattle", "code": "SE018" },
+        { "name": "Sam Wright", "place": "Denver", "code": "DE019" },
+        { "name": "Tina Scott", "place": "Washington", "code": "WA020" },
+        { "name": "Uma Green", "place": "Boston", "code": "BO021" },
+        { "name": "Vince Adams", "place": "El Paso", "code": "EP022" },
+        { "name": "Wendy Nelson", "place": "Detroit", "code": "DE023" },
+        { "name": "Xander Carter", "place": "Nashville", "code": "NA024" },
+        { "name": "Yara Mitchell", "place": "Memphis", "code": "ME025","photo":"" }]
 
     const show = function(){
           
@@ -41,6 +56,7 @@ const Home = () => {
         setResult((prev)=>{
             return {...prev,name:"",place:""}
         })
+        setName(null)
 
     }
     
@@ -62,9 +78,9 @@ const Home = () => {
                           <Form>
 
 
-                          <Form.Control onChange={e=>setName(e.target.value)} placeholder='name' size='sm'></Form.Control>
-                          <hr></hr>
-                           <p style = {{fontWeight:"",fontSize:"12px",opacity:"0.8"}}>put your thoughts here</p>
+                          <Form.Control onChange={e=>setName(e.target.value)} placeholder='search . . .' size='sm'></Form.Control>
+                           <p></p>
+                          
                            <div style = {{width:"100%"}} className='mobile_right'>
 
                            <Button onClick={show} variant = "outline-success" size = "sm" style = {{fontWeight:"bolder"}}>Search</Button>
@@ -75,30 +91,57 @@ const Home = () => {
                       </div>        
                         
                     </div>
+                   
                  
                  </Col>
                  <Col lg = {8} style={{backgroundColor:"",height:"auto"}} >
 
                  <div className='mobile_view_up' style = {{backgroundColor:"",width:"100%"}}  >
                                 
-                                <div style = {{width:"40%"}}>
+                                <div style = {{width:"100%",height:"70vh",border:" ",overflowY:'scroll',overflowX:"hidden",paddingLeft:"20px",paddingRight:"20px"}}>
                                      
-                                {result.name.length<=0?<div></div>: <Card>
-                                    <Card.Header>{result.name}</Card.Header>
-                                    <Card.Body>{result.place}
-                                        <hr></hr>
+                                {result.name.length<=0?<>{
+                                    <Row>
+                                        {
+                                             list.map((x)=>{
+                                                return <Col  lg = {6} sm = {6}><Card style = {{marginBottom:"15px"}}>
+                                                <Card.Header className='header_font'>{x.name}</Card.Header>
+                                                <Card.Body className='desc_font'>{x.place}
+                                                    <hr></hr>
+                                                    {x.code}
+                                                  <div style={{width:"100%",textAlign:"right"}}>
+                                                    <p></p>
+
+                                                  <Button onClick={e=>setResult((prev)=>{
+                                                    return {...prev,name:x.name,place:x.place,code:x.code}
+                                                  })} style = {{width:"100%"}} variant='success' size= "sm">Show</Button>
+
+                                                  </div>
+                                                </Card.Body>
+                                                
+                                            </Card>
+                                            </Col> 
+                                            })
+                                        }
+
+                                    </Row>
+                                }</>: <Card style={{padding:"10px"}}>
+                                    <Card.Header className='header_font'>{result.name}</Card.Header>
+                                    <Card.Body className='desc_font'>{result.place}
+                                        <p></p>
                                         {result.code}
                                     </Card.Body>
                                     
+                                    {
+                                        result.name.length>0?<><hr></hr><Button variant='outline-danger' style = {{width:"20%"}} size = "sm" onClick={clear}>Back</Button></>:<></>
+                                    }
                                 </Card>}
                                 </div>
                  </div>
 
                  <div style = {{width:"100%"}} className='mobile_right'>
               
-                  {
-                    result.name.length>0?<><hr></hr><Button size = "sm" onClick={clear}>Clear</Button></>:<></>
-                 }
+                 
                  </div>
                      
 
