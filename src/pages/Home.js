@@ -74,44 +74,46 @@ const Home = () => {
                   <div style = {{width:"100%",height:"auto"}}>
 
 
-                         <div style = {{padding:"0px",}}>
+                         <div style = {{padding:"0px"}}>
+                         <Card style = {{backgroundColor:"#baf7b5"}}>
+                                   
+                                   <Card.Body  style = {{padding:"15px"}}>
+       
+                                  <Card.Header ><span className='header_font'>Arjun Tudu</span></Card.Header>
+       
+                                   <Card.Footer className='bg-white'> 0 requests 
+                                       
+                                       <p></p>
+                                       0 matches
+                                       <p></p>
+                                       <Button style = {{width:"100%"}} size ="sm" variant = "outline-success"> Profile</Button>
+                                        </Card.Footer>
+                                                               
+                                                               
+                                                               </Card.Body>
+                                                              
+                                                               </Card>
+                            
+                            <p></p>
                             <Card style = {{backgroundColor:""}}>
                                 
                                 <Card.Header style = {{padding:"15px"}}>
                                          <Form >
                                             <Form.Control type = "file" ></Form.Control>
                                             <p></p>
-                                        <Form.Control onChange={e=>setName(e.target.value)} placeholder='search . . .' size='sm'></Form.Control>
+                                        <Form.Control onChange={e=>setName(e.target.value)} placeholder='make a post . . .' size='sm'></Form.Control>
                                         <p></p>
 
                                         <div style = {{width:"100%"}} className='mobile_right'>
 
-                                        <Button onClick={show} variant = "outline-success" size = "sm" style = {{fontWeight:"bolder"}}>Search</Button>
+                                        <Button onClick={show} variant = "success" size = "sm" style = {{fontWeight:"bolder",width:"100%"}}>Post</Button>
 
                                         </div>
                                         </Form></Card.Header>
 
                             </Card>
-                            <p></p>
 
-                                 <Card style = {{backgroundColor:"#baf7b5"}}>
-                                   
-                            <Card.Body  style = {{padding:"15px"}}>
-
-                           <Card.Header ><span className='header_font'>Arjun Tudu</span></Card.Header>
-
-                            <Card.Footer className='bg-white'> 0 requests 
-                                
-                                <p></p>
-                                0 matches
-                                <p></p>
-                                <Button style = {{width:"100%"}} size ="sm" variant = "outline-success"> Profile</Button>
-                                 </Card.Footer>
-                                                        
-                                                        
-                                                        </Card.Body>
-                                                       
-                                                        </Card>
+                              
                                             <p></p>
                                         </div>        
                                             
@@ -126,7 +128,7 @@ const Home = () => {
                                                                 defaultActiveKey="profile"
                                                                 id="uncontrolled-tab-example"
                                                                 className="mb-3"
-                                                                style = {{border:"",padding:"9px",backgroundColor:"#baf7b5"}}
+                                                                style = {{border:"",padding:"9px",backgroundColor:"#baf7b5",borderRadius:"5px"}}
                                                                 >
                                                                 <Tab eventKey="home" title="Posts">
                                                                 <div style = {{width:"100%",height:"70vh",border:" ",overflowY:'scroll',overflowX:"hidden",paddingLeft:"0px",paddingRight:""}}>
@@ -175,7 +177,7 @@ const Home = () => {
                                             <Tab eventKey="profile" title="Events">
                                                  
                                             </Tab>
-                                            <Tab eventKey="contact" title="Contacts" >
+                                            <Tab eventKey="contact" title="Matches" >
                                                
                                             </Tab>
                                             </Tabs>
