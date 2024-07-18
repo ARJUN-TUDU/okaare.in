@@ -81,29 +81,29 @@ const Home = () => {
 
                           <div className='mobile_flex' style={{width:"100%"}}>
                               
-                          <Card style = {{backgroundColor:"#baf7b5",display:"",width:"100%"}}>
+                          <Card style = {{backgroundColor:"",display:"",width:"100%"}}>
                                    
                                    <Card.Body  style = {{padding:"5px"}}>
        
                                   
-                                  <Card.Img style={{height:"",width:""}} sizes='sm' varian t="top" src={require("../pic.jpg")} />
+                                  <Card.Img style={{height:"",width:""}} sizes='sm' variant="top" src={require("../pic.jpg")} />
                                        
                                                                
                                    </Card.Body>
                                                               
                         </Card>
-                        <Card style = {{backgroundColor:"",display:"",width:"100%"}}>
+                        <Card style = {{backgroundColor:"green",display:"",color:"white",width:"100%"}}>
                                    
                                   
        
-                                  <Card.Header ><span className='header_font'>Arjun Tudu</span></Card.Header>
+                                  <Card.Header  style = {{backgroundColor:"green"}} ><span className='header_font'>Arjun Tudu</span></Card.Header>
                                  
-                                   <Card.Footer style={{width:"100%"}} className='bg-white'> 0 requests 
+                                   <Card.Footer style={{width:"100%",backgroundColor:"green"}} className=''> 0 requests 
                                        
                                        <p></p>
                                        0 matches
                                        <p></p>
-                                       <Button style = {{width:"100%"}} size ="sm" variant = "outline-success"> Profile</Button>      
+                                       <Button className='bg-white' style = {{width:"100%",backgroundColor:""}} size ="sm" variant = "outline-success"> Profile</Button>      
                                         </Card.Footer>
                                                                
                                                                
@@ -119,6 +119,8 @@ const Home = () => {
                             <Card style = {{backgroundColor:""}}>
                                 
                                 <Card.Header style = {{padding:"15px"}}>
+                                    <span className='header_font'> Make a post</span>
+                                    <hr></hr>
                                          <Form >
                                             <Form.Control type = "file" ></Form.Control>
                                             <p></p>
@@ -130,7 +132,8 @@ const Home = () => {
                                         <Button onClick={show} variant = "success" size = "sm" style = {{fontWeight:"bolder",width:"100%"}}>Post</Button>
 
                                         </div>
-                                        </Form></Card.Header>
+                                        </Form>
+                                </Card.Header>
 
                             </Card>
                             </Col>
@@ -155,7 +158,7 @@ const Home = () => {
                                                                 style = {{border:"",padding:"9px",color:"green",backgroundColor:"#baf7b5",borderRadius:"5px"}}
                                                                 >
                                                                 <Tab eventKey="Posts" title="Posts">
-                                                                <div style = {{width:"100%",height:"70vh",border:" ",overflowY:'scroll',overflowX:"hidden",paddingLeft:"0px",paddingRight:""}}>
+                                                                <div style = {{width:"100%",height:"100vh",marginBottom:"100px",border:" ",overflowY:'scroll',overflowX:"hidden",paddingLeft:"0px",paddingRight:""}}>
                                                     
                                                             
 
