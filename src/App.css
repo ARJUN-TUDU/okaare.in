@@ -64,3 +64,23 @@
 
 }
 
+.mobile_view_up {
+   
+  @media(max-width:800px) {
+
+     margin-top: 20px;
+    
+  }
+
+}
+
+.mobile_view_up {
+   
+  @media(min-width:800px) {
+
+     margin-top: 0px;
+    
+  }
+
+}
+
