@@ -170,7 +170,7 @@ const Home = () => {
                     <Row>
                                                             {
                                                                 list.map((x)=>{
-                                                                    return <Col  lg = {6} sm = {6}><Card style = {{marginBottom:"15px"}}>
+                                                                    return <Col  lg = {6} sm = {6}><Card style = {{marginBottom:"15px",height:"",backgroundColor:""}}>
                                                                     <Card.Header className='header_font' style = {{padding:""}}><p>{x.name}
                                                                     </p></Card.Header>
                                                                     <Card.Body className='desc_font'><span style = {{fontWeight:"bold",color:"green"}}> {x.code}</span>
@@ -187,8 +187,8 @@ const Home = () => {
                                                                     <p></p>
                                                                    
 
-                                                                           <div style = {{width:"100%",height:"auto",padding:"15px"}} >
-                                                                           <Modal  style ={{padding:"30px"}} size='sm' centered show={show} onHide={handleClose}>
+                                                                           <div style = {{width:"100%",height:"auto",padding:""}} >
+                                                                           <Modal  style ={{padding:""}} size='sm' centered show={show} onHide={handleClose}>
                                                                             <Modal.Header closeButton>
                                                                             <Modal.Title  >
                                                                                 
@@ -198,7 +198,7 @@ const Home = () => {
                                                                             <Modal.Body>
                                                                                  
                                                                                 
-                                                                                 <div style = {{maxHeight:"60vh",overflowY:"scroll"}}>
+                                                                                 <div style = {{maxHeight:"50vh",overflowY:"scroll"}}>
                                                                                      
                                                                                       {
                                                                                         list.map((x)=>{
