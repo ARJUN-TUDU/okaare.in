@@ -165,7 +165,7 @@ const Home = () => {
                                                                 style = {{border:"",position:"",zIndex:"1",padding:"9px",color:"green",backgroundColor:"#baf7b5",borderRadius:"5px",height:"auto"}}
                                                                 >
                                                                 <Tab style = {{}} eventKey="Posts" title="Posts">
-                                                                <div className='mobile_height' style = {{width:"100%",marginBottom:"100px",height:"70vh",border:" ",overflowY:'scroll',overflowX:"hidden",paddingRight:""}}>
+                                                                <div className='mobile_height' style = {{width:"100%",marginBottom:"100px",height:"90vh",border:" ",overflowY:'scroll',overflowX:"hidden",paddingRight:""}}>
                                                     
                                                             
 
@@ -201,9 +201,7 @@ const Home = () => {
                                                                                         list.map((x)=>{
                                                                                             return <p style = {{marginBottom:"15px"}}> 
                                                                                                 
-                                                                                              
-                                                                                            This HTML file is a template.
-                                                                                            If you open it directly in the browser, you will see an empty page.
+                                                                                                  {x.place}
                                                                                                 <hr></hr>
                                                                                                   </p>
                                                                                         })
@@ -294,7 +292,7 @@ const Home = () => {
             </Row>
 
            
-            <Button  style = {{width:"",position:"fixed",right:"0px"}} href='/home' variant="success" onClick={reload}>
+            <Button  style = {{width:"",position:"fixed",right:"0px",zIndex:"1"}} href='/home' variant="success" onClick={reload}>
                                                                                 reload
                                                                             </Button>
                  
