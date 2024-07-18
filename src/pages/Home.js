@@ -187,7 +187,7 @@ const Home = () => {
                                                                     <p></p>
                                                                    
 
-                                                                    <Modal  size='sm' centered show={show} onHide={handleClose}>
+                                                                    <Modal  style ={{padding:"0px 30px 0px 30px"}} size='sm' centered show={show} onHide={handleClose}>
                                                                             <Modal.Header closeButton>
                                                                             <Modal.Title>
                                                                                 <p className='desc_font'>comments</p>
@@ -234,7 +234,7 @@ const Home = () => {
                                             <Tab eventKey="Matches" color='green' title="Matches" >
                                                
                                             </Tab>
-                                            <Tab eventKey="Matches" color='green' title="Groups" >
+                                            <Tab eventKey="Groups" color='green' title="Groups" >
                                                
                                                </Tab>
                                             </Tabs>
