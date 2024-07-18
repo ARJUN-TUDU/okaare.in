@@ -187,7 +187,7 @@ const Home = () => {
                                                                     <p></p>
                                                                    
 
-                                                                    <Modal size='sm' centered show={show} onHide={handleClose}>
+                                                                    <Modal  size='sm' centered show={show} onHide={handleClose}>
                                                                             <Modal.Header closeButton>
                                                                             <Modal.Title>
                                                                                 <p className='desc_font'>comments</p>
@@ -198,7 +198,7 @@ const Home = () => {
                                                                             <Modal.Footer>
                                                                               <div style = {{width:"100%",display:"flex",gap:"5px"}}>
                                                                               <Form style = {{width:"70%"}}>
-                                                                                    <Form.Control placeholder='comment'></Form.Control>
+                                                                                    <Form.Control placeholder='typle your comment here . . . . . '></Form.Control>
                                                                         
                                                                                 </Form>
                                                                             <Button style = {{width:"30%"}} variant="success" onClick={handleClose}>
@@ -234,6 +234,9 @@ const Home = () => {
                                             <Tab eventKey="Matches" color='green' title="Matches" >
                                                
                                             </Tab>
+                                            <Tab eventKey="Matches" color='green' title="Groups" >
+                                               
+                                               </Tab>
                                             </Tabs>
                                 
                  </div>
