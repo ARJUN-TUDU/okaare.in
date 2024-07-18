@@ -84,3 +84,24 @@
 
 }
 
+
+
+.mobile_right {
+   
+  @media(max-width:800px) {
+
+     text-align: right;
+    
+  }
+
+}
+
+.mobile_right{
+   
+  @media(min-width:800px) {
+
+     text-align: start;
+    
+  }
+
+}

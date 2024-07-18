@@ -65,7 +65,11 @@ const Home = () => {
                           <Form.Control onChange={e=>setName(e.target.value)} placeholder='name' size='sm'></Form.Control>
                           <hr></hr>
                            <p style = {{fontWeight:"",fontSize:"12px",opacity:"0.8"}}>put your thoughts here</p>
-                          <Button onClick={show} variant = "outline-success" size = "sm" style = {{fontWeight:"bolder"}}>Search</Button>
+                           <div style = {{width:"100%"}} className='mobile_right'>
+
+                           <Button onClick={show} variant = "outline-success" size = "sm" style = {{fontWeight:"bolder"}}>Search</Button>
+
+                           </div>
                           </Form>
                           <p></p>
                       </div>        
@@ -89,10 +93,13 @@ const Home = () => {
                                 </Card>}
                                 </div>
                  </div>
+
+                 <div style = {{width:"100%"}} className='mobile_right'>
               
-                 {
+                  {
                     result.name.length>0?<><hr></hr><Button size = "sm" onClick={clear}>Clear</Button></>:<></>
                  }
+                 </div>
                      
 
                  </Col>
