@@ -44,7 +44,7 @@ function App() {
           </Navbar>
               </div>
               
-          </Container>
+    </Container>
 
 
   

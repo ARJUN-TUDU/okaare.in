@@ -65,7 +65,7 @@ const Home = () => {
     
   return (
  
-        <div className='mb-5' style={{height:"100px",width:"100%",marginTop:"50px",backgroundColor:""}}>
+        <div className='mb-5' style={{height:"100px",width:"100%",marginTop:"10px",backgroundColor:""}}>
 
             <Row>
                  
@@ -101,13 +101,16 @@ const Home = () => {
                            <Card.Header ><span className='header_font'>Arjun Tudu</span></Card.Header>
 
                             <Card.Footer className='bg-white'> 0 requests 
+                                
                                 <p></p>
                                 0 matches
+                                <p></p>
+                                <Button style = {{width:"100%"}} size ="sm" variant = "outline-success"> Profile</Button>
                                  </Card.Footer>
                                                         
                                                         
                                                         </Card.Body>
-
+                                                       
                                                         </Card>
                                             <p></p>
                                         </div>        

@@ -40,7 +40,7 @@ const Signin_Page = () => {
         
         <div className='' style = {{height:"auto",backgroundColor:"",border:"",padding:"",textAlign:"start",marginTop:""}} >
           
-           <div style = {{marginBottom:"25px"}}>
+           <div style = {{padding:"25px 0px 0px 0px"}}>
             {element}
 
 
