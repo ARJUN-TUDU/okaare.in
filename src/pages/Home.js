@@ -106,9 +106,9 @@ const Home = () => {
                                              list.map((x)=>{
                                                 return <Col  lg = {6} sm = {6}><Card style = {{marginBottom:"15px"}}>
                                                 <Card.Header className='header_font'>{x.name}</Card.Header>
-                                                <Card.Body className='desc_font'>{x.place}
+                                                <Card.Body className='desc_font'><span style = {{fontWeight:"bold",color:"green"}}> {x.code}</span>
                                                     <hr></hr>
-                                                    {x.code}
+                                                    {x.place}
                                                   <div style={{width:"100%",textAlign:"right"}}>
                                                     <p></p>
 
