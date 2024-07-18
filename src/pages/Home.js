@@ -192,7 +192,7 @@ const Home = () => {
                                                                             <Modal.Header closeButton>
                                                                             <Modal.Title  >
                                                                                 
-                                                                              
+                                                                              comment
                                                                             </Modal.Title>
                                                                             </Modal.Header>
                                                                             <Modal.Body>
@@ -207,7 +207,7 @@ const Home = () => {
                                                                                               
                                                                                             This HTML file is a template.
                                                                                             If you open it directly in the browser, you will see an empty page.
-                                                                                                
+                                                                                                <hr></hr>
                                                                                                   </p>
                                                                                         })
                                                                                       }
