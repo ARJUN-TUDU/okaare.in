@@ -187,14 +187,39 @@ const Home = () => {
                                                                     <p></p>
                                                                    
 
-                                                                    <Modal  style ={{padding:"30px"}} size='sm' centered show={show} onHide={handleClose}>
+                                                                           <div style = {{width:"100%",height:"auto",padding:"15px"}} >
+                                                                           <Modal  style ={{padding:"30px"}} size='sm' centered show={show} onHide={handleClose}>
                                                                             <Modal.Header closeButton>
-                                                                            <Modal.Title>
-                                                                                <p className='desc_font'>comments</p>
+                                                                            <Modal.Title  >
+                                                                                
                                                                               
                                                                             </Modal.Title>
                                                                             </Modal.Header>
-                                                                            <Modal.Body>Woohoo, you are reading this text in a modal!</Modal.Body>
+                                                                            <Modal.Body>
+                                                                                 
+                                                                                
+                                                                                 <div style = {{maxHeight:"60vh",overflowY:"scroll"}}>
+                                                                                     
+                                                                                      {
+                                                                                        list.map((x)=>{
+                                                                                            return <p style = {{marginBottom:"15px"}}> 
+                                                                                                
+                                                                                              
+                                                                                            This HTML file is a template.
+                                                                                            If you open it directly in the browser, you will see an empty page.
+                                                                                                
+                                                                                                  </p>
+                                                                                        })
+                                                                                      }
+
+
+                                                                                 </div>
+                                                                                
+
+                                                                                
+
+
+                                                                            </Modal.Body>
                                                                             <Modal.Footer>
                                                                               <div style = {{width:"100%",display:"flex",gap:"5px"}}>
                                                                               <Form style = {{width:"70%"}}>
@@ -205,8 +230,14 @@ const Home = () => {
                                                                                 submit
                                                                             </Button>
                                                                               </div>
+                                                                              <hr></hr>
+                                                                              <Button style = {{width:"100%"}} variant="outline-danger" onClick={handleClose}>
+                                                                                close
+                                                                            </Button>
                                                                             </Modal.Footer>
                                                                         </Modal>
+
+                                                                           </div>
                                                                     </Card.Body>
                                                                     
                                                                 </Card>
