@@ -75,7 +75,7 @@ const Home = () => {
 
 
                          <div style = {{padding:"0px",}}>
-                            <Card>
+                            <Card style = {{backgroundColor:""}}>
                                 
                                 <Card.Header style = {{padding:"15px"}}>
                                          <Form >
@@ -94,13 +94,13 @@ const Home = () => {
                             </Card>
                             <p></p>
 
-                                 <Card>
+                                 <Card style = {{backgroundColor:"#baf7b5"}}>
                                    
                             <Card.Body  style = {{padding:"15px"}}>
 
-                           <Card.Header><span className='header_font'>Arjun Tudu</span></Card.Header>
+                           <Card.Header ><span className='header_font'>Arjun Tudu</span></Card.Header>
 
-                            <Card.Footer> 0 requests 
+                            <Card.Footer className='bg-white'> 0 requests 
                                 <p></p>
                                 0 matches
                                  </Card.Footer>

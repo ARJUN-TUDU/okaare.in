@@ -5,7 +5,7 @@ import {useState,useEffect} from 'react'
 import Signin_Page from './pages/Signin_Page';
 import {Routes,Route} from 'react-router-dom'
 import Home from './pages/Home';
-import { Container } from 'react-bootstrap';
+import { Container ,Nav,Navbar,NavDropdown } from 'react-bootstrap';
 
 function App() {
   
@@ -32,11 +32,27 @@ function App() {
   return (
     <>
 
-    <Container fluid style = {{width:"100%",display:"flex",justifyContent:"center",height:"15vh",backgroundColor:"green"}} >
-        <div className='mobile_down' style = {{backgroundColor:"",height:"100%",display:"flex",alignItems:"center"}}>
-           <h5 style = {{color:"white",fontWeight:"bolder"}}>Okaare.in</h5>
-        </div>
-    </Container>
+    <Container fluid style = {{width:"100%",display:"flex",justifyContent:"center",alignItems:"center",height:"10vh",backgroundColor:"#baf7b5"}} >
+        <div className='mobile_down'>
+          
+        <Navbar expand="lg"  style={{backgroundColor:"#baf7b5"}}>
+            <Container>
+              <span className='header_font' style = {{fontSize:"19px" , color:"green"}}>Okaare.in</span>
+              <Navbar.Toggle aria-controls="basic-navbar-nav" />
+              <Navbar.Collapse id="basic-navbar-nav">
+                <Nav className="me-auto">
+                  <Nav.Link href="#home">Home</Nav.Link>
+                  <Nav.Link href="#link">Link</Nav.Link>
+                
+                </Nav>
+              </Navbar.Collapse>
+              
+            </Container>
+          
+          </Navbar>
+              </div>
+              
+          </Container>
 
 
   
