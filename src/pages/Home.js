@@ -80,7 +80,7 @@ const Home = () => {
                                    <Card.Body  style = {{padding:"15px"}}>
        
                                   <Card.Header ><span className='header_font'>Arjun Tudu</span></Card.Header>
-       
+                                  <Card.Img varian t="top" src={require("../pic.jpg")} />
                                    <Card.Footer className='bg-white'> 0 requests 
                                        
                                        <p></p>
@@ -126,9 +126,10 @@ const Home = () => {
                                     <div className='mobile_view_up' style = {{backgroundColor:"",width:"100%"}}  >
                                     <Tabs
                                                                 defaultActiveKey="profile"
+                                                                color='green'
                                                                 id="uncontrolled-tab-example"
                                                                 className="mb-3"
-                                                                style = {{border:"",padding:"9px",backgroundColor:"#baf7b5",borderRadius:"5px"}}
+                                                                style = {{border:"",padding:"9px",color:"green",backgroundColor:"#baf7b5",borderRadius:"5px"}}
                                                                 >
                                                                 <Tab eventKey="home" title="Posts">
                                                                 <div style = {{width:"100%",height:"70vh",border:" ",overflowY:'scroll',overflowX:"hidden",paddingLeft:"0px",paddingRight:""}}>
@@ -174,10 +175,10 @@ const Home = () => {
                                                             </Card>}
                                                             </div>
                                             </Tab>
-                                            <Tab eventKey="profile" title="Events">
+                                            <Tab eventKey="profile" title="Events" color='green'  >
                                                  
                                             </Tab>
-                                            <Tab eventKey="contact" title="Matches" >
+                                            <Tab eventKey="contact" color='green' title="Matches" >
                                                
                                             </Tab>
                                             </Tabs>
