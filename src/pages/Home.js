@@ -75,26 +75,47 @@ const Home = () => {
 
 
                          <div style = {{padding:"0px"}}>
-                         <Card style = {{backgroundColor:"#baf7b5"}}>
+                            <Row>
+                           <Col lg = {12} sm = {6}>
+
+
+                          <div className='mobile_flex' style={{width:"100%"}}>
+                              
+                          <Card style = {{backgroundColor:"#baf7b5",display:"",width:"100%"}}>
                                    
-                                   <Card.Body  style = {{padding:"15px"}}>
+                                   <Card.Body  style = {{padding:"5px"}}>
+       
+                                  
+                                  <Card.Img style={{height:"",width:""}} sizes='sm' varian t="top" src={require("../pic.jpg")} />
+                                       
+                                                               
+                                   </Card.Body>
+                                                              
+                        </Card>
+                        <Card style = {{backgroundColor:"",display:"",width:"100%"}}>
+                                   
+                                  
        
                                   <Card.Header ><span className='header_font'>Arjun Tudu</span></Card.Header>
-                                  <Card.Img varian t="top" src={require("../pic.jpg")} />
-                                   <Card.Footer className='bg-white'> 0 requests 
+                                 
+                                   <Card.Footer style={{width:"100%"}} className='bg-white'> 0 requests 
                                        
                                        <p></p>
                                        0 matches
                                        <p></p>
-                                       <Button style = {{width:"100%"}} size ="sm" variant = "outline-success"> Profile</Button>
+                                       <Button style = {{width:"100%"}} size ="sm" variant = "outline-success"> Profile</Button>      
                                         </Card.Footer>
                                                                
                                                                
-                                                               </Card.Body>
+                                                                                         
                                                               
-                                                               </Card>
+                        </Card>
+
+                          </div>
+                           </Col>
                             
                             <p></p>
+                            <Col lg = {12} sm ={6}>
                             <Card style = {{backgroundColor:""}}>
                                 
                                 <Card.Header style = {{padding:"15px"}}>
@@ -112,6 +133,8 @@ const Home = () => {
                                         </Form></Card.Header>
 
                             </Card>
+                            </Col>
+                            </Row>
 
                               
                                             <p></p>
@@ -125,13 +148,13 @@ const Home = () => {
                                     
                                     <div className='mobile_view_up' style = {{backgroundColor:"",width:"100%"}}  >
                                     <Tabs
-                                                                defaultActiveKey="profile"
+                                                                defaultActiveKey="Posts"
                                                                 color='green'
                                                                 id="uncontrolled-tab-example"
                                                                 className="mb-3"
                                                                 style = {{border:"",padding:"9px",color:"green",backgroundColor:"#baf7b5",borderRadius:"5px"}}
                                                                 >
-                                                                <Tab eventKey="home" title="Posts">
+                                                                <Tab eventKey="Posts" title="Posts">
                                                                 <div style = {{width:"100%",height:"70vh",border:" ",overflowY:'scroll',overflowX:"hidden",paddingLeft:"0px",paddingRight:""}}>
                                                     
                                                             
@@ -175,10 +198,10 @@ const Home = () => {
                                                             </Card>}
                                                             </div>
                                             </Tab>
-                                            <Tab eventKey="profile" title="Events" color='green'  >
+                                            <Tab eventKey="Events" title="Events" color='green'  >
                                                  
                                             </Tab>
-                                            <Tab eventKey="contact" color='green' title="Matches" >
+                                            <Tab eventKey="Matches" color='green' title="Matches" >
                                                
                                             </Tab>
                                             </Tabs>

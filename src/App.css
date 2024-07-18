@@ -124,3 +124,25 @@
   font-family: "Plus Jakarta Sans", sans-serif;
   font-weight: 200;
 }
+
+.mobile_flex{
+   
+  @media(min-width:800px) {
+
+   
+    
+  }
+
+}
+
+
+.mobile_flex{
+   
+  @media(max-width:800px) {
+
+    display:flex;
+    
+  }
+
+}
+
