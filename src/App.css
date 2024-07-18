@@ -147,24 +147,7 @@
 }
 
 
-.mobile_height{
-   
-  @media(max-width:800px) {
 
-    max-height:70vh
-    
-  }
-
-}
-.mobile_height{
-   
-  @media(min-width:800px) {
-
-    height:110vh
-    
-  }
-
-}
 
 
 
