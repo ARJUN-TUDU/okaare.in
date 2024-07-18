@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Container, Row ,Col, Button ,Form, Card} from 'react-bootstrap'
+import { Container, Row ,Col, Button ,Form, Card,Tabs,Tab} from 'react-bootstrap'
 
 const Home = () => {
    
@@ -65,7 +65,7 @@ const Home = () => {
     
   return (
  
-        <div className='' style={{height:"100px",width:"100%",marginTop:"50px",backgroundColor:""}}>
+        <div className='mb-5' style={{height:"100px",width:"100%",marginTop:"50px",backgroundColor:""}}>
 
             <Row>
                  
@@ -104,62 +104,79 @@ const Home = () => {
                                 <p></p>
                                 0 matches
                                  </Card.Footer>
-                                    
-                                    
-                                    </Card.Body>
+                                                        
+                                                        
+                                                        </Card.Body>
 
-                                    </Card>
-                          <p></p>
-                      </div>        
-                        
-                    </div>
-                   
-                 
-                 </Col>
-                 <Col lg = {8} style={{backgroundColor:"",height:"auto"}} >
-                 
-                 <div className='mobile_view_up' style = {{backgroundColor:"",width:"100%"}}  >
+                                                        </Card>
+                                            <p></p>
+                                        </div>        
+                                            
+                                        </div>
+                                    
+                                    
+                                    </Col>
+                                    <Col lg = {8} style={{backgroundColor:"",height:"auto"}} >
+                                    
+                                    <div className='mobile_view_up' style = {{backgroundColor:"",width:"100%"}}  >
+                                    <Tabs
+                                                                defaultActiveKey="profile"
+                                                                id="uncontrolled-tab-example"
+                                                                className="mb-3"
+                                                                style = {{border:"",padding:"9px",backgroundColor:"#baf7b5"}}
+                                                                >
+                                                                <Tab eventKey="home" title="Posts">
+                                                                <div style = {{width:"100%",height:"70vh",border:" ",overflowY:'scroll',overflowX:"hidden",paddingLeft:"0px",paddingRight:""}}>
+                                                    
+                                                            
+
+                                                    {result.name.length<=0?<>{
+                    <Row>
+                                                            {
+                                                                list.map((x)=>{
+                                                                    return <Col  lg = {6} sm = {6}><Card style = {{marginBottom:"15px"}}>
+                                                                    <Card.Header className='header_font' style = {{padding:"10px"}}><p>{x.name}
+                                                                    </p></Card.Header>
+                                                                    <Card.Body className='desc_font'><span style = {{fontWeight:"bold",color:"green"}}> {x.code}</span>
+                                                                        <hr></hr>
+                                                                        <p>{x.place}</p>
+                                                                    <div style={{width:"100%",textAlign:"right"}}>
+                                                                        <p></p>
+
+                                                                    <Button onClick={e=>setResult((prev)=>{
+                                                                        return {...prev,name:x.name,place:x.place,code:x.code}
+                                                                    })} style = {{width:"100%"}} variant='success' size= "sm">Show</Button>
+
+                                                                    </div>
+                                                                    </Card.Body>
+                                                                    
+                                                                </Card>
+                                                                </Col> 
+                                                                })
+                                                            }
+
+                                                            </Row>
+                                                            }</>: <Card style={{padding:"10px"}}>
+                                                            <Card.Header className='header_font'>{result.name}</Card.Header>
+                                                            <Card.Body className='desc_font'>{result.place}
+                                                            <p></p>
+                                                            {result.code}
+                                                            </Card.Body>
+
+                                                            {
+                                                            result.name.length>0?<><hr></hr><Button variant='outline-danger' style = {{width:"20%"}} size = "sm" onClick={clear}>Back</Button></>:<></>
+                                                            }
+                                                            </Card>}
+                                                            </div>
+                                            </Tab>
+                                            <Tab eventKey="profile" title="Events">
+                                                 
+                                            </Tab>
+                                            <Tab eventKey="contact" title="Contacts" >
+                                               
+                                            </Tab>
+                                            </Tabs>
                                 
-                                <div style = {{width:"100%",height:"70vh",border:" ",overflowY:'scroll',overflowX:"hidden",paddingLeft:"20px",paddingRight:"20px"}}>
-                                     
-                                {result.name.length<=0?<>{
-                                    <Row>
-                                        {
-                                             list.map((x)=>{
-                                                return <Col  lg = {6} sm = {6}><Card style = {{marginBottom:"15px"}}>
-                                                <Card.Header className='header_font' style = {{padding:"10px"}}><p>{x.name}
-                                                  </p></Card.Header>
-                                                <Card.Body className='desc_font'><span style = {{fontWeight:"bold",color:"green"}}> {x.code}</span>
-                                                    <hr></hr>
-                                                    <p>{x.place}</p>
-                                                  <div style={{width:"100%",textAlign:"right"}}>
-                                                    <p></p>
-
-                                                  <Button onClick={e=>setResult((prev)=>{
-                                                    return {...prev,name:x.name,place:x.place,code:x.code}
-                                                  })} style = {{width:"100%"}} variant='success' size= "sm">Show</Button>
-
-                                                  </div>
-                                                </Card.Body>
-                                                
-                                            </Card>
-                                            </Col> 
-                                            })
-                                        }
-
-                                    </Row>
-                                }</>: <Card style={{padding:"10px"}}>
-                                    <Card.Header className='header_font'>{result.name}</Card.Header>
-                                    <Card.Body className='desc_font'>{result.place}
-                                        <p></p>
-                                        {result.code}
-                                    </Card.Body>
-                                    
-                                    {
-                                        result.name.length>0?<><hr></hr><Button variant='outline-danger' style = {{width:"20%"}} size = "sm" onClick={clear}>Back</Button></>:<></>
-                                    }
-                                </Card>}
-                                </div>
                  </div>
 
                  <div style = {{width:"100%"}} className='mobile_right'>
