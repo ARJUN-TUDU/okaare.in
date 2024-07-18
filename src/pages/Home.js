@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Container, Row ,Col, Button ,Form, Card,Tabs,Tab} from 'react-bootstrap'
+import { Container,Accordion, Row ,Col, Button ,Form, Card,Tabs,Tab,Modal} from 'react-bootstrap'
 
 const Home = () => {
    
@@ -9,6 +9,10 @@ const Home = () => {
         place:"",
         code:""
     })
+    const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
     const list = [
         { "name": "Alice Johnson", "place": "New York", "code": "NY001" },
@@ -37,7 +41,7 @@ const Home = () => {
         { "name": "Xander Carter", "place": "Nashville", "code": "NA024" },
         { "name": "Yara Mitchell", "place": "Memphis", "code": "ME025","photo":"" }]
 
-    const show = function(){
+    const shows = function(){
           
          list.map((x)=>{
             if(x.name === name){
@@ -129,7 +133,7 @@ const Home = () => {
 
                                         <div style = {{width:"100%"}} className='mobile_right'>
 
-                                        <Button onClick={show} variant = "success" size = "sm" style = {{fontWeight:"bolder",width:"100%"}}>Post</Button>
+                                        <Button onClick={shows} variant = "success" size = "sm" style = {{fontWeight:"bolder",width:"100%"}}>Post</Button>
 
                                         </div>
                                         </Form>
@@ -167,19 +171,42 @@ const Home = () => {
                                                             {
                                                                 list.map((x)=>{
                                                                     return <Col  lg = {6} sm = {6}><Card style = {{marginBottom:"15px"}}>
-                                                                    <Card.Header className='header_font' style = {{padding:"10px"}}><p>{x.name}
+                                                                    <Card.Header className='header_font' style = {{padding:""}}><p>{x.name}
                                                                     </p></Card.Header>
                                                                     <Card.Body className='desc_font'><span style = {{fontWeight:"bold",color:"green"}}> {x.code}</span>
                                                                         <hr></hr>
                                                                         <p>{x.place}</p>
-                                                                    <div style={{width:"100%",textAlign:"right"}}>
+                                                                    <div style={{width:"100%",backgroundColor:"",display:"flex",gap:""}}>
                                                                         <p></p>
 
-                                                                    <Button onClick={e=>setResult((prev)=>{
+                                                                    <Button  onClick={e=>setResult((prev)=>{
                                                                         return {...prev,name:x.name,place:x.place,code:x.code}
-                                                                    })} style = {{width:"100%"}} variant='success' size= "sm">Show</Button>
-
+                                                                    })} style = {{width:"50%"}} variant='success' size= "sm">like</Button>
+                                                                      <Button onClick={handleShow} size = "sm" variant='outline-success' style = {{width:"50%",marginLeft:"5px"}} >comments</Button>
                                                                     </div>
+                                                                    <p></p>
+                                                                   
+
+                                                                    <Modal size='sm' centered show={show} onHide={handleClose}>
+                                                                            <Modal.Header closeButton>
+                                                                            <Modal.Title>
+                                                                                <p className='desc_font'>comments</p>
+                                                                              
+                                                                            </Modal.Title>
+                                                                            </Modal.Header>
+                                                                            <Modal.Body>Woohoo, you are reading this text in a modal!</Modal.Body>
+                                                                            <Modal.Footer>
+                                                                              <div style = {{width:"100%",display:"flex",gap:"5px"}}>
+                                                                              <Form style = {{width:"70%"}}>
+                                                                                    <Form.Control placeholder='comment'></Form.Control>
+                                                                        
+                                                                                </Form>
+                                                                            <Button style = {{width:"30%"}} variant="success" onClick={handleClose}>
+                                                                                submit
+                                                                            </Button>
+                                                                              </div>
+                                                                            </Modal.Footer>
+                                                                        </Modal>
                                                                     </Card.Body>
                                                                     
                                                                 </Card>
