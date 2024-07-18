@@ -174,12 +174,12 @@ const Home = () => {
                                                                        
                                                                     <Card.Header className='header_font' style = {{padding:""}}><p style = {{marginTop:"10px"}}>{x.name}
                                                                     </p></Card.Header>
-                                                                    <Card.Body className='desc_font'><span style = {{fontWeight:"bold",color:"green"}}> {x.code}</span>
-                                                                      
-                                                                        <p>{x.place}</p>
-                                                                         <p style = {{opacity:"0.8"}}> 12/32/2023</p>
-                                                                       
-                                                                
+                                                                  
+                                                                    <Card.Body className='desc_font'>
+                                                                    <Card.Img src ={require("../pic.jpg")}></Card.Img>
+                                                                          <p></p>
+                                                                         <p style = {{fontSize:"10px"}}>  This HTML file is a template.
+                                                                         If you open it directly in the browser, you will see an empty page.</p>
 
                                                                            <div style = {{width:"100%",height:"auto",padding:""}} >
                                                                            <Modal  style ={{padding:""}} size='sm' centered show={show} onHide={handleClose}>
