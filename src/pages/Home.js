@@ -79,20 +79,20 @@ const Home = () => {
                            <Col lg = {12} sm = {6}>
 
 
-                          <div className='mobile_flex' style={{width:"100%"}}>
+                          <div className='mobile_flex' style={{width:"100%",gap:"5px"}}>
                               
-                          <Card style = {{backgroundColor:"",display:"",width:"100%"}}>
+                          <Card style = {{backgroundColor:"",display:"",width:"100%",padding:""}}>
                                    
-                                   <Card.Body  style = {{padding:"5px"}}>
-       
                                   
-                                  <Card.Img style={{height:"",width:""}} sizes='sm' variant="top" src={require("../pic.jpg")} />
+                                  
+                                  <Card.Img style={{height:"100%",width:"100%",objectFit:"cover",borderRadius:"5px"}} sizes='sm' variant="top" src={require("../pic.jpg")} />
                                        
                                                                
-                                   </Card.Body>
+                                   
                                                               
                         </Card>
-                        <Card style = {{backgroundColor:"green",display:"",color:"white",width:"100%"}}>
+                        <p></p>
+                        <Card style = {{backgroundColor:"green",display:"",color:"white",width:"100%",padding:"5px"}}>
                                    
                                   
        
