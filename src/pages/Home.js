@@ -54,6 +54,9 @@ const Home = () => {
          
 
     }
+    const reload = function(){
+        window.location.reload();
+    }
 
     const clear = function(){
            
@@ -107,7 +110,7 @@ const Home = () => {
                                        <p></p>
                                        0 matches
                                        <p></p>
-                                       <Button className='bg-white' style = {{width:"100%",backgroundColor:""}} size ="sm" variant = "outline-success"> Profile</Button>      
+                                       <Button  className='bg-white' style = {{width:"100%",backgroundColor:""}} size ="sm" variant = "outline-success"> Profile</Button>      
                                         </Card.Footer>
                                                                
                                                                
@@ -162,7 +165,7 @@ const Home = () => {
                                                                 style = {{border:"",position:"",zIndex:"1",padding:"9px",color:"green",backgroundColor:"#baf7b5",borderRadius:"5px",height:"auto"}}
                                                                 >
                                                                 <Tab style = {{}} eventKey="Posts" title="Posts">
-                                                                <div className='mobile_height' style = {{width:"100%",marginBottom:"100px",border:" ",overflowY:'scroll',overflowX:"hidden",paddingRight:""}}>
+                                                                <div className='mobile_height' style = {{width:"100%",marginBottom:"100px",height:"70vh",border:" ",overflowY:'scroll',overflowX:"hidden",paddingRight:""}}>
                                                     
                                                             
 
@@ -174,7 +177,7 @@ const Home = () => {
                                                                        
                                                                     <Card.Header className='header_font' style = {{padding:""}}><p style = {{marginTop:""}}>{x.name}
                                                                     </p></Card.Header>
-                                                                  
+                                                                    
                                                                     <Card.Body className='desc_font'>
                                                                     <Card.Img src ={require("../pic.jpg")}></Card.Img>
                                                                           <p></p>
@@ -223,6 +226,8 @@ const Home = () => {
                                                                             <Button style = {{width:"30%"}} variant="success" onClick={handleClose}>
                                                                                 submit
                                                                             </Button>
+
+                                                                            
                                                                               </div>
                                                                               <hr></hr>
                                                                               <Button style = {{width:"100%"}} variant="outline-danger" onClick={handleClose}>
@@ -240,6 +245,7 @@ const Home = () => {
                                                                     <Button  onClick={e=>setResult((prev)=>{
                                                                         return {...prev,name:x.name,place:x.place,code:x.code}
                                                                     })} style = {{width:"50%"}} variant='success' size= "sm">like</Button>
+                                                                   
                                                                       <Button onClick={handleShow} size = "sm" variant='outline-success' style = {{width:"50%",marginLeft:"5px"}} >comments</Button>
                                                                     </div>
                                                                     </Card.Footer>
@@ -284,8 +290,14 @@ const Home = () => {
                      
 
                  </Col>
-
+                 
             </Row>
+
+           
+            <Button  style = {{width:"",position:"fixed",right:"0px"}} href='/home' variant="success" onClick={reload}>
+                                                                                reload
+                                                                            </Button>
+                 
              
         </div>
     
