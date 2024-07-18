@@ -159,9 +159,9 @@ const Home = () => {
                                                                 color='green'
                                                                 id="uncontrolled-tab-example"
                                                                 className="mb-3"
-                                                                style = {{border:"",padding:"9px",color:"green",backgroundColor:"#baf7b5",borderRadius:"5px"}}
+                                                                style = {{border:"",padding:"9px",color:"green",backgroundColor:"#baf7b5",borderRadius:"5px",height:"auto"}}
                                                                 >
-                                                                <Tab eventKey="Posts" title="Posts">
+                                                                <Tab style = {{}} eventKey="Posts" title="Posts">
                                                                 <div style = {{width:"100%",height:"100vh",marginBottom:"100px",border:" ",overflowY:'scroll',overflowX:"hidden",paddingLeft:"0px",paddingRight:""}}>
                                                     
                                                             
@@ -171,21 +171,15 @@ const Home = () => {
                                                             {
                                                                 list.map((x)=>{
                                                                     return <Col  lg = {6} sm = {6}><Card style = {{marginBottom:"15px",height:"",backgroundColor:""}}>
-                                                                    <Card.Header className='header_font' style = {{padding:""}}><p>{x.name}
+                                                                       
+                                                                    <Card.Header className='header_font' style = {{padding:""}}><p style = {{marginTop:"10px"}}>{x.name}
                                                                     </p></Card.Header>
                                                                     <Card.Body className='desc_font'><span style = {{fontWeight:"bold",color:"green"}}> {x.code}</span>
-                                                                        <hr></hr>
+                                                                      
                                                                         <p>{x.place}</p>
-                                                                    <div style={{width:"100%",backgroundColor:"",display:"flex",gap:""}}>
-                                                                        <p></p>
-
-                                                                    <Button  onClick={e=>setResult((prev)=>{
-                                                                        return {...prev,name:x.name,place:x.place,code:x.code}
-                                                                    })} style = {{width:"50%"}} variant='success' size= "sm">like</Button>
-                                                                      <Button onClick={handleShow} size = "sm" variant='outline-success' style = {{width:"50%",marginLeft:"5px"}} >comments</Button>
-                                                                    </div>
-                                                                    <p></p>
-                                                                   
+                                                                         <p style = {{opacity:"0.8"}}> 12/32/2023</p>
+                                                                       
+                                                                
 
                                                                            <div style = {{width:"100%",height:"auto",padding:""}} >
                                                                            <Modal  style ={{padding:""}} size='sm' centered show={show} onHide={handleClose}>
@@ -239,6 +233,16 @@ const Home = () => {
 
                                                                            </div>
                                                                     </Card.Body>
+                                                                    <Card.Footer>
+                                                                    <div style={{width:"100%",backgroundColor:"",display:"flex",gap:""}}>
+                                                                        <p></p>
+
+                                                                    <Button  onClick={e=>setResult((prev)=>{
+                                                                        return {...prev,name:x.name,place:x.place,code:x.code}
+                                                                    })} style = {{width:"50%"}} variant='success' size= "sm">like</Button>
+                                                                      <Button onClick={handleShow} size = "sm" variant='outline-success' style = {{width:"50%",marginLeft:"5px"}} >comments</Button>
+                                                                    </div>
+                                                                    </Card.Footer>
                                                                     
                                                                 </Card>
                                                                 </Col> 
