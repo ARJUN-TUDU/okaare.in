@@ -187,7 +187,7 @@ const Home = () => {
                                                                     <p></p>
                                                                    
 
-                                                                    <Modal  style ={{padding:"0px 30px 0px 30px"}} size='sm' centered show={show} onHide={handleClose}>
+                                                                    <Modal  style ={{padding:"30px"}} size='sm' centered show={show} onHide={handleClose}>
                                                                             <Modal.Header closeButton>
                                                                             <Modal.Title>
                                                                                 <p className='desc_font'>comments</p>
