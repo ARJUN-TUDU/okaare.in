@@ -6,8 +6,8 @@ const Home = () => {
  
         <div className='' style={{height:"100px",width:"100%",width:"100%",backgroundColor:"red"}}>
             
-            cristiano ronaldo
-            
+            cristiano ronaldodwdwadwad
+
         </div>
     
   )
