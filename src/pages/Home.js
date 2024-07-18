@@ -159,10 +159,10 @@ const Home = () => {
                                                                 color='green'
                                                                 id="uncontrolled-tab-example"
                                                                 className="mb-3"
-                                                                style = {{border:"",padding:"9px",color:"green",backgroundColor:"#baf7b5",borderRadius:"5px",height:"auto"}}
+                                                                style = {{border:"",position:"",zIndex:"1",padding:"9px",color:"green",backgroundColor:"#baf7b5",borderRadius:"5px",height:"auto"}}
                                                                 >
                                                                 <Tab style = {{}} eventKey="Posts" title="Posts">
-                                                                <div style = {{width:"100%",height:"100vh",marginBottom:"100px",border:" ",overflowY:'scroll',overflowX:"hidden",paddingLeft:"0px",paddingRight:""}}>
+                                                                <div className='mobile_height' style = {{width:"100%",marginBottom:"100px",border:" ",overflowY:'scroll',overflowX:"hidden",paddingRight:""}}>
                                                     
                                                             
 
@@ -170,9 +170,9 @@ const Home = () => {
                     <Row>
                                                             {
                                                                 list.map((x)=>{
-                                                                    return <Col  lg = {6} sm = {6}><Card style = {{marginBottom:"15px",height:"",backgroundColor:""}}>
+                                                                    return <Col  lg = {6} sm = {6}><Card style = {{marginBottom:"",height:"",backgroundColor:""}}>
                                                                        
-                                                                    <Card.Header className='header_font' style = {{padding:""}}><p style = {{marginTop:"10px"}}>{x.name}
+                                                                    <Card.Header className='header_font' style = {{padding:""}}><p style = {{marginTop:""}}>{x.name}
                                                                     </p></Card.Header>
                                                                   
                                                                     <Card.Body className='desc_font'>
@@ -245,6 +245,7 @@ const Home = () => {
                                                                     </Card.Footer>
                                                                     
                                                                 </Card>
+                                                                <p></p>
                                                                 </Col> 
                                                                 })
                                                             }

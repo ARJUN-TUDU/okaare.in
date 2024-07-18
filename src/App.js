@@ -32,8 +32,8 @@ function App() {
   return (
     <>
 
-    <Container fluid style = {{width:"100%",display:"flex",justifyContent:"center",alignItems:"center",height:"10vh",backgroundColor:"#baf7b5"}} >
-        <div className='mobile_down'>
+    <Container fluid style = {{width:"100%",display:"flex",position:"",zIndex:"1",marginBottom:"",justifyContent:"center",alignItems:"center",height:"10vh",backgroundColor:"#baf7b5"}} >
+        <div className='mobile_down' style = {{position:"",zIndex:""}}>
           
         <Navbar expand="lg"  style={{backgroundColor:"#baf7b5"}}>
             <Container>
@@ -48,7 +48,7 @@ function App() {
 
 
   
-      <Container className='mobile_down' style = {{marginBottom:"100px",height:"auto"}}>
+      <Container className='mobile_down' style = {{marginTop:"",height:"auto"}}>
      
     
     <Routes>
