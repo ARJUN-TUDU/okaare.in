@@ -1,3 +1,9 @@
+
+* {
+ font-size: 11px; 
+}
+
+
 .App {
   text-align: center;
 }
@@ -107,14 +113,14 @@
 }
 
 .header_font{
-    font-size: 15px;
+    
     font-weight: 1000;
     font-family: "Plus Jakarta Sans", sans-serif;
     opacity: 1.5;
 }
 
 .desc_font{
-  font-size: 13px;
+  
   font-family: "Plus Jakarta Sans", sans-serif;
   font-weight: 200;
 }

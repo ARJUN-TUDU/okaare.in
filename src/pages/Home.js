@@ -74,19 +74,41 @@ const Home = () => {
                   <div style = {{width:"100%",height:"auto"}}>
 
 
-                         <div style = {{backgroundColor:"white",width:"100%",borderRadius:"10px",padding:"15px",boxShadow: "rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px"}}>
-                          <Form>
+                         <div style = {{padding:"0px",}}>
+                            <Card>
+                                
+                                <Card.Header style = {{padding:"15px"}}>
+                                         <Form >
+                                            <Form.Control type = "file" ></Form.Control>
+                                            <p></p>
+                                        <Form.Control onChange={e=>setName(e.target.value)} placeholder='search . . .' size='sm'></Form.Control>
+                                        <p></p>
 
+                                        <div style = {{width:"100%"}} className='mobile_right'>
 
-                          <Form.Control onChange={e=>setName(e.target.value)} placeholder='search . . .' size='sm'></Form.Control>
-                           <p></p>
-                          
-                           <div style = {{width:"100%"}} className='mobile_right'>
+                                        <Button onClick={show} variant = "outline-success" size = "sm" style = {{fontWeight:"bolder"}}>Search</Button>
 
-                           <Button onClick={show} variant = "outline-success" size = "sm" style = {{fontWeight:"bolder"}}>Search</Button>
+                                        </div>
+                                        </Form></Card.Header>
 
-                           </div>
-                          </Form>
+                            </Card>
+                            <p></p>
+
+                                 <Card>
+                                   
+                            <Card.Body  style = {{padding:"15px"}}>
+
+                           <Card.Header><span className='header_font'>Arjun Tudu</span></Card.Header>
+
+                            <Card.Footer> 0 requests 
+                                <p></p>
+                                0 matches
+                                 </Card.Footer>
+                                    
+                                    
+                                    </Card.Body>
+
+                                    </Card>
                           <p></p>
                       </div>        
                         
@@ -95,7 +117,7 @@ const Home = () => {
                  
                  </Col>
                  <Col lg = {8} style={{backgroundColor:"",height:"auto"}} >
-
+                 
                  <div className='mobile_view_up' style = {{backgroundColor:"",width:"100%"}}  >
                                 
                                 <div style = {{width:"100%",height:"70vh",border:" ",overflowY:'scroll',overflowX:"hidden",paddingLeft:"20px",paddingRight:"20px"}}>
@@ -105,10 +127,11 @@ const Home = () => {
                                         {
                                              list.map((x)=>{
                                                 return <Col  lg = {6} sm = {6}><Card style = {{marginBottom:"15px"}}>
-                                                <Card.Header className='header_font'>{x.name}</Card.Header>
+                                                <Card.Header className='header_font' style = {{padding:"10px"}}><p>{x.name}
+                                                  </p></Card.Header>
                                                 <Card.Body className='desc_font'><span style = {{fontWeight:"bold",color:"green"}}> {x.code}</span>
                                                     <hr></hr>
-                                                    {x.place}
+                                                    <p>{x.place}</p>
                                                   <div style={{width:"100%",textAlign:"right"}}>
                                                     <p></p>
 
