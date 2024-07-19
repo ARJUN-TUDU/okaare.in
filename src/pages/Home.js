@@ -14,6 +14,9 @@ const Home = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const [showProfile,setShowProfile] = useState(false)
+  const [setnot,setNoti] = useState(false)
+
     const list = [
         { "name": "Alice Johnson", "place": "New York", "code": "NY001" },
         { "name": "Bob Smith", "place": "Los Angeles", "code": "LA002" },
@@ -98,9 +101,11 @@ const Home = () => {
                                         
                                         Matchings : <span style = {{color:"green",fontWeight:"1000"}}> 232
                                         </span>
+                                         <p></p>
+                                        <Button onClick={e=>setNoti(true)} style = {{width:"100%"}} className='header_font' variant = "outline-success">View More</Button>
                                         
                                     </Card.Body>
-                                    <Card.Footer><Button style = {{width:"100%"}} className='header_font' variant = "success">Edit Profile</Button></Card.Footer>
+                                    <Card.Footer><Button onClick={e=>setShowProfile(true)} style = {{width:"100%"}} className='header_font' variant = "success">Edit Profile</Button></Card.Footer>
                                   </Card>
                                
                             </Col>
@@ -115,7 +120,7 @@ const Home = () => {
                          <Form>
                                         <Form.Group className="mb-3" controlId="">
                                         
-                                            <Form.Control type="text" placeholder="username" />
+                                            <Form.Control style = {{height:"50px"}} type="text" placeholder="username" />
                                         
                                         </Form.Group>
                                         <Form.Control type="file" placeholder="username" />
@@ -272,11 +277,70 @@ const Home = () => {
                  
             </Row>
 
-           
-            <Button  style = {{width:"",position:"fixed",right:"0px",zIndex:"1"}} href='/home' variant="success" onClick={reload}>
-                                                                                reload
+            <Modal  style ={{padding:""}} size='sm' centered show={showProfile} onHide={e=>setShowProfile(false)}>
+                                                                            <Modal.Header closeButton>
+                                                                            <Modal.Title  >
+                                                                                
+                                                                              comment
+                                                                            </Modal.Title>
+                                                                            </Modal.Header>
+                                                                               <Modal.Body> <Form className='desc_font' style = {{width:"90%"}}>
+                                                                                Update your Profile Picture
+                                                                                <p></p>
+                                                                                <img src = {require("../pic.jpg")} style={{height:"100px" ,width:"100%",objectFit:"cover"}} />
+                                                                                    <Form.Control style = {{height:""}} type='file' placeholder='typle  comment here . . . . . '></Form.Control>
+                                                                                    <p></p>
+                                                                                    <p style = {{color:"green"}} className = "header_font">Arjun Tudu</p>
+                                                                                    <Form.Control style = {{height:""}} type='text' placeholder='change your name'></Form.Control>
+                                                                        
+                                                                                </Form></Modal.Body>
+                                                                            <Modal.Footer>
+                                                                              <div style = {{width:"100%",display:"flex",gap:"5px"}}>
+                                                                             
+                                                                            <Button className=" header_font button_view_change  "style = {{width:"30%"}} variant="success" onClick={handleClose}>
+                                                                                submit
                                                                             </Button>
-                 
+
+                                                                            
+                                                                              </div>
+                                                                              <hr></hr>
+                                                                              <Button onClick = {e=>setShowProfile(false)}  className=" header_font button_view_change  "style = {{width:"100%"}} variant="outline-danger" >
+                                                                                close
+                                                                            </Button>
+                                                                            </Modal.Footer>
+                                                                        </Modal>
+            
+            <Modal  centered show = {setnot} onHide={e=>setNoti(false)}>
+                
+                <Modal.Header closeButton>
+                    <p className='header_font'> Notifications</p>
+                </Modal.Header>
+
+                <Modal.Body style = {{width:"",textAlign:"",maxHeight:"50vh",overflowY:"scroll"}}>
+                     
+                {
+                                                                                        list.map((x)=>{
+                                                                                            return <p style = {{marginBottom:""}}> 
+                                                                                                
+                                                                                                  {x.place}
+                                                                                                <hr></hr>
+                                                                                                  </p>
+                                                                                        })
+                                                                                      }
+
+
+                </Modal.Body>
+
+                <Modal.Footer>  <Button onClick = {e=>setNoti(false)}  className=" header_font button_view_change  "style = {{width:"100%"}} variant="outline-danger" >
+                                                                                close
+                                                                            </Button></Modal.Footer>
+
+            
+
+            </Modal>
+
+           
+                   
              
         </div>
     
