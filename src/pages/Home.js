@@ -174,10 +174,10 @@ const Home = () => {
                                                                               comment
                                                                             </Modal.Title>
                                                                             </Modal.Header>
-                                                                            <Modal.Body>
+                                                                            <Modal.Body  style = {{maxHeight:"30vh",overflowY:"scroll"}}>
                                                                                  
                                                                                 
-                                                                                 <div style = {{maxHeight:"70vh",overflowY:"scroll"}}>
+                                                                                 
                                                                                      
                                                                                       {
                                                                                         list.map((x)=>{
@@ -190,7 +190,6 @@ const Home = () => {
                                                                                       }
 
 
-                                                                                 </div>
                                                                                 
 
                                                                                 
