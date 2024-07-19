@@ -177,11 +177,11 @@ const Home = () => {
                                                                             <Modal.Body>
                                                                                  
                                                                                 
-                                                                                 <div style = {{maxHeight:"50vh",overflowY:"scroll"}}>
+                                                                                 <div style = {{maxHeight:"",overflowY:""}}>
                                                                                      
                                                                                       {
                                                                                         list.map((x)=>{
-                                                                                            return <p style = {{marginBottom:"15px"}}> 
+                                                                                            return <p style = {{marginBottom:""}}> 
                                                                                                 
                                                                                                   {x.place}
                                                                                                 <hr></hr>
