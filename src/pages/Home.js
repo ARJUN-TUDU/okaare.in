@@ -81,7 +81,7 @@ const Home = () => {
                          
                          <Row>
                             <Col lg = {12} xs = {6} sm = {6}>
-                               <div style = {{backgroundColor:"",width:"100%",height:"auto"}}>
+                               <div style = {{backgroundColor:"",width:"100%",height:"100%"}}>
                                        <img src = {require("../pic.jpg")} style = {{width:"100%",height:"100%",objectFit:"cover",borderRadius:"5px"}} />
                                </div>
                             </Col>
@@ -92,7 +92,7 @@ const Home = () => {
                                   <Card.Header><span className='header_font'> Arjun Tudu</span></Card.Header>
                                     <Card.Body className='desc_font' style = {{textAlign:"start"}}>
                                        
-                                        <p></p>
+                                       
                                         Notifications : <span style = {{color:"green",fontWeight:"1000"}}> 0</span>
                                         <p></p>
                                         
@@ -100,6 +100,7 @@ const Home = () => {
                                         </span>
                                         
                                     </Card.Body>
+                                    <Card.Footer><Button style = {{width:"100%"}} className='header_font' variant = "success">Edit Profile</Button></Card.Footer>
                                   </Card>
                                
                             </Col>
@@ -146,7 +147,7 @@ const Home = () => {
                                                                 style = {{border:"",position:"",zIndex:"1",padding:"9px",color:"green",backgroundColor:"#baf7b5",borderRadius:"5px",height:"auto"}}
                                                                 >
                                                                 <Tab style = {{}} eventKey="Posts" title="Posts">
-                                                                <div className='mobile_height' style = {{width:"100%",marginBottom:"100px",height:"70vh",border:" ",overflowY:'scroll',overflowX:"hidden",paddingRight:""}}>
+                                                                <div className='mobile_view_up' style = {{width:"100%",marginBottom:"100px",height:"70vh",border:" ",overflowY:'scroll',overflowX:"hidden",paddingRight:""}}>
                                                     
                                                             
 
