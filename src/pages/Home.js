@@ -165,7 +165,7 @@ const Home = () => {
                                                                 style = {{border:"",position:"",zIndex:"1",padding:"9px",color:"green",backgroundColor:"#baf7b5",borderRadius:"5px",height:"auto"}}
                                                                 >
                                                                 <Tab style = {{}} eventKey="Posts" title="Posts">
-                                                                <div className='mobile_height' style = {{width:"100%",marginBottom:"100px",height:"90vh",border:" ",overflowY:'scroll',overflowX:"hidden",paddingRight:""}}>
+                                                                <div className='mobile_height' style = {{width:"100%",marginBottom:"100px",height:"70vh",border:" ",overflowY:'scroll',overflowX:"hidden",paddingRight:""}}>
                                                     
                                                             
 
