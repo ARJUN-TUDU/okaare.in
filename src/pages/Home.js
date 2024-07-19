@@ -81,10 +81,8 @@ const Home = () => {
                   <div style = {{width:"100%",height:"auto"}}>
 
 
-                         <div style = {{padding:"0px"}}>
-                            <Row>
-                           <Col lg = {12} sm = {6}>
-
+                        
+                         
 
                           <div className='mobile_flex' style={{width:"100%",gap:"5px"}}>
                               
@@ -99,30 +97,33 @@ const Home = () => {
                                                               
                         </Card>
                         <p></p>
-                        <Card style = {{backgroundColor:"green",display:"",color:"white",width:"100%",padding:"5px"}}>
+                    
+
+                          
+                           
+                            
+                            <p></p>
+                           
+                            <Card style = {{backgroundColor:"green",display:"",color:"white",width:"100%",padding:"5px"}}>
                                    
                                   
        
-                                  <Card.Header  style = {{backgroundColor:"green"}} ><span className='header_font'>Arjun Tudu</span></Card.Header>
-                                 
-                                   <Card.Footer style={{width:"100%",backgroundColor:"green"}} className=''> 0 requests 
-                                       
-                                       <p></p>
-                                       0 matches
-                                       <p></p>
-                                       <Button href = "/" className='bg-white header_font button_view_change ' style = {{width:"100%",backgroundColor:""}} size ="" variant = "outline-success"> Log Out</Button>      
-                                        </Card.Footer>
+                                   <Card.Header  style = {{backgroundColor:"green"}} ><span className='header_font'>Arjun Tudu</span></Card.Header>
+                                  
+                                    <Card.Footer style={{width:"100%",backgroundColor:"green"}} className=''> 0 requests 
+                                        
+                                        <p></p>
+                                        0 matches
+                                        <p></p>
+                                        <Button href = "/" className='bg-white header_font button_view_change ' style = {{width:"100%",backgroundColor:""}} size ="" variant = "outline-success"> Log Out</Button>      
+                                         </Card.Footer>
+                                                                
+                                                                
+                                                                                          
                                                                
-                                                               
-                                                                                         
-                                                              
-                        </Card>
-
-                          </div>
-                           </Col>
-                            
+                         </Card>
+                         </div>
                             <p></p>
-                            <Col lg = {12} sm ={6}>
                             <Card style = {{backgroundColor:""}}>
                                 
                                 <Card.Header style = {{padding:"15px"}}>
@@ -143,12 +144,10 @@ const Home = () => {
                                 </Card.Header>
 
                             </Card>
-                            </Col>
-                            </Row>
 
                               
                                             <p></p>
-                                        </div>        
+                                              
                                             
                                         </div>
                                     
