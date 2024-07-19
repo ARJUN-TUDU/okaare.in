@@ -31,7 +31,7 @@ const Register = () => {
       </Form>
       
     
-     <div style = {{width:"100%",textAlign:""}}><Button size = "sm" variant='outline-success' style = {{fontWeight:"bold",color:"white",width:"100%"}}>Register</Button></div>
+     <div style = {{width:"100%",textAlign:""}}><Button size = "sm" variant='outline-success' style = {{fontWeight:"bold",color:"",width:"100%"}}>Register</Button></div>
      <p></p>
        
         
