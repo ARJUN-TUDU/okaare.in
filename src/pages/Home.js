@@ -102,7 +102,7 @@ const Home = () => {
                                         Matchings : <span style = {{color:"green",fontWeight:"1000"}}> 232
                                         </span>
                                          <p></p>
-                                        <Button onClick={e=>setNoti(true)} style = {{width:"100%"}} className='header_font' variant = "outline-success">View More</Button>
+                                        <Button onClick={e=>setNoti(true)} style = {{width:"100%",color:"white"}} className='header_font' variant = "warning">View More</Button>
                                         
                                     </Card.Body>
                                     <Card.Footer><Button onClick={e=>setShowProfile(true)} style = {{width:"100%"}} className='header_font' variant = "success">Edit Profile</Button></Card.Footer>
