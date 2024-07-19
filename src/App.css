@@ -44,11 +44,13 @@
 }
 
 
+/*max for mobile       min for Desktop*/
+
 
 .mobile_down{
    
   @media(max-width:800px){
-    width:90%
+    width:100vw
     
   }
 
@@ -62,19 +64,20 @@
 .mobile_down{
    
   @media(min-width:800px){
-    width:65%
+    width:70vw
     
 
   }
 
 
 }
+/* for mobile view shift down */
 
 .mobile_view_up {
    
   @media(max-width:800px) {
 
-     margin-top: 20px;
+     margin-top: 50px;
     
   }
 
@@ -89,6 +92,7 @@
   }
 
 }
+/* ---------------------- */
 
 
 
@@ -125,6 +129,11 @@
   font-weight: 200;
 }
 
+
+
+/* for mobile view  flex right */
+
+
 .mobile_flex{
    
   @media(min-width:800px) {
@@ -149,5 +158,43 @@
 
 
 
+/* --------------- */
 
+
+/* for mobile view with 100% */
+.mobile_view_full{
+   /*for mobile*/
+  @media(max-width:800px) {
+
+    width:100%
+    
+  }
+
+}
+
+.mobile_view_full{
+   
+  @media(min-width:800px) {
+
+    width:auto
+    
+  }
+
+}
+
+
+.button_view_change{
+     
+  @media(max-width:800px){
+     height: 35px;
+  }
+
+}
+.button_view_change{
+     
+  @media(min-width:800px){
+     height: 30px;
+  }
+
+}
 

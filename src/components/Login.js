@@ -1,40 +1,36 @@
 import React from 'react'
-import {Button, Form} from 'react-bootstrap';
+import {Button, Form, Row,Col, Container, Card} from 'react-bootstrap';
 
 
 const Login = () => {
     const onChange = () => {}
   return ( 
-    <div style ={{width:"100%",fontSize:"15px",display:"flex",justifyContent:"center",textAlign:"center",height:"auto",backgroundColor:"",alignItems:""}}>
-         
-         <div style = {{width:"auto",height:"auto",backgroundColor:"white",border:"",boxShadow: "rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px",padding:"15px 30px 30px 30px",textAlign:"start",borderRadius:"8px",marginTop:"10px"}} >
-            <p></p>
-            <h5 style={{fontWeight:"bolder",color:"green"}}>Login</h5>
-            <hr></hr>
-         <Form>
-        
-      <Form.Control placeholder='name' size='sm'
-        type="text"
-        
-      />
-      <p></p>
-      <Form.Control placeholder='password' size='sm'
-        type="password"
-        
-      />
-     <p></p>
-    
-     <Button style = {{fontWeight:"bolder",width:"100%"}} variant='success' size='sm'>Login</Button>
+    <div className='mobile_view_up' style={{width:"100%",fontSize:"11px",padding:"",backgroundColor:""}}>
+                               <h5 className='header_font'> Login</h5> 
+                               <p></p>
+            <Form>
+                    <Form.Group className="mb-3" controlId="">
+                       
+                        <Form.Control type="email" placeholder="username" />
+                       
+                    </Form.Group>
 
-      
-    </Form>
-            
-             
+                    <Form.Group className="mb-3" controlId="">
+                        
+                        <Form.Control type="password" placeholder="Password" />
+                    </Form.Group>
+                    <p></p>
+                    <hr></hr>
+                    <Button size = "sm" variant = "outline-success"  className=' header_font button_view_change mobile_view_full mobile_view_up' type="submit">
+                        Submit
+                    </Button>
+                    <Button href = "/home" size = "sm" variant = "outline-success"  className=' header_font button_view_change mobile_view_full ' type="submit">
+                        Go Home
+                    </Button>
+                    </Form>
 
-         </div>
-        
 
-    </div>
+                </div>
   )
 }
 

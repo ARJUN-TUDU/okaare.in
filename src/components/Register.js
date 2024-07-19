@@ -1,45 +1,40 @@
 import React from 'react'
 import { Button ,Form} from 'react-bootstrap'
-import {Row,Col} from 'react-bootstrap'
+import {Row,Col,Container,Card} from 'react-bootstrap'
 
 const Register = () => {
   return (
-    <div style ={{height:"auto",backgroundColor:"yellow",alignItems:""}}>
-        
-        <div  style = {{width:"100%",height:"auto",backgroundColor:"white",border:"",boxShadow: "rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px",padding:"15px 30px 30px 30px",textAlign:"start",marginTop:"10px"}} >
-      <p></p>
-       <h5 style={{fontWeight:"bolder",color:"GrayText"}}>Register</h5>
-     <hr></hr>
-      <Form>
-     
-      <p></p>
-     
-      <p></p>
-      <Form.Control placeholder='name' size='sm'></Form.Control>
-   
-      <p></p>
-      
-      <Form.Control placeholder='email' size='sm'></Form.Control>
-   
-      <p></p>
-      <Form.Control placeholder='password' size='sm'></Form.Control>
-   
-    
-      <Form.Control placeholder='re-enter password' size='sm'></Form.Control>
-   
-      <p></p>
-      </Form>
-      
-    
-     <div style = {{width:"100%",textAlign:""}}><Button size = "sm" variant='outline-success' style = {{fontWeight:"bold",color:"",width:"100%"}}>Register</Button></div>
-     <p></p>
-       
-        
+    <div className='mobile_view_up' style={{width:"100%",fontSize:"11px",padding:"",backgroundColor:""}}>
+    <h5 className='header_font'> Register</h5> 
+    <p></p>
+                            <Form>
+                            <Form.Group className="mb-3" controlId="">
 
-    </div>
-        
+                            <Form.Control type="text" placeholder="name" />
 
-   </div>
+                            </Form.Group>
+
+                            <Form.Group className="mb-3" controlId="">
+
+                            <Form.Control type="email" placeholder="email" />
+                            </Form.Group>
+                         
+
+                                    <Form.Control type="password" placeholder="Password" />
+                                    
+                                   
+
+                                    <Form.Control type="password" placeholder="re-enter Password" />
+                                    
+                            <p></p>
+                            <hr></hr>
+                            <Button size = "sm" variant = "outline-success"  className=' header_font button_view_change mobile_view_full mobile_view_up' type="submit">
+                            Submit
+                            </Button>
+                            </Form>
+
+
+                            </div>
   )
 }
 

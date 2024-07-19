@@ -6,6 +6,7 @@ import Signin_Page from './pages/Signin_Page';
 import {Routes,Route} from 'react-router-dom'
 import Home from './pages/Home';
 import { Container ,Nav,Navbar,NavDropdown } from 'react-bootstrap';
+import Login from './components/Login';
 
 function App() {
   
@@ -30,28 +31,16 @@ function App() {
 
   },[])
   return (
-    <>
+      <>
 
-    <Container fluid style = {{width:"100%",display:"flex",position:"",zIndex:"1",marginBottom:"",justifyContent:"center",alignItems:"center",height:"10vh",backgroundColor:"#baf7b5"}} >
-        <div className='mobile_down' style = {{position:"",zIndex:""}}>
-          
-        <Navbar expand="lg"  style={{backgroundColor:"#baf7b5"}}>
-            <Container>
-              <span className='header_font' style = {{fontSize:"19px" , color:"green"}}>Okaare.in</span>
-             
-            </Container>
-          
-          </Navbar>
-              </div>
-              
-    </Container>
-
+ 
 
   
-      <Container className='mobile_down' style = {{marginTop:"",height:"auto"}}>
+      <Container className='mobile_down' style = {{marginTop:"10%",height:"120vh"}}>
      
     
     <Routes>
+     
       <Route path = "/" element = {<Signin_Page/>} />
       <Route path = "/home" element = {<Home/>} />
     </Routes>
@@ -59,7 +48,7 @@ function App() {
       </Container>
     
 
-    </>
+      </>
   );
 }
 

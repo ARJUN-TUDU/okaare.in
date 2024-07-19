@@ -110,7 +110,7 @@ const Home = () => {
                                        <p></p>
                                        0 matches
                                        <p></p>
-                                       <Button  className='bg-white' style = {{width:"100%",backgroundColor:""}} size ="sm" variant = "outline-success"> Profile</Button>      
+                                       <Button href = "/" className='bg-white header_font button_view_change ' style = {{width:"100%",backgroundColor:""}} size ="" variant = "outline-success"> Log Out</Button>      
                                         </Card.Footer>
                                                                
                                                                
@@ -136,7 +136,7 @@ const Home = () => {
 
                                         <div style = {{width:"100%"}} className='mobile_right'>
 
-                                        <Button onClick={shows} variant = "success" size = "sm" style = {{fontWeight:"bolder",width:"100%"}}>Post</Button>
+                                        <Button onClick={shows} className='header_font button_view_change ' variant = "success" size = "sm" style = {{fontWeight:"bolder",width:"100%"}}>Post</Button>
 
                                         </div>
                                         </Form>
@@ -221,14 +221,14 @@ const Home = () => {
                                                                                     <Form.Control placeholder='typle your comment here . . . . . '></Form.Control>
                                                                         
                                                                                 </Form>
-                                                                            <Button style = {{width:"30%"}} variant="success" onClick={handleClose}>
+                                                                            <Button className=" header_font button_view_change  "style = {{width:"30%"}} variant="success" onClick={handleClose}>
                                                                                 submit
                                                                             </Button>
 
                                                                             
                                                                               </div>
                                                                               <hr></hr>
-                                                                              <Button style = {{width:"100%"}} variant="outline-danger" onClick={handleClose}>
+                                                                              <Button  className=" header_font button_view_change  "style = {{width:"100%"}} variant="outline-danger" onClick={handleClose}>
                                                                                 close
                                                                             </Button>
                                                                             </Modal.Footer>
@@ -240,11 +240,11 @@ const Home = () => {
                                                                     <div style={{width:"100%",backgroundColor:"",display:"flex",gap:""}}>
                                                                         <p></p>
 
-                                                                    <Button  onClick={e=>setResult((prev)=>{
+                                                                    <Button className=" header_font button_view_change  " onClick={e=>setResult((prev)=>{
                                                                         return {...prev,name:x.name,place:x.place,code:x.code}
                                                                     })} style = {{width:"50%"}} variant='success' size= "sm">like</Button>
                                                                    
-                                                                      <Button onClick={handleShow} size = "sm" variant='outline-success' style = {{width:"50%",marginLeft:"5px"}} >comments</Button>
+                                                                      <Button className=" header_font button_view_change  " onClick={handleShow} size = "sm" variant='outline-success' style = {{width:"50%",marginLeft:"5px"}} >comments</Button>
                                                                     </div>
                                                                     </Card.Footer>
                                                                     
