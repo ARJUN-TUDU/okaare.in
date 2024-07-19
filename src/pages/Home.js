@@ -78,22 +78,56 @@ const Home = () => {
                  
                  <Col lg = {4}  >
                   
-                         <Container>
+                         
                          <Row>
                             <Col lg = {12} xs = {6} sm = {6}>
-                               <div style = {{backgroundColor:"",width:"100%",height:"200px"}}>
-                                       <img src = {require("../pic.jpg")} style = {{width:"100%",height:"100%",objectFit:"cover"}} />
+                               <div style = {{backgroundColor:"",width:"100%",height:"auto"}}>
+                                       <img src = {require("../pic.jpg")} style = {{width:"100%",height:"100%",objectFit:"cover",borderRadius:"5px"}} />
                                </div>
                             </Col>
+                            
                             <Col lg = {12} xs = {6} sm = {6}>
-                               <div style = {{backgroundColor:"",width:"100%",height:"200px",padding:"10px"}}>
-                                       dwawa
-                               </div>
+                               <p></p>
+                                  <Card className='bg-white'  style = {{backgroundColor:""}}>
+                                    <Card.Footer className='desc_font'>
+                                        <span className='header_font'> Arjun Tudu</span>
+                                        <p></p>
+                                        Notifications : <span style = {{color:"green",fontWeight:"1000"}}> 0</span>
+                                        <p></p>
+                                        Matchings : <span style = {{color:"green",fontWeight:"1000"}}> 232
+                                        </span>
+                                        <p></p>
+                                    </Card.Footer>
+                                  </Card>
+                               
                             </Col>
                          </Row>
                          <p></p>
-                         </Container>
+                         
+                         
+                         <Card style = {{padding:""}}>
+                            <Card.Header><p className='header_font'>Make a post</p></Card.Header>
+                            <Card.Footer>
+                                
+                         <Form>
+                                        <Form.Group className="mb-3" controlId="">
+                                        
+                                            <Form.Control type="text" placeholder="username" />
+                                        
+                                        </Form.Group>
+                                        <Form.Control type="file" placeholder="username" />
+
+                                       
+                                        <p></p>
+                                        
+                                        <Button size = "sm" variant = "success"  className=' mt-3 header_font button_view_change mobile_view_full' style = {{width:"100%"}} type="submit">
+                                            Submit
+                                        </Button>
+                                        
+                        </Form>
                    
+                            </Card.Footer>
+                         </Card>
 
                  
                                     
