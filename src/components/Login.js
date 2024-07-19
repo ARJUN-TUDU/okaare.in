@@ -24,7 +24,7 @@ const Login = () => {
       />
      <p></p>
     
-     <Button style = {{fontWeight:"bolder"}} variant='success' size='sm'>Login</Button>
+     <Button style = {{fontWeight:"bolder",width:"100%"}} variant='success' size='sm'>Login</Button>
 
       
     </Form>
