@@ -87,17 +87,19 @@ const Home = () => {
                             </Col>
                             
                             <Col lg = {12} xs = {6} sm = {6}>
-                               <p></p>
-                                  <Card className='bg-white'  style = {{backgroundColor:""}}>
-                                    <Card.Footer className='desc_font'>
-                                        <span className='header_font'> Arjun Tudu</span>
+                             
+                                  <Card className='bg-white'  style = {{backgroundColor:"",height:"100%"}}>
+                                  <Card.Header><span className='header_font'> Arjun Tudu</span></Card.Header>
+                                    <Card.Body className='desc_font' style = {{textAlign:"start"}}>
+                                       
                                         <p></p>
                                         Notifications : <span style = {{color:"green",fontWeight:"1000"}}> 0</span>
                                         <p></p>
+                                        
                                         Matchings : <span style = {{color:"green",fontWeight:"1000"}}> 232
                                         </span>
-                                        <p></p>
-                                    </Card.Footer>
+                                        
+                                    </Card.Body>
                                   </Card>
                                
                             </Col>

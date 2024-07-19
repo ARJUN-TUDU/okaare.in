@@ -33,10 +33,15 @@ function App() {
   return (
       <>
 
- 
+<Navbar expand="lg" className="" style={{backgroundColor:"#baf7b5"}}>
+      <Container className = "mobile_down header_font"  style={{backgroundColor:"#baf7b5"}}>
+         <span className = "mobile_down header_font" style = {{fontSize:"30px"}}>Okaare.in</span>
 
-  
-      <Container className='mobile_down' style = {{marginTop:"10%",height:"auto"}}>
+      </Container>
+    </Navbar>
+
+     <p></p>
+      <Container className='mobile_down' style = {{marginTop:"",height:"auto"}}>
      
     
     <Routes>
