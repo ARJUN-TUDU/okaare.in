@@ -76,83 +76,28 @@ const Home = () => {
 
             <Row>
                  
-                 <Col lg = {4} style={{backgroundColor:"",height:"auto"}} >
+                 <Col lg = {4}  >
+                  
+                         <Container>
+                         <Row>
+                            <Col lg = {12} xs = {6} sm = {6}>
+                               <div style = {{backgroundColor:"",width:"100%",height:"200px"}}>
+                                       <img src = {require("../pic.jpg")} style = {{width:"100%",height:"100%",objectFit:"cover"}} />
+                               </div>
+                            </Col>
+                            <Col lg = {12} xs = {6} sm = {6}>
+                               <div style = {{backgroundColor:"",width:"100%",height:"200px",padding:"10px"}}>
+                                       dwawa
+                               </div>
+                            </Col>
+                         </Row>
+                         </Container>
+                   
 
-                  <div style = {{width:"100%",height:"auto"}}>
-
-
-                        
-                         
-
-                          <div className='mobile_flex' style={{width:"100%",gap:"2px"}}>
-                              
-                          <Card style = {{backgroundColor:"",display:"",width:"100%",padding:""}}>
-                                   
-                                  
-                                  
-                                  <Card.Img style={{height:"100%",width:"100%",objectFit:"cover",borderRadius:"5px"}} sizes='sm' variant="top" src={require("../pic.jpg")} />
-                                       
-                                                               
-                                   
-                                                              
-                        </Card>
-                        <p></p>
-                    
-
-                          
-                           
-                            
-                            <p></p>
-                           
-                            <Card style = {{backgroundColor:"green",display:"",color:"white",width:"100%",padding:"5px"}}>
-                                   
-                                  
-       
-                                   <Card.Header  style = {{backgroundColor:"green"}} ><span className='header_font'>Arjun Tudu</span></Card.Header>
-                                  
-                                    <Card.Footer style={{width:"100%",backgroundColor:"green"}} className=''> 0 requests 
-                                        
-                                        <p></p>
-                                        0 matches
-                                        <p></p>
-                                        <Button href = "/" className='bg-white header_font button_view_change ' style = {{width:"100%",backgroundColor:""}} size ="" variant = "outline-success"> Log Out</Button>      
-                                         </Card.Footer>
-                                                                
-                                                                
-                                                                                          
-                                                               
-                         </Card>
-                         </div>
-                            <p></p>
-                            <Card style = {{backgroundColor:""}}>
-                                
-                                <Card.Header style = {{padding:"15px"}}>
-                                    <span className='header_font'> Make a post</span>
-                                    <hr></hr>
-                                         <Form >
-                                            <Form.Control type = "file" ></Form.Control>
-                                            <p></p>
-                                        <Form.Control onChange={e=>setName(e.target.value)} placeholder='make a post . . .' size='sm'></Form.Control>
-                                        <p></p>
-
-                                        <div style = {{width:"100%"}} className='mobile_right'>
-
-                                        <Button onClick={shows} className='header_font button_view_change ' variant = "success" size = "sm" style = {{fontWeight:"bolder",width:"100%"}}>Post</Button>
-
-                                        </div>
-                                        </Form>
-                                </Card.Header>
-
-                            </Card>
-
-                              
-                                            <p></p>
-                                              
-                                            
-                                        </div>
+                 
                                     
                                     
-                                    </Col>
+                 </Col>
                                     <Col lg = {8} style={{backgroundColor:"",height:"auto"}} >
                                     
                                     <div className='mobile_view_up' style = {{backgroundColor:"",width:"100%"}}  >
