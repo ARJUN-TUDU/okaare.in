@@ -177,7 +177,7 @@ const Home = () => {
                                                                             <Modal.Body>
                                                                                  
                                                                                 
-                                                                                 <div style = {{maxHeight:"",overflowY:""}}>
+                                                                                 <div style = {{maxHeight:"70vh",overflowY:""}}>
                                                                                      
                                                                                       {
                                                                                         list.map((x)=>{
