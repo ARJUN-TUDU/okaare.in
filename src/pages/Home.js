@@ -199,7 +199,7 @@ const Home = () => {
                                                                             <Modal.Footer>
                                                                               <div style = {{width:"100%",display:"flex",gap:"5px"}}>
                                                                               <Form style = {{width:"70%"}}>
-                                                                                    <Form.Control placeholder='typle your comment here . . . . . '></Form.Control>
+                                                                                    <Form.Control style = {{height:"80px"}} placeholder='typle your comment here . . . . . '></Form.Control>
                                                                         
                                                                                 </Form>
                                                                             <Button className=" header_font button_view_change  "style = {{width:"30%"}} variant="success" onClick={handleClose}>
