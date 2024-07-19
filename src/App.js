@@ -36,7 +36,7 @@ function App() {
  
 
   
-      <Container className='mobile_down' style = {{marginTop:"10%",height:"120vh"}}>
+      <Container className='mobile_down' style = {{marginTop:"10%",height:"auto"}}>
      
     
     <Routes>

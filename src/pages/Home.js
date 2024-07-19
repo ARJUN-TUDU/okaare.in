@@ -84,7 +84,7 @@ const Home = () => {
                         
                          
 
-                          <div className='mobile_flex' style={{width:"100%",gap:"5px"}}>
+                          <div className='mobile_flex' style={{width:"100%",gap:"2px"}}>
                               
                           <Card style = {{backgroundColor:"",display:"",width:"100%",padding:""}}>
                                    
