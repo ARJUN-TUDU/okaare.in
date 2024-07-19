@@ -123,7 +123,7 @@ const Home = () => {
                                        
                                         <p></p>
                                         
-                                        <Button size = "sm" variant = "success"  className=' mt-3 header_font button_view_change mobile_view_full' style = {{width:"100%"}} type="submit">
+                                        <Button size = "sm" variant = "success"  className=' mt-3 header_font button_view_change mobile_view_full' style = {{width:"100%",height:"35px"}} type="submit">
                                             Submit
                                         </Button>
                                         
@@ -138,10 +138,10 @@ const Home = () => {
                  </Col>
                                     <Col lg = {8} style={{backgroundColor:"",height:"auto"}} >
                                     
-                                    <div className='mobile_view_up' style = {{backgroundColor:"",width:"100%"}}  >
+                                    <div className='mobile_view_up desc_font' style = {{backgroundColor:"",fontSize:"11PX",width:"100%"}}  >
                                     <Tabs
                                                                 defaultActiveKey="Posts"
-                                                                color='green'
+                                                                color='YELLOW'
                                                                 id="uncontrolled-tab-example"
                                                                 className="mb-3"
                                                                 style = {{border:"",position:"",zIndex:"1",padding:"9px",color:"green",backgroundColor:"#baf7b5",borderRadius:"5px",height:"auto"}}
