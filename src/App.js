@@ -10,13 +10,17 @@ import Login from './components/Login';
 import { IoHomeOutline } from "react-icons/io5";
 import { SlRefresh } from "react-icons/sl";
 import { IoSettingsOutline } from "react-icons/io5";
+import { FaPlus } from "react-icons/fa6";
 function App() {
   
   const [data,setData] = useState([]);
 
   const [myTitle,setMyTitle] = useState("Okaare");
 
-  
+  const refreshing = function(){
+    window.location.reload();
+    console.log("clicked")
+  }
 
   useEffect(()=>{
         
@@ -64,8 +68,8 @@ function App() {
            <Row>
              
              <Col  className ="bg-pink desc font bold" style = {{fontWeight:"BOLD",color:"green",height:"auto"}} lg = {4} sm = {4} xs = {4}><IoHomeOutline size = {25} /> </Col>
-             <Col  className ="bg-pink desc font bold" style = {{fontWeight:"BOLD",color:"green",height:"auto"}} lg = {4} sm = {4} xs = {4}><IoSettingsOutline size = {25} /> </Col>
-             <Col  className ="bg-pink desc font bold" style = {{fontWeight:"BOLD",color:"red",height:"auto"}} lg = {4} sm = {4} xs = {4}><SlRefresh size = {25} /> </Col>
+             <Col  className ="bg-pink desc font bold" style = {{fontWeight:"BOLD",color:"green",height:"auto"}} lg = {4} sm = {4} xs = {4}><FaPlus size = {30} /> </Col>
+             <Col onClick={refreshing}  className ="bg-pink desc font bold" style = {{fontWeight:"BOLD",color:"red",height:"auto"}} lg = {4} sm = {4} xs = {4}><SlRefresh size = {25} /> </Col>
              
            </Row>
 

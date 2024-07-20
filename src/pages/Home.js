@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { Container,Accordion, Row ,Col, Button ,Form, Card,Tabs,Tab,Modal} from 'react-bootstrap'
 import { MdBroadcastOnHome } from "react-icons/md";
+import { IoNotificationsOutline } from "react-icons/io5";
+import { FaRegHeart } from "react-icons/fa6";
 const Home = () => {
    
     const[name,setName] = useState()
@@ -76,7 +78,7 @@ const Home = () => {
   return (
  
         <div className='mb-5' style={{height:"100px",width:"100%",marginTop:"10px",backgroundColor:""}}>
-                <MdBroadcastOnHome />
+                
             <Row>
                  
                  <Col lg = {4}  >
@@ -99,10 +101,10 @@ const Home = () => {
                                     <Card.Body className='desc_font' style = {{textAlign:"start"}}>
                                        
                                        
-                                        Notifications : <span style = {{color:"green",fontWeight:"1000"}}> 0</span>
+                                        Notifications <IoNotificationsOutline color='green' size = {18} /> : <span style = {{color:"green",fontWeight:"1000",fontSize:""}}> 0</span>
                                         <p></p>
                                         
-                                        Matchings : <span style = {{color:"green",fontWeight:"1000"}}> 232
+                                        Matchings  <FaRegHeart color = "red" size = {18}  /> : <span style = {{color:"green",fontWeight:"1000",}}> 232
                                         </span>
                                          <p></p>
                                         <Button onClick={e=>setNoti(true)} style = {{width:"100%",color:"white"}} className='header_font' variant = "warning">View More</Button>
