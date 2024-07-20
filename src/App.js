@@ -40,7 +40,7 @@ function App() {
 
       <Navbar expand="lg" className="" style={{backgroundColor:"#baf7b5",position:"",top:"",zIndex:""}}>
       <Container className = "mobile_down header_font"  style={{backgroundColor:"#baf7b5",position:"",top:"",padding:"10px 0px 10px 10px"}}>
-      <span className = "mobile_down header_font" style = {{fontSize:"24px"}}>Okaare|<span style={{color:"white",fontSize:"24px"}}>ᱚᱠᱟᱨᱮ</span>.in</span>
+      <span className = "mobile_down header_font" style = {{fontSize:"24px"}}>Okaare|<span style={{color:"green",fontSize:"24px"}}>ᱚᱠᱟᱨᱮ</span>.in</span>
       </Container>
       </Navbar>
 

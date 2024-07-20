@@ -7,6 +7,7 @@ import { IoHomeOutline } from "react-icons/io5";
 import { SlRefresh } from "react-icons/sl";
 import { IoSettingsOutline } from "react-icons/io5";
 import { FaPlus } from "react-icons/fa6";
+import { CiSearch } from "react-icons/ci";
 const Home = () => {
    
     const[name,setName] = useState()
@@ -21,7 +22,8 @@ const Home = () => {
   const handleShow = () => setShow(true);
 
   const [showProfile,setShowProfile] = useState(false)
-  const [setnot,setNoti] = useState(false)
+  const [setnot,setNoti] = useState(false);
+  const [searchModal,setSearchModal] = useState(false)
 
   const refreshing = function(){
     window.scrollTo({top:0,behavior:"smooth"})
@@ -70,6 +72,9 @@ const Home = () => {
     }
     const reload = function(){
         window.location.reload();
+    }
+    const searchModalChange = function(){
+      setSearchModal(true)
     }
 
     const clear = function(){
@@ -353,13 +358,23 @@ const Home = () => {
             
 
             </Modal>
+            <Modal centered style = {{textAlign:"center"}} show = {searchModal} onHide={e=>setSearchModal(false)} >
+                         <Modal.Header closeButton>Search</Modal.Header>
+                        <Modal.Body><Form><Form.Control placeholder='type the name' ></Form.Control></Form>
+                        <p></p>
+                        <Button className = "header_font" variant = "success" style = {{width:"100%"}} >search</Button>
+
+                         </Modal.Body>
+                        
+
+                  </Modal>
 
             <div className = "mobile_show bg-white" style={{height:"8vh",backgroundColor:"",width:"100%",textAlign:"center",position :"fixed",bottom:"0px"}}>
          <Container className='mobile_down' style = {{display:"",alignItems:"",padding:"",position:"fixed",bottom:"20px"}}>
           
            <Row>
              
-             <Col  className ="bg-pink desc font bold" style = {{fontWeight:"BOLD",color:"green",height:"auto"}} lg = {4} sm = {4} xs = {4}><IoHomeOutline size = {25} /> </Col>
+             <Col onClick = {searchModalChange}  className ="bg-pink desc font bold" style = {{fontWeight:"BOLD",color:"green",height:"auto"}} lg = {4} sm = {4} xs = {4}><CiSearch  size = {25} /> </Col>
              <Col  className ="bg-pink desc font bold" style = {{fontWeight:"BOLD",color:"green",height:"auto"}} lg = {4} sm = {4} xs = {4}><FaPlus size = {30} /> </Col>
              <Col onClick={refreshing} className ="bg-pink desc font bold" style = {{fontWeight:"BOLD",color:"red",fontWeight:"bold",height:"auto"}} lg = {4} sm = {4} xs = {4}><SlRefresh size = {25} /> </Col>
              
