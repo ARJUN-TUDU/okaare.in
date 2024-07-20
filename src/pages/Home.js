@@ -370,7 +370,8 @@ const Home = () => {
                   </Modal>
 
             <div className = "mobile_show bg-white" style={{height:"8vh",backgroundColor:"",width:"100%",textAlign:"center",position :"fixed",bottom:"0px"}}>
-         <Container className='mobile_down' style = {{display:"",alignItems:"",padding:"",position:"fixed",bottom:"20px"}}>
+        <hr></hr>
+         <div className='mobile_down' style = {{display:"",alignItems:"",padding:"",position:"fixed",border:"1px 0px 0px 0px solid",bottom:"20px"}}>
           
            <Row>
              
@@ -380,7 +381,7 @@ const Home = () => {
              
            </Row>
 
-         </Container>
+         </div>
       </div>
                    
              
