@@ -3,6 +3,10 @@ import { Container,Accordion, Row ,Col, Button ,Form, Card,Tabs,Tab,Modal} from 
 import { MdBroadcastOnHome } from "react-icons/md";
 import { IoNotificationsOutline } from "react-icons/io5";
 import { FaRegHeart } from "react-icons/fa6";
+import { IoHomeOutline } from "react-icons/io5";
+import { SlRefresh } from "react-icons/sl";
+import { IoSettingsOutline } from "react-icons/io5";
+import { FaPlus } from "react-icons/fa6";
 const Home = () => {
    
     const[name,setName] = useState()
@@ -18,6 +22,11 @@ const Home = () => {
 
   const [showProfile,setShowProfile] = useState(false)
   const [setnot,setNoti] = useState(false)
+
+  const refreshing = function(){
+    window.scrollTo({top:0,behavior:"smooth"})
+    console.log("clicked")
+  }
 
     const list = [
         { "name": "Alice Johnson", "place": "New York", "code": "NY001" },
@@ -345,7 +354,19 @@ const Home = () => {
 
             </Modal>
 
-           
+            <div className = "mobile_show bg-white" style={{height:"8vh",backgroundColor:"",width:"100%",textAlign:"center",position :"fixed",bottom:"0px"}}>
+         <Container className='mobile_down' style = {{display:"",alignItems:"",padding:"",position:"fixed",bottom:"20px"}}>
+          
+           <Row>
+             
+             <Col  className ="bg-pink desc font bold" style = {{fontWeight:"BOLD",color:"green",height:"auto"}} lg = {4} sm = {4} xs = {4}><IoHomeOutline size = {25} /> </Col>
+             <Col  className ="bg-pink desc font bold" style = {{fontWeight:"BOLD",color:"green",height:"auto"}} lg = {4} sm = {4} xs = {4}><FaPlus size = {30} /> </Col>
+             <Col onClick={refreshing} className ="bg-pink desc font bold" style = {{fontWeight:"BOLD",color:"red",fontWeight:"bold",height:"auto"}} lg = {4} sm = {4} xs = {4}><SlRefresh size = {25} /> </Col>
+             
+           </Row>
+
+         </Container>
+      </div>
                    
              
         </div>
