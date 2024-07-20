@@ -58,14 +58,14 @@ function App() {
   
       </Container>
 
-      <div className = "mobile_show bg-black" style={{height:"10vh",backgroundColor:"",width:"100%",textAlign:"center",position :"fixed",bottom:"0px"}}>
-         <Container className='mobile_down' style = {{display:"",alignItems:"",padding:"",position:"fixed",bottom:"35px"}}>
+      <div className = "mobile_show bg-white" style={{height:"10vh",backgroundColor:"",width:"100%",textAlign:"center",position :"fixed",bottom:"0px"}}>
+         <Container className='mobile_down' style = {{display:"",alignItems:"",padding:"",position:"fixed",bottom:"25px"}}>
           
            <Row>
              
              <Col  className ="bg-pink desc font bold" style = {{fontWeight:"BOLD",color:"green",height:"auto"}} lg = {4} sm = {4} xs = {4}><IoHomeOutline size = {30} /> </Col>
              <Col  className ="bg-pink desc font bold" style = {{fontWeight:"BOLD",color:"green",height:"auto"}} lg = {4} sm = {4} xs = {4}><IoSettingsOutline size = {30} /> </Col>
-             <Col  className ="bg-pink desc font bold" style = {{fontWeight:"BOLD",color:"green",height:"auto"}} lg = {4} sm = {4} xs = {4}><SlRefresh size = {30} /> </Col>
+             <Col  className ="bg-pink desc font bold" style = {{fontWeight:"BOLD",color:"red",height:"auto"}} lg = {4} sm = {4} xs = {4}><SlRefresh size = {30} /> </Col>
              
            </Row>
 
