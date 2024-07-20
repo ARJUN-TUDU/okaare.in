@@ -18,7 +18,7 @@ function App() {
   const [myTitle,setMyTitle] = useState("Okaare");
 
   const refreshing = function(){
-    window.location.reload();
+    window.scrollTo({top:0,behavior:"smooth"})
     console.log("clicked")
   }
 
