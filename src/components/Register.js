@@ -89,8 +89,8 @@ const Register = () => {
                             <hr></hr>
                             
                             </Form>
-                            <Button onClick={send} size = "sm" variant = "outline-success"  className=' header_font button_view_change mobile_view_full mobile_view_up' type="">
-                            Submit
+                            <Button onClick={send} size = "sm" variant = "outline-success"  className=' header_font button_view_change mobile_view_full mobile_view_up' style = {{width:"100%"}} type="">
+                            Register
                             </Button>
 
                           

@@ -44,7 +44,7 @@ const Login = () => {
 
     const onChange = () => {}
   return ( 
-    <div className='mobile_view_up' style={{width:"100%",fontSize:"11px",padding:"",backgroundColor:""}}>
+    <div className='mobile_view_up' style={{width:"100%",fontSize:"11px",textAlign:"center",padding:"",backgroundColor:""}}>
                                <h5 className='header_font'> Login</h5> 
                                <p></p>
             <Form>
@@ -65,7 +65,7 @@ const Login = () => {
                    
                   
                     </Form>
-                    <Button  onClick={sendLogin} size = "sm" variant = "outline-success"  className=' header_font button_view_change mobile_view_full ' type="submit">
+                    <Button  onClick={sendLogin} size = "sm" variant = "outline-success"  className=' header_font button_view_change mobile_view_full ' style= {{width:"100%"}} type="submit">
                         Login
                     </Button>
 
