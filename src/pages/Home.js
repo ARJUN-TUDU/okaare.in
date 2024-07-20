@@ -152,7 +152,7 @@ const Home = () => {
                                                                 style = {{border:"",position:"",zIndex:"1",padding:"9px",color:"green",backgroundColor:"#baf7b5",borderRadius:"5px",height:"auto"}}
                                                                 >
                                                                 <Tab style = {{}} eventKey="Posts" title="Posts">
-                                                                <div className='mobile_view_up' style = {{width:"100%",marginBottom:"100px",height:"70vh",border:" ",overflowY:'scroll',overflowX:"hidden",paddingRight:""}}>
+                                                                <div className='mobile_height' style = {{width:"100%",marginBottom:"100px",border:" ",overflowY:'scroll',overflowX:"",paddingRight:""}}>
                                                     
                                                             
 
@@ -288,6 +288,7 @@ const Home = () => {
                                                                                 Update your Profile Picture
                                                                                 <p></p>
                                                                                 <img src = {require("../pic.jpg")} style={{height:"100px" ,width:"100%",objectFit:"cover"}} />
+                                                                                <p></p>
                                                                                     <Form.Control style = {{height:""}} type='file' placeholder='typle  comment here . . . . . '></Form.Control>
                                                                                     <p></p>
                                                                                     <p style = {{color:"green"}} className = "header_font">Arjun Tudu</p>

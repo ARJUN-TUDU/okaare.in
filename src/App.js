@@ -10,8 +10,11 @@ import Login from './components/Login';
 
 function App() {
   
-  const [data,setData] = useState([])
+  const [data,setData] = useState([]);
 
+  const [myTitle,setMyTitle] = useState("Okaare");
+
+  
 
   useEffect(()=>{
         
@@ -25,20 +28,20 @@ function App() {
        }
     }
 
-    getData()
+    
+ 
   
 
 
   },[])
   return (
-      <>
+      <div style = {{marginBottom:"100vh"}}>
 
-<Navbar expand="lg" className="" style={{backgroundColor:"#baf7b5"}}>
+      <Navbar expand="lg" className="" style={{backgroundColor:"#baf7b5"}}>
       <Container className = "mobile_down header_font"  style={{backgroundColor:"#baf7b5"}}>
-         <span className = "mobile_down header_font" style = {{fontSize:"30px"}}>Okaare.in</span>
-
+      <span className = "mobile_down header_font" style = {{fontSize:"30px"}}>{myTitle}.in</span>
       </Container>
-    </Navbar>
+      </Navbar>
 
      <p></p>
       <Container className='mobile_down' style = {{marginTop:"",height:"auto"}}>
@@ -51,9 +54,12 @@ function App() {
     </Routes>
   
       </Container>
+
+      <div style={{height:"30vh",backgroundColor:""}}>
+      </div>
     
 
-      </>
+      </div>
   );
 }
 

@@ -1,8 +1,47 @@
-import React from 'react'
-import {Button, Form, Row,Col, Container, Card} from 'react-bootstrap';
+import React, { useState } from 'react'
+import {Button, Form, Row,Col, Container, Card,Modal} from 'react-bootstrap';
+import axios from 'axios';
 
 
 const Login = () => {
+
+    const [data,setData] =  useState({
+        name:"",
+        age:0,
+        password:"",
+        phone:"",
+        profile_photo:"",
+        photos:[],
+        date:"",
+        email:""
+
+    })
+
+    const [showFlag,setShowFlag] =useState(false)
+    
+    const sendLogin = async function(){
+         
+        try{
+            const response = await axios.post("http://localhost:5000/login",data);
+            if(response.data.status == "done"){
+                window.location.href = "/home"
+            }else{
+                 setShowFlag(true)
+            }
+        }catch(e){
+            console.log(e)
+        }
+
+
+    }
+
+
+
+
+
+
+
+
     const onChange = () => {}
   return ( 
     <div className='mobile_view_up' style={{width:"100%",fontSize:"11px",padding:"",backgroundColor:""}}>
@@ -11,7 +50,9 @@ const Login = () => {
             <Form>
                     <Form.Group className="mb-3" controlId="">
                        
-                        <Form.Control type="email" placeholder="username" />
+                        <Form.Control onChange={e=>setData((prev)=>{
+                            return {...prev,name:e.target.value}
+                        })} type="name" placeholder="username" />
                        
                     </Form.Group>
 
@@ -21,13 +62,19 @@ const Login = () => {
                     </Form.Group>
                     <p></p>
                     <hr></hr>
-                    <Button size = "sm" variant = "outline-success"  className=' header_font button_view_change mobile_view_full mobile_view_up' type="submit">
-                        Submit
-                    </Button>
-                    <Button href = "/home" size = "sm" variant = "outline-success"  className=' header_font button_view_change mobile_view_full ' type="submit">
-                        Go Home
-                    </Button>
+                   
+                  
                     </Form>
+                    <Button onClick={sendLogin} size = "sm" variant = "outline-success"  className=' header_font button_view_change mobile_view_full ' type="submit">
+                        Login
+                    </Button>
+
+                    <Modal centered style = {{textAlign:"center"}} show = {showFlag} onHide={e=>setShowFlag(false)} >
+                         <Modal.Header closeButton></Modal.Header>
+                        <Modal.Body> <span className='desc_font' style={{color:"red",fontWeight:"bold",fontSize:"19px"}} > Wrong Details<p style = {{color:"black"}}>Register first</p></span> </Modal.Body>
+                        
+
+                    </Modal>
 
 
                 </div>
