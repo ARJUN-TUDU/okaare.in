@@ -55,7 +55,7 @@ function App() {
   
       </Container>
 
-      <div style={{height:"auto",backgroundColor:"",width:"100%",textAlign:"center",position :"fixed",bottom:"0"}}>
+      <div className = "mobile_show" style={{height:"auto",backgroundColor:"",width:"100%",textAlign:"center",position :"fixed",bottom:"0"}}>
          <Container className='mobile_down bg-white' style = {{display:"",alignItems:"",paddingTop:"15px"}}>
           <p></p>
            <Row>
