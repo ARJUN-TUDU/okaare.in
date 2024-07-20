@@ -186,7 +186,7 @@
 .mobile_height {
    
   @media (max-width:800px) {
-     height: 67vh;
+      background-color: red;
   }
 
 }
@@ -196,7 +196,7 @@
 .mobile_height {
    
   @media (min-width:800px) {
-     height: 150vh;
+      background-color: black;
   }
 
 }
