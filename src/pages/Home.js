@@ -82,15 +82,18 @@ const Home = () => {
                  <Col lg = {4}  >
                   
                          
-                         <Row>
+                         <Row style = {{gap:""}}>
                             <Col lg = {12} xs = {6} sm = {6}>
                                <div style = {{backgroundColor:"",width:"100%",height:"100%"}}>
                                        <img src = {require("../pic.jpg")} style = {{width:"100%",height:"100%",objectFit:"cover",borderRadius:"5px"}} />
+                                       
                                </div>
+                            
+                              
                             </Col>
                             
                             <Col lg = {12} xs = {6} sm = {6}>
-                             
+                                    
                                   <Card className='bg-white'  style = {{backgroundColor:"",height:"100%"}}>
                                   <Card.Header><span className='header_font'> Arjun Tudu</span></Card.Header>
                                     <Card.Body className='desc_font' style = {{textAlign:"start"}}>

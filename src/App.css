@@ -186,15 +186,17 @@
 .mobile_height {
    
   @media (max-width:800px) {
-    height: 75vh;
+     height: 67vh;
   }
 
 }
 
+
+/* desktop */
 .mobile_height {
    
   @media (min-width:800px) {
-    height: 150vh;
+     height: 150vh;
   }
 
 }

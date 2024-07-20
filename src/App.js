@@ -35,7 +35,7 @@ function App() {
 
   },[])
   return (
-      <div style = {{marginBottom:"50vh"}}>
+      <div style = {{marginBottom:"10vh"}}>
 
       <Navbar expand="lg" className="" style={{backgroundColor:"#baf7b5"}}>
       <Container className = "mobile_down header_font"  style={{backgroundColor:"#baf7b5",padding:"10px 0px 10px 10px"}}>
