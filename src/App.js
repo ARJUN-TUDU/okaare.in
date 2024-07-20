@@ -35,11 +35,12 @@ function App() {
 
   },[])
   return (
-      <div style = {{marginBottom:"100vh"}}>
+      <div style = {{marginBottom:"50vh"}}>
 
       <Navbar expand="lg" className="" style={{backgroundColor:"#baf7b5"}}>
       <Container className = "mobile_down header_font"  style={{backgroundColor:"#baf7b5"}}>
-      <span className = "mobile_down header_font" style = {{fontSize:"30px"}}>{myTitle}.in</span>
+      <span className = "mobile_down header_font" style = {{fontSize:"30px"}}> Okaare |ᱚᱠᱟᱨᱮ 
+      .in</span>
       </Container>
       </Navbar>
 
