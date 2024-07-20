@@ -44,7 +44,7 @@ const Signin_Page = () => {
        
         
          
-         <Container style ={{width:"40%",textAlign:"center",backgroundColor:"red",fontSize:"15px",height:"auto",padding:"15px",backgroundColor:""}}>
+         <Container style ={{width:"300px",textAlign:"center",backgroundColor:"red",fontSize:"15px",height:"auto",padding:"15px",backgroundColor:""}}>
    
               
               <div style = {{width:"100%"}}>
