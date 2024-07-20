@@ -65,7 +65,7 @@ const Login = () => {
                    
                   
                     </Form>
-                    <Button onClick={sendLogin} size = "sm" variant = "outline-success"  className=' header_font button_view_change mobile_view_full ' type="submit">
+                    <Button  onClick={sendLogin} size = "sm" variant = "outline-success"  className=' header_font button_view_change mobile_view_full ' type="submit">
                         Login
                     </Button>
 
