@@ -59,7 +59,7 @@ function App() {
       </Container>
 
       <div className = "mobile_show bg-white" style={{height:"8vh",backgroundColor:"",width:"100%",textAlign:"center",position :"fixed",bottom:"0px"}}>
-         <Container className='mobile_down' style = {{display:"",alignItems:"",padding:"",position:"fixed",bottom:"25px"}}>
+         <Container className='mobile_down' style = {{display:"",alignItems:"",padding:"",position:"fixed",bottom:"20px"}}>
           
            <Row>
              
