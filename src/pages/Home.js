@@ -98,16 +98,16 @@ const Home = () => {
                                     
                                   <Card className='bg-white'  style = {{backgroundColor:"",height:"100%"}}>
                                   <Card.Header><span className='header_font'> Arjun Tudu</span></Card.Header>
-                                    <Card.Body className='desc_font' style = {{textAlign:"start"}}>
+                                    <Card.Body className='desc_font' style = {{textAlign:"start",gap:"15px"}}>
                                        
                                        
-                                        Notifications <IoNotificationsOutline color='green' size = {18} /> : <span style = {{color:"green",fontWeight:"1000",fontSize:""}}> 0</span>
+                                       <IoNotificationsOutline color='green' size = {18} /> : <span style = {{color:"",fontWeight:"1000",fontSize:""}}> 0</span>
+                                       
                                         <p></p>
-                                        
-                                        Matchings  <FaRegHeart color = "red" size = {18}  /> : <span style = {{color:"green",fontWeight:"1000",}}> 232
+                                        <FaRegHeart color = "red" size = {18}  /> : <span style = {{color:"",fontWeight:"1000",}}> 232
                                         </span>
                                          <p></p>
-                                        <Button onClick={e=>setNoti(true)} style = {{width:"100%",color:"white"}} className='header_font' variant = "warning">View More</Button>
+                                        <Button onClick={e=>setNoti(true)} style = {{width:"100%",color:""}} className='header_font' variant = "outline-success">Notifications</Button>
                                         
                                     </Card.Body>
                                     <Card.Footer><Button onClick={e=>setShowProfile(true)} style = {{width:"100%"}} className='header_font' variant = "success">Edit Profile</Button></Card.Footer>
