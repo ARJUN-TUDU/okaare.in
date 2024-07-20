@@ -38,8 +38,8 @@ function App() {
       <div style = {{marginBottom:"50vh"}}>
 
       <Navbar expand="lg" className="" style={{backgroundColor:"#baf7b5"}}>
-      <Container className = "mobile_down header_font"  style={{backgroundColor:"#baf7b5"}}>
-      <span className = "mobile_down header_font" style = {{fontSize:"30px"}}>Okaare|<span style={{color:"white",fontSize:"30px"}}>ᱚᱠᱟᱨᱮ</span>.in</span>
+      <Container className = "mobile_down header_font"  style={{backgroundColor:"#baf7b5",padding:"10px 0px 10px 10px"}}>
+      <span className = "mobile_down header_font" style = {{fontSize:"24px"}}>Okaare|<span style={{color:"white",fontSize:"24px"}}>ᱚᱠᱟᱨᱮ</span>.in</span>
       </Container>
       </Navbar>
 
