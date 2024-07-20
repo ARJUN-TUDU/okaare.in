@@ -58,9 +58,9 @@ function App() {
   
       </Container>
 
-      <div className = "mobile_show" style={{height:"8vh",backgroundColor:"",width:"100%",textAlign:"center",position :"fixed",bottom:"0"}}>
-         <Container className='mobile_down bg-white' style = {{display:"",alignItems:"",paddingTop:""}}>
-          <p></p>
+      <div className = "mobile_show bg-black" style={{height:"10vh",backgroundColor:"",width:"100%",textAlign:"center",position :"fixed",bottom:"0px"}}>
+         <Container className='mobile_down' style = {{display:"",alignItems:"",padding:"",position:"fixed",bottom:"35px"}}>
+          
            <Row>
              
              <Col  className ="bg-pink desc font bold" style = {{fontWeight:"BOLD",color:"green",height:"auto"}} lg = {4} sm = {4} xs = {4}><IoHomeOutline size = {30} /> </Col>
