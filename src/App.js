@@ -5,7 +5,7 @@ import {useState,useEffect} from 'react'
 import Signin_Page from './pages/Signin_Page';
 import {Routes,Route} from 'react-router-dom'
 import Home from './pages/Home';
-import { Container ,Nav,Navbar,NavDropdown } from 'react-bootstrap';
+import { Container ,Nav,Navbar,NavDropdown, Row,Col } from 'react-bootstrap';
 import Login from './components/Login';
 
 function App() {
@@ -37,8 +37,8 @@ function App() {
   return (
       <div style = {{marginBottom:"10vh"}}>
 
-      <Navbar expand="lg" className="" style={{backgroundColor:"#baf7b5"}}>
-      <Container className = "mobile_down header_font"  style={{backgroundColor:"#baf7b5",padding:"10px 0px 10px 10px"}}>
+      <Navbar expand="lg" className="" style={{backgroundColor:"#baf7b5",position:"",top:"",zIndex:""}}>
+      <Container className = "mobile_down header_font"  style={{backgroundColor:"#baf7b5",position:"",top:"",padding:"10px 0px 10px 10px"}}>
       <span className = "mobile_down header_font" style = {{fontSize:"24px"}}>Okaare|<span style={{color:"white",fontSize:"24px"}}>ᱚᱠᱟᱨᱮ</span>.in</span>
       </Container>
       </Navbar>
@@ -55,7 +55,22 @@ function App() {
   
       </Container>
 
-      <div style={{height:"30vh",backgroundColor:""}}>
+      <div style={{height:"auto",backgroundColor:"",width:"100%",textAlign:"center",position :"fixed",bottom:"0"}}>
+         <Container className='mobile_down bg-white' style = {{display:"",alignItems:"",paddingTop:"15px"}}>
+          <p></p>
+           <Row>
+             <Col className ="bg-pink" lg = {3} sm = {3} xs = {3}>
+              <div style = {{height:"5vh"}}>
+                  dw
+              </div>
+             </Col>
+             <Col className ="bg-pink" lg = {3} sm = {3} xs = {3}>d</Col>
+             <Col  className ="bg-pink" lg = {3} sm = {3} xs = {3}>d</Col>
+             <Col  className ="bg-pink" lg = {3} sm = {3} xs = {3}>d</Col>
+             
+           </Row>
+
+         </Container>
       </div>
     
 
