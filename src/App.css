@@ -210,7 +210,7 @@
 .mobile_height {
    
   @media (max-width:750px) {
-      background-color: red;
+      max-height: 70vh;
   }
 
 }
@@ -220,7 +220,7 @@
 .mobile_height {
    
   @media (min-width:750px) {
-      background-color: black;
+      max-height: 150vh;
   }
 
 }
