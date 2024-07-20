@@ -300,13 +300,19 @@ const Home = () => {
                                                                             <Modal.Header closeButton>
                                                                             <Modal.Title  >
                                                                                 
-                                                                              comment
+                                                                              <p className='header_font' style = {{fontSize:"18px"}} > Edit Profile </p>
                                                                             </Modal.Title>
                                                                             </Modal.Header>
-                                                                               <Modal.Body> <Form className='desc_font' style = {{width:"90%"}}>
+                                                                               <Modal.Body> <Form className='desc_font' style = {{width:"100%"}}>
                                                                                 Update your Profile Picture
                                                                                 <p></p>
-                                                                                <img src = {require("../pic.jpg")} style={{height:"100px" ,width:"100%",objectFit:"cover"}} />
+                                                                               
+                                                                               <div className='' style = {{width:"100%",textAlign:"center"}}>
+                                                                                   
+                                                                               <img src = {require("../pic.jpg")} style={{height:"150px" ,width:"100%",objectFit:"cover",borderRadius:"10px"}} />
+
+
+                                                                               </div>
                                                                                 <p></p>
                                                                                     <Form.Control style = {{height:""}} type='file' placeholder='typle  comment here . . . . . '></Form.Control>
                                                                                     <p></p>
@@ -317,6 +323,10 @@ const Home = () => {
                                                                             <Modal.Footer>
                                                                               <div style = {{width:"100%",display:"flex",gap:"5px"}}>
                                                                              
+                                                                            <Button className=" header_font button_view_change  "style = {{width:"30%"}} variant="success" onClick={handleClose}>
+                                                                                submit
+                                                                            </Button>
+                                                                                
                                                                             <Button className=" header_font button_view_change  "style = {{width:"30%"}} variant="success" onClick={handleClose}>
                                                                                 submit
                                                                             </Button>
