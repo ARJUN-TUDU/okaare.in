@@ -7,7 +7,9 @@ import {Routes,Route} from 'react-router-dom'
 import Home from './pages/Home';
 import { Container ,Nav,Navbar,NavDropdown, Row,Col } from 'react-bootstrap';
 import Login from './components/Login';
-
+import { IoHomeOutline } from "react-icons/io5";
+import { SlRefresh } from "react-icons/sl";
+import { IoSettingsOutline } from "react-icons/io5";
 function App() {
   
   const [data,setData] = useState([]);
@@ -36,6 +38,7 @@ function App() {
   },[])
   return (
       <div style = {{marginBottom:"10vh"}}>
+   
 
       <Navbar expand="lg" className="" style={{backgroundColor:"#baf7b5",position:"",top:"",zIndex:""}}>
       <Container className = "mobile_down header_font"  style={{backgroundColor:"#baf7b5",position:"",top:"",padding:"10px 0px 10px 10px"}}>
@@ -55,18 +58,14 @@ function App() {
   
       </Container>
 
-      <div className = "mobile_show" style={{height:"auto",backgroundColor:"",width:"100%",textAlign:"center",position :"fixed",bottom:"0"}}>
-         <Container className='mobile_down bg-white' style = {{display:"",alignItems:"",paddingTop:"15px"}}>
+      <div className = "mobile_show" style={{height:"8vh",backgroundColor:"",width:"100%",textAlign:"center",position :"fixed",bottom:"0"}}>
+         <Container className='mobile_down bg-white' style = {{display:"",alignItems:"",paddingTop:""}}>
           <p></p>
            <Row>
-             <Col className ="bg-pink" lg = {3} sm = {3} xs = {3}>
-              <div style = {{height:"5vh"}}>
-                  dw
-              </div>
-             </Col>
-             <Col className ="bg-pink" lg = {3} sm = {3} xs = {3}>d</Col>
-             <Col  className ="bg-pink" lg = {3} sm = {3} xs = {3}>d</Col>
-             <Col  className ="bg-pink" lg = {3} sm = {3} xs = {3}>d</Col>
+             
+             <Col  className ="bg-pink desc font bold" style = {{fontWeight:"BOLD",color:"green",height:"auto"}} lg = {4} sm = {4} xs = {4}><IoHomeOutline size = {30} /> </Col>
+             <Col  className ="bg-pink desc font bold" style = {{fontWeight:"BOLD",color:"green",height:"auto"}} lg = {4} sm = {4} xs = {4}><IoSettingsOutline size = {30} /> </Col>
+             <Col  className ="bg-pink desc font bold" style = {{fontWeight:"BOLD",color:"green",height:"auto"}} lg = {4} sm = {4} xs = {4}><SlRefresh size = {30} /> </Col>
              
            </Row>
 

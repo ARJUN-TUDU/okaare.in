@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Container,Accordion, Row ,Col, Button ,Form, Card,Tabs,Tab,Modal} from 'react-bootstrap'
-
+import { MdBroadcastOnHome } from "react-icons/md";
 const Home = () => {
    
     const[name,setName] = useState()
@@ -76,7 +76,7 @@ const Home = () => {
   return (
  
         <div className='mb-5' style={{height:"100px",width:"100%",marginTop:"10px",backgroundColor:""}}>
-
+                <MdBroadcastOnHome />
             <Row>
                  
                  <Col lg = {4}  >
