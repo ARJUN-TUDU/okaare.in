@@ -10,7 +10,10 @@ import { FaPlus } from "react-icons/fa6";
 import { CiSearch } from "react-icons/ci";
 import Events from '../components/Events';
 import { useParams } from 'react-router-dom';
+import { GoComment } from "react-icons/go";
 import axios from 'axios';
+import { SlLike } from "react-icons/sl";
+import { AiOutlineLike } from "react-icons/ai";
 const Home = () => {
    
     const[name,setName] = useState()
@@ -28,6 +31,7 @@ const Home = () => {
   const [showProfile,setShowProfile] = useState(false)
   const [setnot,setNoti] = useState(false);
   const [searchModal,setSearchModal] = useState(false);
+  const [buttonFlag,setButtonFlag] = useState(false);
  
 
   const refreshing = function(){
@@ -52,9 +56,9 @@ const Home = () => {
     date:""
    });
    const [post,setPost] = useState({
-    owner_name:profile.name,
+    owner_name:"",
     owner_id:"",
-    likes:"",
+    likes:[],
     comments:[],
     desc:"",
     photos:[],
@@ -82,10 +86,10 @@ const Home = () => {
         
        
         try{
-          const myname = profile.name
           
-          
-          console.log(post,)
+
+
+
           const res = await axios.post("http://localhost:5000/create_post",post);
           console.log(res)
         }catch(e){
@@ -93,6 +97,17 @@ const Home = () => {
         }
          
 
+
+    }
+    const liking = async (id,name)=>{
+        
+       try{
+          const res = await axios.post("http://localhost:5000/findPost",{name:name,id:id})
+          console.log(res);
+          
+       }catch(e){}
+
+       window.location.reload()
 
     }
 
@@ -106,13 +121,16 @@ const Home = () => {
 
            const res = await axios.get("http://localhost:5000/persons");
            const resPost = await axios.get("http://localhost:5000/all_post");
-           console.log(resPost)
+           console.log(resPost.data,"<===========postssssss")
            
            
           await res.data.map((x)=>{
-            
+
               if(x.name === params.id){
                 console.log(x,"current value")
+                setPost((prev)=>{
+                  return {...prev,owner_name:x.name}
+                })
                  setProfile((prev)=>{
                   return {...prev,name:x.name}
                  })
@@ -124,6 +142,7 @@ const Home = () => {
            console.log("--------------------------")
            console.log(post)
            setPersonList(res.data);
+           setPostList(resPost.data);
           
           
 
@@ -209,8 +228,8 @@ const Home = () => {
                                        
                                         <p></p>
                                         
-                                        <Button onClick = {e=>sendPost()} size = "sm" variant = "success"  className=' mt-3 header_font button_view_change mobile_view_full' style = {{width:"100%",height:"35px"}}>
-                                            Submit
+                                        <Button onClick = {e=>sendPost()} size = "sm" variant = "success"  className=' mt-3 header_font button_view_change mobile_view_full' style = {{width:"100%",height:"35px",fontSize:"15px"}} type = "submit" >
+                                            Upload
                                         </Button>
                                         
                         </Form>
@@ -237,71 +256,42 @@ const Home = () => {
                                                     
                                                                 <Row>
                                                             {
-                                                                personList.map((x)=>{
-                                                                    return <Col  lg = {6} sm = {6}><Card style = {{marginBottom:"",height:"",backgroundColor:""}}>
+                                                                postList.map((x)=>{
                                                                        
-                                                                    <Card.Header className='header_font' style = {{padding:""}}><p style = {{marginTop:""}}>{x.name}
+
+                                                                    return <Col  lg = {6} sm = {6}><Card style = {{marginBottom:"",height:"auto",backgroundColor:""}}>
+                                                                       
+                                                                    <Card.Header className='desc_Font' style = {{padding:"",height:""}}>{ x.owner_name ? x.owner_name:"not maintioned" }
+                                                                      <p></p>
+                                                                      <p style = {{marginTop:"10px",fontWeight:"300"}}>
+                                                                      
+                                                                      
+                                                                      {x.name}
                                                                     </p></Card.Header>
-                                                                    
-                                                                    <Card.Body className='desc_font'>
-                                                                    <Card.Img src ={require("../pic.jpg")}></Card.Img>
-                                                                          <p></p>
-                                                                         <p style = {{fontSize:"10px"}}>  This HTML file is a template.
-                                                                         If you open it directly in the browser, you will see an empty page.</p>
+                                                                     
+                                                                    <Card.Body style = {{height:"auto"}} className='header_font'>
+                                                                       
+                                                                         
+                                                                         <p style = {{fontSize:"15px"}}>{x.desc}</p>
 
-                                                                           <div style = {{width:"100%",height:"auto",padding:""}} >
-                                                                           <Modal  style ={{padding:""}} size='sm' centered show={show} onHide={handleClose}>
-                                                                            <Modal.Header closeButton>
-                                                                            <Modal.Title  >
-                                                                                
-                                                                              comment
-                                                                            </Modal.Title>
-                                                                            </Modal.Header>
-                                                                            <Modal.Body  style = {{maxHeight:"30vh",overflowY:"scroll"}}>
-                                                                                 
-                                                                                
-                                                                                 
-                                                                                     
-                                                                                    
-
-
-                                                                                
-
-                                                                                
-
-
-                                                                            </Modal.Body>
-                                                                            <Modal.Footer>
-                                                                              <div style = {{width:"100%",display:"flex",gap:"5px"}}>
-                                                                              <Form style = {{width:"70%"}}>
-                                                                                    <Form.Control style = {{height:"80px"}} placeholder='typle your comment here . . . . . '></Form.Control>
-                                                                        
-                                                                                </Form>
-                                                                            <Button className=" header_font button_view_change  "style = {{width:"30%"}} variant="success" onClick={handleClose}>
-                                                                                submit
-                                                                            </Button>
-
-                                                                            
-                                                                              </div>
-                                                                              <hr></hr>
-                                                                              <Button  className=" header_font button_view_change  "style = {{width:"100%"}} variant="outline-danger" onClick={handleClose}>
-                                                                                close
-                                                                            </Button>
-                                                                            </Modal.Footer>
-                                                                        </Modal>
-
+                                                                           <div style = {{width:"100%",height:"auto",padding:"",fontWeight:"200"}} >
+                                                                           
+                                                                               <AiOutlineLike/> : <span style = {{fontSize:"13px"}}>{x.likes.length}</span>
+                                                                               <GoComment style = {{marginLeft:"5px"}}/> : {x.likes.length}
                                                                            </div>
                                                                     </Card.Body>
-                                                                    <Card.Footer>
-                                                                    <div style={{width:"100%",backgroundColor:"",display:"flex",gap:""}}>
-                                                                        <p></p>
-
-                                                                    <Button className=" header_font button_view_change  " onClick={e=>setResult((prev)=>{
-                                                                        return {...prev,name:x.name,place:x.place,code:x.code}
-                                                                    })} style = {{width:"50%"}} variant='success' size= "sm">like</Button>
-                                                                   
-                                                                      <Button className=" header_font button_view_change  " onClick={handleShow} size = "sm" variant='outline-success' style = {{width:"50%",marginLeft:"5px"}} >comments</Button>
-                                                                    </div>
+                                                                    <Card.Footer style = {{display:"flex",width:"100%",justifyContent:"",flexDirection:"",alignItems:"center",gap:'5px'}}>
+                                                                  
+                                                                        
+                                                                          
+                                                                        
+                                                                        <div style={{height:""}}> <form>  <Button className=" header_font  "  onClick = {e=>liking(x._id,profile.name)}  disabled = {x.likes.includes(profile.name)?true:false}   style = {{width:"",color:""}} variant={x.likes.includes(profile.name)?"outline-secondary":"primary"} type = "submit" size= "sm"><AiOutlineLike  size = {16}/></Button></form>
+                                                                        </div>
+                                                                       
+                                                                        <div style={{width:""}}> <form>  <Button className=" header_font  "    variant='success' type = "submit" size= "sm">comments</Button></form>
+                                                                        </div>
+                                                                    
+                                                                 
                                                                     </Card.Footer>
                                                                     
                                                                 </Card>

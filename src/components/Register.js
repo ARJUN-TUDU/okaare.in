@@ -5,6 +5,17 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
 const Register = () => {
+    const [isButtonDisabled, setButtonDisabled] = useState(false);
+    
+    const disableButton = () => {
+        setButtonDisabled(true);
+        alert("Button has been disabled!");
+    };
+ 
+    const enableButton = () => {
+        setButtonDisabled(false);
+        alert("Button has been enabled!");
+    };
 
     const navigation  = useNavigate();
 
@@ -110,9 +121,9 @@ const Register = () => {
                             
                             </Form>
                             <Button onClick={send} size = "sm" variant = "outline-success"  className=' header_font button_view_change mobile_view_full mobile_view_up' style = {{width:"100%"}} type="">
-                            Register
+                            Register 
                             </Button>
-
+                           
                           
                                   
                             <Modal  style = {{textAlign:"center"}}  centered show = {loader} onHide={e=>setLoader(false)}>
@@ -132,3 +143,39 @@ const Register = () => {
 }
 
 export default Register
+const styles = {
+    container: {
+        textAlign: 'center',
+        margin: 'auto',
+        padding: '20px',
+        width: 400,
+    },
+    heading: {
+        fontSize: '34px',
+        marginBottom: '10px',
+        color: "green",
+        borderBottom: "3px solid green",
+        paddingBottom: 20,
+        borderRadius: "8px",
+    },
+    disabledButton: {
+        backgroundColor: 'gray',
+        color: 'white',
+        cursor: 'not-allowed',
+        margin: 10,
+        padding: 15,
+        borderRadius: "8px",
+        border: "none",
+        boxShadow: "0px 0px 10px 0px grey",
+    },
+    enabledButton: {
+        backgroundColor: 'red',
+        color: 'white',
+        cursor: 'pointer',
+        margin: 10,
+        padding: 15,
+        borderRadius: "8px",
+        border: "none",
+        boxShadow: "0px 0px 10px 0px grey",
+    },
+};
