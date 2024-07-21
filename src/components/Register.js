@@ -2,8 +2,12 @@ import React, { useState } from 'react'
 import { Button ,Form} from 'react-bootstrap'
 import {Row,Col,Container,Card,Modal} from 'react-bootstrap'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 const Register = () => {
+
+    const navigation  = useNavigate();
+
     const schema = { name:String,
     age:Number,
     password:String,
@@ -15,7 +19,7 @@ const Register = () => {
 }    
 
     const [loader,setLoader] = useState(false);
-    const [msg,setMsg] = useState("Wait")
+    const [msg,setMsg] = useState("")
 
     const [data,setData] = useState({
         name:"",
@@ -36,14 +40,30 @@ const Register = () => {
             setLoader(true)
             const response = await axios.post("http://localhost:5000/register",data)
             
-            if(response.status == 200){
-                 
-                setMsg("done");
-                window.location.href = "/home"
-                 
+            if(response.data.status){
+                console.log(response.data.value)
+                setMsg("Registration Successfull");
+                navigation(`/home/${response.data.value.name}`)
+
+
+                console.log(response.data);
+               
+
+
+
+                setLoader(false);
+            }else{
+
+                 setLoader(true)
+                 setMsg("Registration Failed")
+            
+            }
             }
 
-         }catch(e){
+            
+            
+
+         catch(e){
             console.log(e)
          }
 
@@ -100,7 +120,7 @@ const Register = () => {
                                    <h5></h5>
                                     <Modal.Body  style = {{color:"black",fontSize:"15px"}} >{
                                   
-                                  msg === "Wait"?"Wait": <span className='header_font' style = {{color:"green"}} >Registration Successfull</span> 
+                                  msg === ""?"Wait": <span className='header_font' style = {{color:"green"}} >{msg}</span> 
                                 
                                 }</Modal.Body>
                             </Modal>

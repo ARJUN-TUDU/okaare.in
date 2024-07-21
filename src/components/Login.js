@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
 import {Button, Form, Row,Col, Container, Card,Modal} from 'react-bootstrap';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 
 const Login = () => {
+
+     const navigate = useNavigate();
 
     const [data,setData] =  useState({
         name:"",
@@ -23,8 +26,9 @@ const Login = () => {
          
         try{
             const response = await axios.post("http://localhost:5000/login",data);
+            console.log(response)
             if(response.data.status == "done"){
-                window.location.href = "/home"
+                 navigate(`/home/${response.data.value[0].name}`)
             }else{
                  setShowFlag(true)
             }

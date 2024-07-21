@@ -35,7 +35,7 @@ function App() {
 
   },[])
   return (
-      <div style = {{marginBottom:"10vh"}}>
+      <div className='margin_bottom' style = {{}}>
    
 
       <Navbar expand="lg" className="" style={{backgroundColor:"#baf7b5",position:"",top:"",zIndex:""}}>
@@ -51,7 +51,7 @@ function App() {
     <Routes>
      
       <Route path = "/" element = {<Signin_Page/>} />
-      <Route path = "/home" element = {<Home/>} />
+      <Route path = "/home/:id" element = {<Home/>} />
     </Routes>
   
       </Container>

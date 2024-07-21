@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Container,Accordion, Row ,Col, Button ,Form, Card,Tabs,Tab,Modal} from 'react-bootstrap'
 import { MdBroadcastOnHome } from "react-icons/md";
 import { IoNotificationsOutline } from "react-icons/io5";
@@ -8,6 +8,9 @@ import { SlRefresh } from "react-icons/sl";
 import { IoSettingsOutline } from "react-icons/io5";
 import { FaPlus } from "react-icons/fa6";
 import { CiSearch } from "react-icons/ci";
+import Events from '../components/Events';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
 const Home = () => {
    
     const[name,setName] = useState()
@@ -16,6 +19,7 @@ const Home = () => {
         place:"",
         code:""
     })
+    
     const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -23,53 +27,41 @@ const Home = () => {
 
   const [showProfile,setShowProfile] = useState(false)
   const [setnot,setNoti] = useState(false);
-  const [searchModal,setSearchModal] = useState(false)
+  const [searchModal,setSearchModal] = useState(false);
+ 
 
   const refreshing = function(){
     window.scrollTo({top:0,behavior:"smooth"})
     console.log("clicked")
   }
 
-    const list = [
-        { "name": "Alice Johnson", "place": "New York", "code": "NY001" },
-        { "name": "Bob Smith", "place": "Los Angeles", "code": "LA002" },
-        { "name": "Carol Davis", "place": "Chicago", "code": "CH003" },
-        { "name": "David Wilson", "place": "Houston", "code": "HS004" },
-        { "name": "Eve Brown", "place": "Phoenix", "code": "PH005" },
-        { "name": "Frank Thomas", "place": "Philadelphia", "code": "PA006" },
-        { "name": "Grace Taylor", "place": "San Antonio", "code": "SA007" },
-        { "name": "Henry White", "place": "San Diego", "code": "SD008" },
-        { "name": "Ivy Harris", "place": "Dallas", "code": "DA009" },
-        { "name": "Jack Martin", "place": "San Jose", "code": "SJ010" },
-        { "name": "Kathy Clark", "place": "Austin", "code": "AU011" },
-        { "name": "Leo Lewis", "place": "Jacksonville", "code": "JA012" },
-        { "name": "Mia Lee", "place": "Fort Worth", "code": "FW013" },
-        { "name": "Noah Walker", "place": "Columbus", "code": "CO014" },
-        { "name": "Olivia Hall", "place": "Charlotte", "code": "CH015" },
-        { "name": "Paul Young", "place": "San Francisco", "code": "SF016" },
-        { "name": "Quinn Allen", "place": "Indianapolis", "code": "IN017" },
-        { "name": "Rachel King", "place": "Seattle", "code": "SE018" },
-        { "name": "Sam Wright", "place": "Denver", "code": "DE019" },
-        { "name": "Tina Scott", "place": "Washington", "code": "WA020" },
-        { "name": "Uma Green", "place": "Boston", "code": "BO021" },
-        { "name": "Vince Adams", "place": "El Paso", "code": "EP022" },
-        { "name": "Wendy Nelson", "place": "Detroit", "code": "DE023" },
-        { "name": "Xander Carter", "place": "Nashville", "code": "NA024" },
-        { "name": "Yara Mitchell", "place": "Memphis", "code": "ME025","photo":"" }]
+  const params = useParams()
+  console.log("params=>," ,params)
 
-    const shows = function(){
-          
-         list.map((x)=>{
-            if(x.name === name){
-                setResult((prev)=>{
-                    return {...prev,name:x.name,place:x.place,code:x.code}
-                })
-            }
-        })
-            
-         
+   const [postList,setPostList] = useState([])
+   const[ personList,setPersonList] = useState([]);
+  
+   const [profile,setProfile] = useState({
+    name:"",
+    age:"",
+    password:"",
+    email:"",
+    phone:"",
+    profile_photo:"",
+    photos:[],
+    date:""
+   });
+   const [post,setPost] = useState({
+    owner_name:profile.name,
+    owner_id:"",
+    likes:"",
+    comments:[],
+    desc:"",
+    photos:[],
+    date:""
+   })
 
-    }
+   
     const reload = function(){
         window.location.reload();
     }
@@ -85,6 +77,74 @@ const Home = () => {
         setName(null)
 
     }
+
+    const sendPost = async() => {
+        
+       
+        try{
+          const myname = profile.name
+          
+          
+          console.log(post,)
+          const res = await axios.post("http://localhost:5000/create_post",post);
+          console.log(res)
+        }catch(e){
+          console.log(e)
+        }
+         
+
+
+    }
+
+    useEffect(()=>{
+
+        console.log(params.id,"=========")
+     
+        const showsf = async function(){
+          
+          try{
+
+           const res = await axios.get("http://localhost:5000/persons");
+           const resPost = await axios.get("http://localhost:5000/all_post");
+           console.log(resPost)
+           
+           
+          await res.data.map((x)=>{
+            
+              if(x.name === params.id){
+                console.log(x,"current value")
+                 setProfile((prev)=>{
+                  return {...prev,name:x.name}
+                 })
+                 
+              }
+           })
+
+           console.log(profile)
+           console.log("--------------------------")
+           console.log(post)
+           setPersonList(res.data);
+          
+          
+
+          }catch(e){
+           console.log(e);
+          }
+          
+          
+              
+
+     
+
+    }
+
+    
+  
+    showsf();
+    
+  
+  
+  },[])
     
     
 
@@ -111,7 +171,7 @@ const Home = () => {
                             <Col lg = {12} xs = {6} sm = {6}>
                                     
                                   <Card className='bg-white'  style = {{backgroundColor:"",height:"100%"}}>
-                                  <Card.Header><span className='header_font'> Arjun Tudu</span></Card.Header>
+                                  <Card.Header><span className='header_font'></span>{profile.name}</Card.Header>
                                     <Card.Body className='desc_font' style = {{textAlign:"start",gap:"15px"}}>
                                        
                                        
@@ -139,7 +199,9 @@ const Home = () => {
                          <Form>
                                         <Form.Group className="mb-3" controlId="">
                                         
-                                            <Form.Control style = {{height:"50px"}} type="text" placeholder="username" />
+                                            <Form.Control onChange = {e=>setPost((prev)=>{
+                                              return {...prev,desc:e.target.value}
+                                            })} style = {{height:"50px"}} type="text" placeholder="username" />
                                         
                                         </Form.Group>
                                         <Form.Control type="file" placeholder="username" />
@@ -147,7 +209,7 @@ const Home = () => {
                                        
                                         <p></p>
                                         
-                                        <Button size = "sm" variant = "success"  className=' mt-3 header_font button_view_change mobile_view_full' style = {{width:"100%",height:"35px"}} type="submit">
+                                        <Button onClick = {e=>sendPost()} size = "sm" variant = "success"  className=' mt-3 header_font button_view_change mobile_view_full' style = {{width:"100%",height:"35px"}}>
                                             Submit
                                         </Button>
                                         
@@ -170,15 +232,12 @@ const Home = () => {
                                                                 className="mb-3"
                                                                 style = {{border:"",position:"",zIndex:"1",padding:"9px",color:"green",backgroundColor:"#baf7b5",borderRadius:"5px",height:"auto"}}
                                                                 >
-                                                                <Tab style = {{}} eventKey="Posts" title="Posts">
+                                                                <Tab style = {{}} eventKey="Posts" title="Person">
                                                                 <div className='mobile_height' style = {{width:"100%",marginBottom:"100px",border:" ",overflowY:'scroll',overflowX:"",paddingRight:""}}>
                                                     
-                                                            
-
-                                                    {result.name.length<=0?<>{
-                    <Row>
+                                                                <Row>
                                                             {
-                                                                list.map((x)=>{
+                                                                personList.map((x)=>{
                                                                     return <Col  lg = {6} sm = {6}><Card style = {{marginBottom:"",height:"",backgroundColor:""}}>
                                                                        
                                                                     <Card.Header className='header_font' style = {{padding:""}}><p style = {{marginTop:""}}>{x.name}
@@ -203,15 +262,7 @@ const Home = () => {
                                                                                 
                                                                                  
                                                                                      
-                                                                                      {
-                                                                                        list.map((x)=>{
-                                                                                            return <p style = {{marginBottom:""}}> 
-                                                                                                
-                                                                                                  {x.place}
-                                                                                                <hr></hr>
-                                                                                                  </p>
-                                                                                        })
-                                                                                      }
+                                                                                    
 
 
                                                                                 
@@ -260,21 +311,11 @@ const Home = () => {
                                                             }
 
                                                             </Row>
-                                                            }</>: <Card style={{padding:"10px"}}>
-                                                            <Card.Header className='header_font'>{result.name}</Card.Header>
-                                                            <Card.Body className='desc_font'>{result.place}
-                                                            <p></p>
-                                                            {result.code}
-                                                            </Card.Body>
 
-                                                            {
-                                                            result.name.length>0?<><hr></hr><Button variant='outline-danger' style = {{width:"20%"}} size = "sm" onClick={clear}>Back</Button></>:<></>
-                                                            }
-                                                            </Card>}
                                                             </div>
                                             </Tab>
                                             <Tab eventKey="Events" title="Events" color='green'  >
-                                                 
+                                                 <Events/>
                                             </Tab>
                                             <Tab eventKey="Matches" color='green' title="Matches" >
                                                
@@ -309,7 +350,7 @@ const Home = () => {
                                                                                
                                                                                <div className='' style = {{width:"100%",textAlign:"center"}}>
                                                                                    
-                                                                               <img src = {require("../pic.jpg")} style={{height:"150px" ,width:"100%",objectFit:"cover",borderRadius:"10px"}} />
+                                                                               <img src = {require("../pic.jpg")} style={{height:"150px" ,width:"150px",objectFit:"cover",borderRadius:"10px"}} />
 
 
                                                                                </div>
@@ -348,15 +389,7 @@ const Home = () => {
 
                 <Modal.Body style = {{width:"",textAlign:"",maxHeight:"50vh",overflowY:"scroll"}}>
                      
-                {
-                                                                                        list.map((x)=>{
-                                                                                            return <p style = {{marginBottom:""}}> 
-                                                                                                
-                                                                                                  {x.place}
-                                                                                                <hr></hr>
-                                                                                                  </p>
-                                                                                        })
-                                                                                      }
+                
 
 
                 </Modal.Body>

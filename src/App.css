@@ -210,7 +210,9 @@
 .mobile_height {
    
   @media (max-width:750px) {
-      max-height: 70vh;
+
+      height: 70vh;
+
   }
 
 }
@@ -220,7 +222,9 @@
 .mobile_height {
    
   @media (min-width:750px) {
-      max-height: 150vh;
+
+     height: 150vh;
+
   }
 
 }
@@ -245,3 +249,36 @@
 
 }
 
+.horizontal {
+
+   @media(max-width:750px){
+      
+    display: flex;
+     
+   }
+
+
+}
+
+.margin_bottom{
+   
+   
+  @media (max-width:750px) {
+     margin-bottom: 30vh;
+  }
+   
+   
+   
+
+}
+.margin_bottom{
+   
+   
+  @media (min-width:750px) {
+     margin-bottom: 150vh;
+  }
+   
+   
+   
+
+}
