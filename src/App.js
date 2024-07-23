@@ -37,7 +37,7 @@ function App() {
 
   },[])
   return (
-      <div className='margin_bottom' style = {{}}>
+      <div className='margin_bottom' style = {{width:""}}>
    
 
       <Navbar expand="lg" className="" style={{backgroundColor:"#baf7b5",position:"",top:"",zIndex:""}}>
