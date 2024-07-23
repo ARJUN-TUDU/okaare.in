@@ -183,7 +183,7 @@ const Home = () => {
     
   return (
  
-        <div className='mb-5' style={{height:"100px",width:"100%",marginTop:"10px",backgroundColor:""}}>
+        <div className='mb-5' style={{height:"100px",width:"",marginTop:"10px",backgroundColor:""}}>
                 
             <Row>
                  
