@@ -47,7 +47,7 @@ function App() {
       </Navbar>
 
      <p></p>
-      <Container className='mobile_down' style = {{marginTop:"",height:"auto"}}>
+      <Container className='mobile_down' style = {{marginTop:"",height:"auto",width:""}}>
      
     
     <Routes>

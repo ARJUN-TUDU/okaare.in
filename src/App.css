@@ -69,11 +69,14 @@
 }
 
 
-
+.mobile_down{
+   
+  width:100%
+}
 
 .mobile_down{
    
-  @media(max-width:800px){
+  @media(max-width:500px){
     width:100%
     
   }
@@ -88,13 +91,17 @@
 .mobile_down{
    
   @media(min-width:500px){
-    width:50%
+    
+    width:70%;
     
 
   }
 
 
 }
+
+
+
 /* for mobile view shift down */
 
 .mobile_view_up {
