@@ -68,16 +68,14 @@
 
 }
 
-
 .mobile_down{
-   
-  width:100%
+   width:50%
 }
 
 .mobile_down{
    
   @media(max-width:500px){
-    width:150%    ;
+    width:100%    ;
   }
 
 
