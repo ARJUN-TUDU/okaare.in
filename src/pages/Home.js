@@ -14,6 +14,7 @@ import { GoComment } from "react-icons/go";
 import axios from 'axios';
 import { SlLike } from "react-icons/sl";
 import { AiOutlineLike } from "react-icons/ai";
+import Posts from '../components/Posts';
 const Home = () => {
    
     const[name,setName] = useState()
@@ -28,7 +29,9 @@ const Home = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const [showProfile,setShowProfile] = useState(false)
+  const [showProfile,setShowProfile] = useState(false);
+  const [firstModal,setFirstModal] = useState(false);
+  const [firstEvent,setFirstEvent] = useState()
   const [setnot,setNoti] = useState(false);
   const [searchModal,setSearchModal] = useState(false);
   const [buttonFlag,setButtonFlag] = useState(false);
@@ -53,11 +56,13 @@ const Home = () => {
     phone:"",
     profile_photo:"",
     photos:[],
-    date:""
+    date:"",
+  
    });
    const [post,setPost] = useState({
     owner_name:"",
-    owner_id:"",
+    
+    owner_id:params.id,
     likes:[],
     comments:[],
     desc:"",
@@ -99,10 +104,10 @@ const Home = () => {
 
 
     }
-    const liking = async (id,name)=>{
+    const liking = async (post_id,person_id)=>{
         
        try{
-          const res = await axios.post("http://localhost:5000/findPost",{name:name,id:id})
+          const res = await axios.post("http://localhost:5000/findPost",{post_id:post_id,person_id:person_id})
           console.log(res);
           
        }catch(e){}
@@ -114,6 +119,8 @@ const Home = () => {
     useEffect(()=>{
 
         console.log(params.id,"=========")
+        
+        setFirstModal(true)
      
         const showsf = async function(){
           
@@ -121,12 +128,18 @@ const Home = () => {
 
            const res = await axios.get("http://localhost:5000/persons");
            const resPost = await axios.get("http://localhost:5000/all_post");
-           console.log(resPost.data,"<===========postssssss")
+           const resEvent = await axios.get("http://localhost:5000/get_events")
+           console.log(resPost.data,"<===========postssssss");
+
+           if(resEvent){
+              
+            setFirstEvent(resEvent.data.reverse().slice(0,3)[0].name)
+           }
            
            
           await res.data.map((x)=>{
 
-              if(x.name === params.id){
+              if(x._id === params.id){
                 console.log(x,"current value")
                 setPost((prev)=>{
                   return {...prev,owner_name:x.name}
@@ -251,68 +264,15 @@ const Home = () => {
                                                                 className="mb-3"
                                                                 style = {{border:"",position:"",zIndex:"1",padding:"9px",color:"green",backgroundColor:"#baf7b5",borderRadius:"5px",height:"auto"}}
                                                                 >
-                                                                <Tab style = {{}} eventKey="Posts" title="Person">
-                                                                <div className='mobile_height' style = {{width:"100%",marginBottom:"100px",border:" ",overflowY:'scroll',overflowX:"",paddingRight:""}}>
-                                                    
-                                                                <Row>
-                                                            {
-                                                                postList.map((x)=>{
-                                                                       
-
-                                                                    return <Col  lg = {6} sm = {6}><Card style = {{marginBottom:"",height:"auto",backgroundColor:""}}>
-                                                                       
-                                                                    <Card.Header className='desc_Font' style = {{padding:"",height:""}}>{ x.owner_name ? x.owner_name:"not maintioned" }
-                                                                      <p></p>
-                                                                      <p style = {{marginTop:"10px",fontWeight:"300"}}>
-                                                                      
-                                                                      
-                                                                      {x.name}
-                                                                    </p></Card.Header>
-                                                                     
-                                                                    <Card.Body style = {{height:"auto"}} className='header_font'>
-                                                                       
-                                                                         
-                                                                         <p style = {{fontSize:"15px"}}>{x.desc}</p>
-
-                                                                           <div style = {{width:"100%",height:"auto",padding:"",fontWeight:"200"}} >
-                                                                           
-                                                                               <AiOutlineLike/> : <span style = {{fontSize:"13px"}}>{x.likes.length}</span>
-                                                                               <GoComment style = {{marginLeft:"5px"}}/> : {x.likes.length}
-                                                                           </div>
-                                                                    </Card.Body>
-                                                                    <Card.Footer style = {{display:"flex",width:"100%",justifyContent:"",flexDirection:"",alignItems:"center",gap:'5px'}}>
-                                                                  
-                                                                        
-                                                                          
-                                                                        
-                                                                        <div style={{height:""}}> <form>  <Button className=" header_font  "  onClick = {e=>liking(x._id,profile.name)}  disabled = {x.likes.includes(profile.name)?true:false}   style = {{width:"",color:""}} variant={x.likes.includes(profile.name)?"outline-secondary":"primary"} type = "submit" size= "sm"><AiOutlineLike  size = {16}/></Button></form>
-                                                                        </div>
-                                                                       
-                                                                        <div style={{width:""}}> <form>  <Button className=" header_font  "    variant='success' type = "submit" size= "sm">comments</Button></form>
-                                                                        </div>
-                                                                    
-                                                                 
-                                                                    </Card.Footer>
-                                                                    
-                                                                </Card>
-                                                                <p></p>
-                                                                </Col> 
-                                                                })
-                                                            }
-
-                                                            </Row>
-
-                                                            </div>
+                                          
+                                            <Tab eventKey="Posts" title="Posts" color='green'  >
+                                                 <Posts profile_id = {params.id} />
                                             </Tab>
+                                                              
                                             <Tab eventKey="Events" title="Events" color='green'  >
-                                                 <Events/>
+                                                 <Events profile_id = {params.id} />
                                             </Tab>
-                                            <Tab eventKey="Matches" color='green' title="Matches" >
-                                               
-                                            </Tab>
-                                            <Tab eventKey="Groups" color='green' title="Groups" >
-                                               
-                                               </Tab>
+                                            
                                             </Tabs>
                                 
                  </div>
@@ -397,6 +357,16 @@ const Home = () => {
                         <p></p>
                         <Button className = "header_font" variant = "success" style = {{width:"100%"}} >search</Button>
 
+                         </Modal.Body>
+                        
+
+                  </Modal>
+             <Modal centered style = {{textAlign:"center"}} show = {firstModal} onHide={e=>setFirstModal(false)} >
+                         <Modal.Header closeButton>
+                          
+                         </Modal.Header>
+                        <Modal.Body>
+                          {firstEvent}
                          </Modal.Body>
                         
 

@@ -7,6 +7,8 @@ import {Routes,Route} from 'react-router-dom'
 import Home from './pages/Home';
 import { Container ,Nav,Navbar,NavDropdown, Row,Col } from 'react-bootstrap';
 import Login from './components/Login';
+import Practice from './components/Practice';
+import Admin from './pages/Admin';
 
 function App() {
   
@@ -52,6 +54,8 @@ function App() {
      
       <Route path = "/" element = {<Signin_Page/>} />
       <Route path = "/home/:id" element = {<Home/>} />
+
+      <Route path = "/admin" element = {<Admin/>} />
     </Routes>
   
       </Container>

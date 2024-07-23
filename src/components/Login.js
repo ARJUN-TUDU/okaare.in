@@ -28,7 +28,7 @@ const Login = () => {
             const response = await axios.post("http://localhost:5000/login",data);
             console.log(response)
             if(response.data.status == "done"){
-                 navigate(`/home/${response.data.value[0].name}`)
+                 navigate(`/home/${response.data.value[0]._id}`)
             }else{
                  setShowFlag(true)
             }

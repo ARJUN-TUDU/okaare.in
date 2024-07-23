@@ -52,9 +52,9 @@ const Register = () => {
             const response = await axios.post("http://localhost:5000/register",data)
             
             if(response.data.status){
-                console.log(response.data.value)
+                console.log(response.data.value,"<============================== current")
                 setMsg("Registration Successfull");
-                navigation(`/home/${response.data.value.name}`)
+                navigation(`/home/${response.data.value._id}`)
 
 
                 console.log(response.data);

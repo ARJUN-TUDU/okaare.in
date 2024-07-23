@@ -2,19 +2,19 @@ import axios from 'axios'
 import React, { useState ,useEffect  } from 'react'
 import { Card, Col, Modal, Row,Button } from 'react-bootstrap'
 
-const Events = ({profile_id}) => { 
+const Posts = ({profile_id}) => { 
 
     const [eventShow,setEvenshow] = useState(false);
-    const [evenList,setEventList] = useState([]);
+    const [postList,setPostList] = useState([]);
     const [buttonFlag,setButtonFlag] = useState(true)
 
 
-    const addVisiting = async(event_id,profile_id) => {
+    const liking = async(post_id,profile_id) => {
 
 
        
         try{
-            const res = await axios.post("http://localhost:5000/findEvent",{profile_id:profile_id,event_id:event_id})
+            const res = await axios.post("http://localhost:5000/findPost",{profile_id:profile_id,post_id:post_id})
             console.log(res)
         }catch(e){
              console.log(e)
@@ -30,8 +30,8 @@ const Events = ({profile_id}) => {
         const getData = async() =>{
 
             try{
-                const res = await axios.get("http://localhost:5000/get_events ");
-                setEventList(res.data)
+                const res = await axios.get("http://localhost:5000/all_post ");
+                setPostList(res.data)
             }catch(e){
                 console.log(e)
             }
@@ -53,8 +53,8 @@ const Events = ({profile_id}) => {
             <Row>
                  
                  {
-                    evenList.map((x)=>{
-                        return  <Col lg = {6} sm = {12} xs = {12} style = {{gap:"5px"}} >
+                    postList.map((x)=>{
+                        return  <Col lg = {6} sm = {12} xs = {12} >
                         <Card  style = {{minHeight:"180px"}} > 
 
                             <Card.Body style = {{display:"",flexDirection:"",justifyContent:""}}>
@@ -64,14 +64,14 @@ const Events = ({profile_id}) => {
                               <p className='header_Font' style = {{fontWeight:"bold"}}  >   {x.desc}</p></div>
                                    
 
-                                <p>{x.date?x.date.split("-").reverse().join("-"):<></>}</p>
-                                Going: {x.visiting.length>0 ? x.visiting.length:"0"}
+                                <p>{x.likes.length>0?x.likes.length:"0"}</p>
+                                
                             </Card.Body>
-                               <Card.Footer className='desc_font'> <Button disabled = { x.visiting.includes( profile_id)? true:false }  onClick={e=>addVisiting(x._id,profile_id)} size = "sm" variant = "success"> Going </Button> </Card.Footer>
+                               <Card.Footer className='desc_font'> <Button disabled = { x.likes.includes( profile_id)? true:false }  onClick={e=>liking(x._id,profile_id)} size = "sm" variant = "success"> like </Button> </Card.Footer>
                                     
                                   
                             </Card>
-                        <p></p>
+                         
                         </Col>
                     })
                  }
@@ -90,4 +90,4 @@ const Events = ({profile_id}) => {
   )
 }
 
-export default Events
+export default Posts
