@@ -74,7 +74,7 @@
 .mobile_down{
    
   @media(max-width:800px){
-    width:800px
+    width:100%
     
   }
 
@@ -87,8 +87,8 @@
 
 .mobile_down{
    
-  @media(min-width:1000px){
-    width:800px
+  @media(min-width:500px){
+    width:50%
     
 
   }
