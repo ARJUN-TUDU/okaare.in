@@ -224,30 +224,29 @@ const Home = () => {
                          <p></p>
                          
                          
-                         <Card style = {{padding:""}}>
-                            <Card.Header><p className='header_font'>Make a post</p></Card.Header>
-                            <Card.Footer>
-                                
+                         <Card style = {{padding:"",backgroundColor:"",marginTop:"8px",borderRadius:"12px",padding:"8px"}}>
+                           <Card.Body>
+                                  <p className='header_font ' style={{color:""}}>Make a Post</p>
                          <Form>
-                                        <Form.Group className="mb-3" controlId="">
-                                        
-                                            <Form.Control onChange = {e=>setPost((prev)=>{
-                                              return {...prev,desc:e.target.value}
-                                            })} style = {{height:"50px"}} type="text" placeholder="username" />
-                                        
-                                        </Form.Group>
+                                       
                                         <Form.Control type="file" placeholder="username" />
+                                        <Form.Group className="mb-3" controlId="">
+                                        <br></br>
+                                        <Form.Control onChange = {e=>setPost((prev)=>{
+                                          return {...prev,desc:e.target.value}
+                                        })} style = {{height:"50px"}} type="text" placeholder="username" />
+                                    
+                                    </Form.Group>
 
                                        
                                         <p></p>
                                         
-                                        <Button onClick = {e=>sendPost()} size = "sm" variant = "success"  className=' mt-3 header_font button_view_change mobile_view_full' style = {{width:"100%",height:"35px",fontSize:"15px"}} type = "submit" >
+                                        <Button onClick = {e=>sendPost()} size = "sm" variant = "outline-success"  className=' mt-3 header_font button_view_change mobile_view_full' style = {{width:"100%",height:"35px",backgroundColor:"",fontSize:"15px"}} type = "submit" >
                                             Upload
                                         </Button>
                                         
                         </Form>
-                   
-                            </Card.Footer>
+                           </Card.Body>
                          </Card>
 
                  
