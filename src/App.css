@@ -86,7 +86,7 @@
 
 .mobile_down{
    
-  @media(min-width:500px){
+  @media(min-width:550px){
     
     width:70%;
     

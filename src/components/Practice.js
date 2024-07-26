@@ -16,7 +16,7 @@ export default function Practice() {
   return (
     <>
        <div style = {{height:"100px",width:""}}>
-       <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
+       <Swiper navigation={true}  modules={[Navigation]} className="mySwiper">
         <SwiperSlide>Slide 1</SwiperSlide>
         <SwiperSlide>Slide 2</SwiperSlide>
         <SwiperSlide>Slide 3</SwiperSlide>

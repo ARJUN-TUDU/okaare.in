@@ -107,7 +107,7 @@ const Home = () => {
     const liking = async (post_id,person_id)=>{
         
        try{
-          const res = await axios.post("http://localhost:5000/findPost",{post_id:post_id,person_id:person_id})
+          const res = await axios.post("http://localhost:5000/findPost",{post_id:post_id,person_id:person_id,owner_id:post.owner_id})
           console.log(res);
           
        }catch(e){}
@@ -193,7 +193,7 @@ const Home = () => {
                          <Row style = {{gap:""}}>
                             <Col lg = {12} xs = {6} sm = {6}>
                                <div style = {{backgroundColor:"",width:"100%",height:"100%"}}>
-                                       <img src = {require("../pic.jpg")} style = {{width:"100%",height:"100%",objectFit:"cover",borderRadius:"5px"}} />
+                                       <img src = {require("../pic2.jpg")} style = {{width:"100%",height:"100%",objectFit:"cover",borderRadius:"5px"}} />
                                        
                                </div>
                             

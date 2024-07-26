@@ -5,10 +5,11 @@ import {useState,useEffect} from 'react'
 import Signin_Page from './pages/Signin_Page';
 import {Routes,Route} from 'react-router-dom'
 import Home from './pages/Home';
-import { Container ,Nav,Navbar,NavDropdown, Row,Col } from 'react-bootstrap';
+import {  Nav,Navbar,NavDropdown, Row,Col,Container } from 'react-bootstrap';
 import Login from './components/Login';
 import Practice from './components/Practice';
 import Admin from './pages/Admin';
+
 
 function App() {
   
@@ -47,7 +48,7 @@ function App() {
       </Navbar>
 
      <p></p>
-      <Container className='mobile_down' style = {{marginTop:"",height:"auto",width:""}}>
+      <Container fluid className='mobile_down'  style = {{marginTop:"",height:"auto"}}>
      
     
     <Routes>
