@@ -58,7 +58,7 @@ const Events = ({profile_id}) => {
                         <Card  style = {{minHeight:"180px",padding:""}} > 
 
                             <Card.Body style = {{display:"",flexDirection:"",justifyContent:""}}>
-                                <Card.Img src = {require("../pic2.jpg")}></Card.Img>
+                                <Card.Img src = {require("../pic.jpg")}></Card.Img>
                                  <div><p className='desc_font'>{x.name}<br></br><p style = {{fontWeight:"500",color:"green"}} >{x.desc}</p></p>
    
                               </div>
