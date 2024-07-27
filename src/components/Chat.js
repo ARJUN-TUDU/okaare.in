@@ -1,8 +1,13 @@
+import { set } from 'mongoose';
 import React , {useEffect, useState} from 'react'
 import { Button, Container, Form ,Card} from 'react-bootstrap'
 import { IoSend } from "react-icons/io5";
 
 const Chat = () => {
+    const [currMsg,setCurrMsg] = useState({
+         name:"p1",
+         msg:""
+    })
    
     const [msgs ,setMsgs] = useState([
 
@@ -11,22 +16,33 @@ const Chat = () => {
         {name:"p1",msg:"p1  3 msg"},
         {name:"p2",msg:"p2 4 msg"},
         {name:"p2",msg:"p2 5 msg"},
+        {name:"p2",msg:"p2 5 m sg"},
+        {name:"p2",msg:"p2 5 m sg"},
+        {name:"p2",msg:"p2 5 m sg"},
+        {name:"p1",msg:"p2 5 m sg"},
+        {name:"p2",msg:"p2 5 m sg"},
+        {name:"p2",msg:"p2 5 m sg"},
+        {name:"p2",msg:"p2 5 m sg"},
+        {name:"p2",msg:"p2 5 m sg"},
+        {name:"p2",msg:"p2 5 m sg"},
+        {name:"p2",msg:"p2 5 m sg"},
+        {name:"p2",msg:"p2 5 m sg"},
+        {name:"p2",msg:"p2 5 m sg"},
+        {name:"p2",msg:"p2 5 m sg"},
+        {name:"p1",msg:"p2 5 m sg"},
+        {name:"p1",msg:"  dwdawd awddaw dawdaw dawedawdf waqddawdaw aw dawd awdawd awdawd adawddddddddddd awd awd aw daw "},
+        {name:"p2",msg:" dwdawd awddaw dawdaw dawedawdf waqddawdaw aw dawd awdawd awdawd adawddddddddddd awd awd aw daw "}
     ])
     
     useEffect(()=>{
-        setMsgs((prev)=>{
-            return [...prev,{
-                name:"p2",
-                msg:"p1 dawdaw dawdawda wdawd waqdawqf segff eawq fgaw awf awedwqad awdawd ascascaw final dawdaw dawdawda wdawd waqdawqf segff eawq fgaw awf awedwqad awdawd ascascaw final dawdaw dawdawda wdawd waqdawqf segff eawq fgaw awf awedwqad awdawd ascascaw finaldawdaw dawdawda wdawd waqdawqf segff eawq fgaw awf awedwqad awdawd ascascaw finaldawdaw dawdawda wdawd waqdawqf segff eawq fgaw awf awedwqad awdawd ascascaw final   msg"
-            }]
-        })
+      
     },[])
 
     
 
   return (
       <div style={{ width: "100%", height: "80vh", backgroundColor: "" }}>
-        <Container  style = {{height:"10%",marginBottom:"10px",backgroundColor:""}}>
+        <div  style = {{height:"10%",marginBottom:"10px",backgroundColor:""}}>
             <Card>
                 <Card.Body className='header_font'>
                     Susmita
@@ -35,7 +51,7 @@ const Chat = () => {
                     </Card.Body>
                
             </Card>
-        </Container>
+        </div>
         <br></br>
           <div style={{ height: "92%", overflowY:"scroll" , backgroundColor: "" }}>
 
@@ -47,11 +63,11 @@ const Chat = () => {
                     if(x.name === "p1"){
                        return <li style={{display:""}}> <div style = {{width:"100%",marginBottom:"10px",display:"flex", justifyContent:"flex-end"  }} >
                          
-                          <div style = {{width:"100px"}}>
+                          <div style = {{maxWidth:"260px"}}>
                               
                           <Card>
-                            <Card.Header>{x.name}</Card.Header>
-                            <Card.Body>{x.msg}</Card.Body>
+                            <Card.Header className='header_font'>{x.name}</Card.Header>
+                            <Card.Body className = 'desc_font' >{x.msg}</Card.Body>
                           </Card>
 
                           </div>
@@ -60,11 +76,11 @@ const Chat = () => {
                     }else{
                        return <li style={{display:""}}> <div style = {{width:"100%",marginBottom:"10px",display:"flex", justifyContent:"flex-start"  }} >
                          
-                         <div style = {{width:"40%"}}>
+                         <div style = {{maxWidth:"260px"}}>
                               
                          <Card>
-                            <Card.Header>{x.name}</Card.Header>
-                            <Card.Body>{x.msg}</Card.Body>
+                         <Card.Header  className='header_font'>{x.name}</Card.Header>
+                         <Card.Body className = 'desc_font'  >{x.msg}</Card.Body>
                           </Card>
     
                               </div>
@@ -82,8 +98,14 @@ const Chat = () => {
           
           <div style={{ height: "" ,backgroundColor:"" }} >
           <Form style = {{display:"flex",gap:"5px",padding:"15px 2px 15px 2px"}}>
-                <Form.Control style = {{width:"70%",height:"50px"}} type='text' ></Form.Control>
-                <Button variant = "success" style = {{width:"30%"}}><IoSend size={25} /></Button>
+                <Form.Control onChange={e=>setCurrMsg((prev)=>{
+                    return {...prev,msg:e.target.value}
+                })} style = {{width:"70%",height:"50px"}} type='text' ></Form.Control>
+                <Button onClick={(e)=>{
+                    return setMsgs((prev)=>{
+                        return [...prev,currMsg]
+                    })
+                }} variant = "success" style = {{width:"30%"}}><IoSend size={25} /></Button>
               </Form>
              
           </div>
