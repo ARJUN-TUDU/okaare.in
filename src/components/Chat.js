@@ -41,7 +41,7 @@ const Chat = () => {
     
 
   return (
-      <div style={{ width: "100%", height: "60vh", backgroundColor: "" }}>
+      <div style={{ width: "100%", height: "68vh", backgroundColor: "" }}>
         <div  style = {{height:"10%",marginBottom:"10px",backgroundColor:""}}>
             <Card>
                 <Card.Body className='header_font'>
