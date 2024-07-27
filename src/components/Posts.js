@@ -15,7 +15,7 @@ const Posts = ({profile_id}) => {
        
         try{
             const res = await axios.post("http://localhost:5000/findPost",{post_id:post_id,profile_id:profile_id,owner_id:owner_id})
-            console.log(res)
+            console.log(res,"<=========== like")
         }catch(e){
              console.log(e)
         }

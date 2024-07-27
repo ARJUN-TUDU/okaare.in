@@ -9,6 +9,7 @@ import {  Nav,Navbar,NavDropdown, Row,Col,Container } from 'react-bootstrap';
 import Login from './components/Login';
 import Practice from './components/Practice';
 import Admin from './pages/Admin';
+import Chat from './components/Chat';
 
 
 function App() {
@@ -55,6 +56,7 @@ function App() {
      
       <Route path = "/" element = {<Signin_Page/>} />
       <Route path = "/home/:id" element = {<Home/>} />
+      <Route path = "/msg/:sender/:receiver" element = {<Chat/>} />
 
       <Route path = "/admin" element = {<Admin/>} />
     </Routes>
