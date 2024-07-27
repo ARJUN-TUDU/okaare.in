@@ -80,30 +80,23 @@ ul {
 
 
 
-.mobile_down{
-   
-  @media(max-width:500px){
-    width:100%    ;
+@media (max-width: 768px) {
+  .mobile_width_max {
+      width: 100%;
+
   }
+}
+@media (min-width: 768px) {
+  .mobile_width_max {
+      width: 70%;
 
-
+  }
 }
 
 
 
 
 
-.mobile_down{
-   
-  @media(min-width:550px){
-    
-    width:70%;
-    
-
-  }
-
-
-}
 
 
 

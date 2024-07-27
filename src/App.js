@@ -49,7 +49,7 @@ function App() {
       </Navbar>
 
      <p></p>
-      <Container fluid className='mobile_down'  style = {{marginTop:"",height:"auto"}}>
+      <Container    style = {{marginTop:"",width:"",height:"auto"}} className='mobile_width_max' >
      
     
     <Routes>

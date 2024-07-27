@@ -20,24 +20,34 @@ const Login = () => {
 
     })
 
-    const [showFlag,setShowFlag] =useState(false)
-    
+    const [showFlag,setShowFlag] = useState(false)
+
+  
     const sendLogin = async function(){
          
         try{
+
             const response = await axios.post("http://localhost:5000/login",data);
             console.log(response)
             if(response.data.status == "done"){
+
                  navigate(`/home/${response.data.value[0]._id}`)
+
             }else{
-                 setShowFlag(true)
+
+                 setShowFlag(true);
+
             }
-        }catch(e){
+
+        }catch(e) 
+        {
             console.log(e)
         }
 
 
     }
+
+    
 
 
 
@@ -72,6 +82,7 @@ const Login = () => {
                     <Button  onClick={sendLogin} size = "sm" variant = "outline-success"  className=' header_font button_view_change mobile_view_full ' style= {{width:"100%"}} type="submit">
                         Login
                     </Button>
+                    
 
                     <Modal centered style = {{textAlign:"center"}} show = {showFlag} onHide={e=>setShowFlag(false)} >
                          <Modal.Header closeButton></Modal.Header>
@@ -79,6 +90,8 @@ const Login = () => {
                         
 
                     </Modal>
+
+
 
 
                 </div>
