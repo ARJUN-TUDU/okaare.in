@@ -77,7 +77,7 @@ const Chat = () => {
                
                 <p className='desc_font' style = {{marginBottom:"30px"}}>{modalMsg}</p>
                 <p></p>
-               <Button variant= "danger">Delete</Button>  <Button variant= "outline-success">Copy</Button>
+               <Button className='mobile_view_full' variant= "danger">Delete</Button> <Button className='mobile_view_up mobile_view_full' variant= "outline-success">Copy</Button>
 
 
                 
@@ -97,8 +97,10 @@ const Chat = () => {
                           <div style = {{maxWidth:"260px"}}>
                               
                           <Card   onClick = {e=>showModal(true,x.msg)}>
-                            <Card.Header className='header_font'>{x.name}</Card.Header>
-                            <Card.Body className = 'desc_font' >{x.msg}</Card.Body>
+                           
+                            <Card.Body className = 'desc_font' >
+                            <p className='header_font' style = {{color:"green" ,fontSize:"15px"}}>{x.name}</p>
+                                {x.msg}</Card.Body>
                             
                            
                           </Card>
@@ -112,8 +114,10 @@ const Chat = () => {
                          <div style = {{maxWidth:"260px"}}>
                               
                          <Card  onClick = {e=>showModal(true,x.msg)}>
-                         <Card.Header  className='header_font'>{x.name}</Card.Header>
-                         <Card.Body className = 'desc_font'  >{x.msg}</Card.Body>
+                        
+                         <Card.Body className = 'desc_font' >
+                                <p className='header_font' style = {{color:"green" ,fontSize:"15px"}}>{x.name}</p>
+                                {x.msg}</Card.Body>
                        
                           </Card>
     
