@@ -1,6 +1,6 @@
 import { set } from 'mongoose';
 import React , {useEffect, useState} from 'react'
-import { Button, Container, Form ,Card} from 'react-bootstrap'
+import { Button, Container, Form ,Card, Modal} from 'react-bootstrap'
 import { IoSend } from "react-icons/io5";
 
 const Chat = () => {
@@ -8,7 +8,24 @@ const Chat = () => {
          name:"p1",
          msg:""
     })
+    const sendMsg = () => {
+        setMsgs((prev)=>{
+            return [...prev,currMsg]
+        })
+        setCurrMsg((prev)=>{
+            return {...prev,msg:""}
+        })
+    }
+    const [modalFlag,setModalFlag] = useState(false)
+    const [modalMsg,setModalMsg] = useState("")
    
+     const showModal = function(status,msg){
+        
+        setModalFlag(status)
+        setModalMsg(msg)
+        
+     }
+
     const [msgs ,setMsgs] = useState([
 
         {name:"p1",msg:"p1 1 msg"},
@@ -53,6 +70,20 @@ const Chat = () => {
             </Card>
         </div>
         <br></br>
+        <Modal centered show = {modalFlag} onHide={e=>setModalFlag(false)} >
+            <Modal.Header className='header_font bg-red '  closeButton>Delet This Massege</Modal.Header>
+            <Modal.Body>
+             
+               
+                <p className='desc_font' style = {{marginBottom:"30px"}}>{modalMsg}</p>
+                <p></p>
+               <Button variant= "danger">Delete</Button>  <Button variant= "outline-success">Copy</Button>
+
+
+                
+           
+            </Modal.Body>
+        </Modal>
           <div style={{ height: "92%", overflowY:"scroll" , backgroundColor: "" }}>
 
 
@@ -65,9 +96,11 @@ const Chat = () => {
                          
                           <div style = {{maxWidth:"260px"}}>
                               
-                          <Card>
+                          <Card   onClick = {e=>showModal(true,x.msg)}>
                             <Card.Header className='header_font'>{x.name}</Card.Header>
                             <Card.Body className = 'desc_font' >{x.msg}</Card.Body>
+                            
+                           
                           </Card>
 
                           </div>
@@ -78,9 +111,10 @@ const Chat = () => {
                          
                          <div style = {{maxWidth:"260px"}}>
                               
-                         <Card>
+                         <Card  onClick = {e=>showModal(true,x.msg)}>
                          <Card.Header  className='header_font'>{x.name}</Card.Header>
                          <Card.Body className = 'desc_font'  >{x.msg}</Card.Body>
+                       
                           </Card>
     
                               </div>
@@ -98,14 +132,10 @@ const Chat = () => {
           
           <div style={{ height: "" ,backgroundColor:"" }} >
           <Form style = {{display:"flex",gap:"5px",padding:"15px 2px 15px 2px"}}>
-                <Form.Control onChange={e=>setCurrMsg((prev)=>{
+                <Form.Control value = {currMsg.msg} onChange={e=>setCurrMsg((prev)=>{
                     return {...prev,msg:e.target.value}
                 })} style = {{width:"70%",height:"50px"}} type='text' ></Form.Control>
-                <Button onClick={(e)=>{
-                    return setMsgs((prev)=>{
-                        return [...prev,currMsg]
-                    })
-                }} variant = "success" style = {{width:"30%"}}><IoSend size={25} /></Button>
+                <Button onClick={sendMsg} variant = "success" style = {{width:"30%"}}><IoSend size={25} /></Button>
               </Form>
              
           </div>
