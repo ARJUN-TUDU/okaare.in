@@ -1,12 +1,17 @@
 import axios from 'axios'
 import React, { useState ,useEffect  } from 'react'
 import { Card, Col, Modal, Row,Button } from 'react-bootstrap'
+import { IoSend } from "react-icons/io5";
+import { BiLike } from "react-icons/bi";
+import {motion} from 'framer-motion'
+
 
 const Posts = ({profile_id}) => { 
 
     const [eventShow,setEvenshow] = useState(false);
     const [postList,setPostList] = useState([]);
     const [buttonFlag,setButtonFlag] = useState(true)
+    const [clicked,setClick] = useState(false)
 
 
     const liking = async(post_id,profile_id,owner_id) => {
@@ -68,7 +73,16 @@ const Posts = ({profile_id}) => {
                                 <p>{x.likes.length>0?x.likes.length:"0"}</p>
                                 
                             </Card.Body>
-                               <Card.Footer className='desc_font'> <Button disabled = { x.likes.includes( profile_id)? true:false }  onClick={e=>liking(x._id,profile_id,x.owner_id)} size = "sm" variant ={ x.likes.includes( profile_id)? "outline-success":"success" }> like </Button> </Card.Footer>
+                               <Card.Footer className='desc_font'> <Button disabled = { x.likes.includes( profile_id)? true:false }  onClick={e=>liking(x._id,profile_id,x.owner_id)}  variant ={ x.likes.includes( profile_id)? "outline-success":"success" }> <IoSend/> </Button>
+                               <motion.div
+                               
+                                initial = {{scale:1}}
+                                whileTap={{ scale: 1.2 }}
+
+                              >
+                              <BiLike size = {18}/>
+                              </motion.div>
+                                </Card.Footer>
                                     
                                   
                             </Card>

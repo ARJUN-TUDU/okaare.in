@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Container,Accordion, Row ,Col, Button ,Form, Card,Tabs,Tab,Modal} from 'react-bootstrap'
+import { Container,Accordion, Row ,Col, Button ,Form,Tabs,Tab,Modal,Card} from 'react-bootstrap'
 import { MdBroadcastOnHome } from "react-icons/md";
 import { IoNotificationsOutline } from "react-icons/io5";
 import { FaRegHeart } from "react-icons/fa6";
@@ -15,6 +15,11 @@ import axios from 'axios';
 import { SlLike } from "react-icons/sl";
 import { AiOutlineLike } from "react-icons/ai";
 import Posts from '../components/Posts';
+import Matching from '../components/Matching';
+
+
+
+
 const Home = () => {
    
     const[name,setName] = useState()
@@ -183,48 +188,76 @@ const Home = () => {
     
   return (
  
-        <div className='mb-5' style={{height:"100px",width:"",marginTop:"10px",backgroundColor:""}}>
-                
-            <Row>
+       <div>
+          <Row>
+             <Col lg = {4} xs = {12} >
+              <div className=' full_view'>
+                 <Row>
+
                  
-                 <Col lg = {4}  >
-                  
-                         
-                         <Row style = {{gap:""}}>
-                            <Col lg = {12} xs = {6} sm = {6}>
-                               <div style = {{backgroundColor:"",width:"100%",height:"100%"}}>
-                                       <img src = {require("../pic2.jpg")} style = {{width:"100%",height:"100%",objectFit:"cover",borderRadius:"5px"}} />
-                                       
-                               </div>
-                            
+
+                    <Col style = {{margin:""}} lg = {12} xs = {6} sm ={6} >
+                    <div className='  full_view'>
+                       
+                         <Card style = {{borderRadius:"5px"}}>
+                                
+                             
+                                <Card.Img src = {require("../pic2.jpg")} ></Card.Img>
                               
-                            </Col>
-                            
-                            <Col lg = {12} xs = {6} sm = {6}>
-                                    
-                                  <Card className='bg-white'  style = {{backgroundColor:"",height:"100%"}}>
-                                  <Card.Header><span className='header_font'></span>{profile.name}</Card.Header>
-                                    <Card.Body className='desc_font' style = {{textAlign:"start",gap:"15px"}}>
-                                       
-                                       
-                                       <IoNotificationsOutline color='green' size = {18} /> : <span style = {{color:"",fontWeight:"1000",fontSize:""}}> 0</span>
-                                       
-                                        <p></p>
-                                        <FaRegHeart color = "red" size = {18}  /> : <span style = {{color:"",fontWeight:"1000",}}> 232
-                                        </span>
-                                         <p></p>
-                                        <Button onClick={e=>setNoti(true)} style = {{width:"100%",color:""}} className='header_font' variant = "outline-success">Notifications</Button>
-                                        
-                                    </Card.Body>
-                                    <Card.Footer><Button onClick={e=>setShowProfile(true)} style = {{width:"100%"}} className='header_font' variant = "success">Edit Profile</Button></Card.Footer>
-                                  </Card>
-                               
-                            </Col>
-                         </Row>
-                         <p></p>
+                         </Card>
+
+                    </div>
+                    </Col>
+                    <Col style = {{margin:""}}  lg = {12} xs = {6} sm ={6} >
+
+                       <Card> 
+                       
+                          <Card.Body>
                          
+                          <p className='header_font' >Arjun Tudu</p>
+                          <p></p>
+                          
+                          <div className='full_width' style= {{display:"flex"}} > 
+                              
+                              <div style = {{width:"50%"}} >
+                                        <FaRegHeart size={20} style = {{color:"red"}} /> : 0 
+                                <p></p>
+                                  <FaRegHeart  size={20} /> : 0 
+                                  <br></br>
+                                  <p></p>
+                              </div>
+
+                              <div>
+                                    <FaRegHeart  size={20}  style = {{color:"red"}} /> : 0 
+                                <p></p>
+                              <FaRegHeart  size={20} /> : 0 
+                              <br></br>
+                              <p></p>
+                              </div>
+
+                          </div>
+
+                          </Card.Body>
+                          
+                         <Card.Footer> <div className='full_width' style = {{gap:"5px",display:"flex",justifyContent:"space-between"}} >
+                         <Button style = {{width:"50%"}} size = "sm" className = "full_width header_font" variant = "outline-success">see more</Button>
+                         <Button style = {{width:"50%"}} size = "sm" className = "full_width header_font" variant = "success">edit profile</Button>
+
+                         </div></Card.Footer>
+
+
+
+                       </Card>
                          
-                         <Card style = {{padding:"",backgroundColor:"",marginTop:"8px",borderRadius:"12px",padding:"8px"}}>
+                    </Col> 
+                    
+                    
+
+
+
+                  </Row>
+                       
+                  <Card style = {{padding:"",backgroundColor:"",marginTop:"8px",borderRadius:"",padding:"8px"}}>
                            <Card.Body>
                                   <p className='header_font ' style={{color:""}}>Make a Post</p>
                          <Form>
@@ -241,7 +274,7 @@ const Home = () => {
                                        
                                         <p></p>
                                         
-                                        <Button onClick = {e=>sendPost()} size = "sm" variant = "outline-success"  className=' mt-3 header_font button_view_change mobile_view_full' style = {{width:"100%",height:"35px",backgroundColor:"",fontSize:"15px"}} type = "submit" >
+                                        <Button onClick = {e=>sendPost()} size = "sm" variant = "success"  className='full_width mt-3 header_font button_view_change mobile_view_full' style = {{width:"100%"}} type = "submit" >
                                             Upload
                                         </Button>
                                         
@@ -249,145 +282,40 @@ const Home = () => {
                            </Card.Body>
                          </Card>
 
-                 
-                                    
-                                    
-                 </Col>
-                                    <Col lg = {8} style={{backgroundColor:"",height:"auto"}} >
-                                    
-                                    <div className='mobile_view_up desc_font' style = {{backgroundColor:"",fontSize:"11PX",width:"100%"}}  >
-                                    <Tabs
+              </div>
+             </Col>
+             
+             <Col lg = {8} xs = {12} >
+                          <div className='full_view'>
+                          <Tabs
                                                                 defaultActiveKey="Posts"
-                                                                color='YELLOW'
+                                                                color='green'
                                                                 id="uncontrolled-tab-example"
                                                                 className="mb-3"
-                                                                style = {{border:"",position:"",zIndex:"1",padding:"9px",color:"green",backgroundColor:"#baf7b5",borderRadius:"5px",height:"auto"}}
+                                                                style = {{border:"",position:"",zIndex:"1",padding:"9px",color:"white",backgroundColor:"green",borderRadius:"5px",height:"auto"}}
                                                                 >
                                           
-                                            <Tab eventKey="Posts" title="Posts" color='green'  >
+                                            <Tab eventKey="Posts" title="Posts" color='white' style = {{color:"white"}} >
                                                  <Posts profile_id = {params.id} />
                                             </Tab>
                                                               
-                                            <Tab eventKey="Events" title="Events" color='green'  >
+                                            <Tab eventKey="Events" title="Events" color='white'  >
                                                  <Events profile_id = {params.id} />
+                                            </Tab>
+                                            <Tab eventKey="Matching" title="Matching" color='white'  >
+                                                 <Matching profile_id = {params.id} />
                                             </Tab>
                                             
                                             </Tabs>
-                                
-                 </div>
+                            
+                          </div>
+             </Col>
 
-                 <div style = {{width:"100%"}} className='mobile_right'>
-              
-                 
-                 </div>
-                     
-
-                 </Col>
-                 
-            </Row>
-
-            <Modal  style ={{padding:""}} size='sm' centered show={showProfile} onHide={e=>setShowProfile(false)}>
-                                                                            <Modal.Header closeButton>
-                                                                            <Modal.Title  >
-                                                                                
-                                                                              <p className='header_font' style = {{fontSize:"18px"}} > Edit Profile </p>
-                                                                            </Modal.Title>
-                                                                            </Modal.Header>
-                                                                               <Modal.Body> <Form className='desc_font' style = {{width:"100%"}}>
-                                                                                Update your Profile Picture
-                                                                                <p></p>
-                                                                               
-                                                                               <div className='' style = {{width:"100%",textAlign:"center"}}>
-                                                                                   
-                                                                               <img src = {require("../pic.jpg")} style={{height:"150px" ,width:"150px",objectFit:"cover",borderRadius:"10px"}} />
+          </Row>
 
 
-                                                                               </div>
-                                                                                <p></p>
-                                                                                    <Form.Control style = {{height:""}} type='file' placeholder='typle  comment here . . . . . '></Form.Control>
-                                                                                    <p></p>
-                                                                                    <p style = {{color:"green"}} className = "header_font">Arjun Tudu</p>
-                                                                                    <Form.Control style = {{height:""}} type='text' placeholder='change your name'></Form.Control>
-                                                                        
-                                                                                </Form></Modal.Body>
-                                                                            <Modal.Footer>
-                                                                              <div style = {{width:"100%",display:"flex",gap:"5px"}}>
-                                                                             
-                                                                            <Button className=" header_font button_view_change  "style = {{width:"30%"}} variant="success" onClick={handleClose}>
-                                                                                submit
-                                                                            </Button>
-                                                                                
-                                                                            <Button className=" header_font button_view_change  "style = {{width:"30%"}} variant="success" onClick={handleClose}>
-                                                                                submit
-                                                                            </Button>
-
-                                                                            
-                                                                              </div>
-                                                                              <hr></hr>
-                                                                              <Button onClick = {e=>setShowProfile(false)}  className=" header_font button_view_change  "style = {{width:"100%"}} variant="outline-danger" >
-                                                                                close
-                                                                            </Button>
-                                                                            </Modal.Footer>
-                                                                        </Modal>
-            
-            <Modal  centered show = {setnot} onHide={e=>setNoti(false)}>
-                
-                <Modal.Header closeButton>
-                    <p className='header_font'> Notifications</p>
-                </Modal.Header>
-
-                <Modal.Body style = {{width:"",textAlign:"",maxHeight:"50vh",overflowY:"scroll"}}>
-                     
-                
-
-
-                </Modal.Body>
-
-                <Modal.Footer>  <Button onClick = {e=>setNoti(false)}  className=" header_font button_view_change  "style = {{width:"100%"}} variant="outline-danger" >
-                                                                                close
-                                                                            </Button></Modal.Footer>
-
-            
-
-            </Modal>
-            <Modal centered style = {{textAlign:"center"}} show = {searchModal} onHide={e=>setSearchModal(false)} >
-                         <Modal.Header closeButton>Search</Modal.Header>
-                        <Modal.Body><Form><Form.Control placeholder='type the name' ></Form.Control></Form>
-                        <p></p>
-                        <Button className = "header_font" variant = "success" style = {{width:"100%"}} >search</Button>
-
-                         </Modal.Body>
-                        
-
-                  </Modal>
-             <Modal centered style = {{textAlign:"center"}} show = {firstModal} onHide={e=>setFirstModal(false)} >
-                         <Modal.Header closeButton>
-                          
-                         </Modal.Header>
-                        <Modal.Body>
-                          {firstEvent}
-                         </Modal.Body>
-                        
-
-                  </Modal>
-
-            <div className = "mobile_show bg-white" style={{height:"8vh",backgroundColor:"",width:"100%",textAlign:"center",position :"fixed",bottom:"0px"}}>
-        <hr></hr>
-         <div className='mobile_down' style = {{display:"",alignItems:"",padding:"",position:"fixed",border:"1px 0px 0px 0px solid",bottom:"20px"}}>
-          
-           <Row>
-             
-             <Col onClick = {searchModalChange}  className ="bg-pink desc font bold" style = {{fontWeight:"BOLD",color:"green",height:"auto"}} lg = {4} sm = {4} xs = {4}><CiSearch  size = {25} /> </Col>
-             <Col  className ="bg-pink desc font bold" style = {{fontWeight:"BOLD",color:"green",height:"auto"}} lg = {4} sm = {4} xs = {4}><FaPlus size = {30} /> </Col>
-             <Col onClick={refreshing} className ="bg-pink desc font bold" style = {{fontWeight:"BOLD",color:"red",fontWeight:"bold",height:"auto"}} lg = {4} sm = {4} xs = {4}><SlRefresh size = {25} /> </Col>
-             
-           </Row>
-
-         </div>
-      </div>
-                   
-             
-        </div>
+        
+       </div>
     
   )
 }

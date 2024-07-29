@@ -1,10 +1,11 @@
+import React from 'react'
 import logo from './logo.svg';
 import './App.css';
 import axios from 'axios'
 import {useState,useEffect} from 'react'
 import Signin_Page from './pages/Signin_Page';
 import {Routes,Route} from 'react-router-dom'
-import Home from './pages/Home';
+import Home from  './pages/Home'
 import {  Nav,Navbar,NavDropdown, Row,Col,Container } from 'react-bootstrap';
 import Login from './components/Login';
 import Practice from './components/Practice';
@@ -57,8 +58,9 @@ function App() {
       <Route path = "/" element = {<Signin_Page/>} />
       <Route path = "/home/:id" element = {<Home/>} />
       <Route path = "/msg/:sender/:receiver" element = {<Chat/>} />
-
       <Route path = "/admin" element = {<Admin/>} />
+
+
     </Routes>
   
       </Container>

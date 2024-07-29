@@ -2,9 +2,12 @@ import React, { useState } from 'react'
 import {Button, Form, Row,Col, Container, Card,Modal} from 'react-bootstrap';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import Home from '../pages/Home';
+
 
 
 const Login = () => {
+    console.log(Home)
 
      const navigate = useNavigate();
 
@@ -31,7 +34,7 @@ const Login = () => {
             console.log(response)
             if(response.data.status == "done"){
 
-                 navigate(`/home/${response.data.value[0]._id}`)
+                 navigate(`/msg/4/4`)
 
             }else{
 
@@ -56,7 +59,7 @@ const Login = () => {
 
 
 
-    const onChange = () => {}
+   
   return ( 
     <div className='mobile_view_up' style={{width:"100%",fontSize:"11px",textAlign:"center",padding:"",backgroundColor:""}}>
                                <h5 className='header_font'> Login</h5> 

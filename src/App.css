@@ -94,7 +94,20 @@ ul {
 }
 
 
+.bg-color{
+   background-color: blue;
+}
+.full_height{
+   height: 100%;
+}
+.full_width {
+   width:100%;
+}
 
+.full_view {
+   height: 100%;
+   width: 100%;
+}
 
 
 
