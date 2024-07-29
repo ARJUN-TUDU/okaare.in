@@ -25,6 +25,12 @@ const Login = () => {
 
     const [showFlag,setShowFlag] = useState(false)
 
+
+    const goHome = function(){
+
+        navigate("home/dwadawdwadwadwadwad")
+    }
+
   
     const sendLogin = async function(){
          
@@ -82,8 +88,11 @@ const Login = () => {
                    
                   
                     </Form>
-                    <Button  onClick={sendLogin} size = "sm" variant = "outline-success"  className=' header_font button_view_change mobile_view_full ' style= {{width:"100%"}} type="submit">
+                    <Button  onClick={sendLogin} size = "sm" variant = "outline-success"  className=' header_font button_view_change mobile_view_full ' style = {{width:"100%",marginBottom:"15px"}} type="submit">
                         Login
+                    </Button>
+                    <Button  onClick={goHome} size = "sm" variant = "light"  className=' header_font button_view_change mobile_view_full ' style= {{width:"100%"}} type="submit">
+                        Enter with demo
                     </Button>
                     
 
