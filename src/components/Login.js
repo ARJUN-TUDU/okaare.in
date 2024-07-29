@@ -34,7 +34,7 @@ const Login = () => {
             console.log(response)
             if(response.data.status == "done"){
 
-                 navigate(`/msg/4/4`)
+                 navigate(`/home/${response.data.value[0]._id}`)
 
             }else{
 
