@@ -233,7 +233,7 @@ const Home = () => {
                          <Card style = {{borderRadius:"5px"}}>
                                 
                              
-                                <Card.Img style = {{height:"215px",objectFit:"cover",width:"100%"}} src = {require("../pic2.jpg")} ></Card.Img>
+                                <Card.Img style = {{height:"208px",objectFit:"cover",width:"100%"}} src = {require("../pic2.jpg")} ></Card.Img>
                               
                          </Card>
 
