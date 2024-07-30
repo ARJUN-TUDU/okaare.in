@@ -11,6 +11,12 @@ import Login from './components/Login';
 import Practice from './components/Practice';
 import Admin from './pages/Admin';
 import { Avatar, Box, Drawer } from '@mui/material';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+
 
 import { GiHamburgerMenu } from "react-icons/gi";
 
@@ -73,24 +79,44 @@ function App() {
 
       
       <Drawer sx = {{width:""}} open={showDrawer} onClose={e=>setShowDrawer(false)}>
-      <Box sx = {{width:"280px",padding:"15px 15px 0px 15px"}}> 
+      <Box sx = {{width:"280px",padding:"15px 15px 0px 15px",backgroundColor:"#adf794"}}> 
                
-           
-              
-              <div style = {{width:"100%",marginTop:"5%",textAlign:""}} >
-              <Avatar src = {require("./pic2.jpg")} style = {{height:"150px",width:"150px",marginBottom:"50px",marginLeft:"18%"}} />
-                  <Form>
-                     <Form.Control placeholder = "search for people"></Form.Control>
-                  </Form>
-                  <p></p>
-                  <Button variant = "outline-success" style = {{width:"50%"}}>Submit</Button>
-              </div>
-
-                        
-        
+      <Avatar src = {require("./pic2.jpg")} style = {{height:"150px",width:"150px",marginTop:"50px",marginBottom:"50px",marginLeft:"18%"}} />
         
           </Box>
-          <hr></hr>
+         
+
+          <div style = {{width:"100%",marginTop:"5%",textAlign:"",backgroundColor:"",padding:"0px 25px 0px 25px"}} >
+              
+               <Card>
+                <Card.Body>
+                  Notifications
+
+
+
+                </Card.Body>
+                  
+
+                <Card.Footer><Button variant='outline-success' style = {{width:"100%"}}>Edit Profile</Button></Card.Footer>
+               </Card>
+                
+                <div style={{marginTop:"10px",width:"100%"}}>
+
+
+                <List>
+                      {['refresh', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+                        <ListItem key={text} disablePadding>
+                          <ListItemButton>
+                           
+                            <ListItemText primary={text} />
+                          </ListItemButton>
+                        </ListItem>
+                      ))}
+                    </List>
+
+                </div>
+
+          </div>
       </Drawer>
     
 
@@ -111,7 +137,9 @@ function App() {
       </Container>
 
      
-    
+      <div className='show_in_mobile' style = {{backgroundColor:"red",width:"100%",height:"10vh"}}>
+             dwadwa
+      </div>
 
       </div>
   );
