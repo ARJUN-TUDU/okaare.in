@@ -97,21 +97,35 @@ function App() {
                 </Card.Body>
                   
 
-                <Card.Footer><Button variant='outline-success' style = {{width:"100%"}}>Edit Profile</Button></Card.Footer>
+                <Card.Footer><Button variant='outline-success' style = {{width:"100%"}}>View More</Button></Card.Footer>
                </Card>
                 
-                <div style={{marginTop:"10px",width:"100%"}}>
+                <div style={{marginTop:"10px",width:"100%",fontSize:"15px"}}>
 
 
                 <List>
-                      {['refresh', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                        <ListItem key={text} disablePadding>
+                     
+                        <ListItem  style = {{backgroundColor:""}} disablePadding>
                           <ListItemButton>
                            
-                            <ListItemText primary={text} />
+                             <h5  style={{fontWeight:"200",fontSize:"15px"}}>Profile</h5> 
                           </ListItemButton>
                         </ListItem>
-                      ))}
+                        <p></p>
+                        <ListItem  style = {{backgroundColor:""}} disablePadding>
+                          <ListItemButton>
+                           
+                             <h5  style={{fontWeight:"200",fontSize:"15px"}}>Privacy & Security </h5> 
+                          </ListItemButton>
+                        </ListItem>
+                        <p></p>
+                        <ListItem  style = {{backgroundColor:"",borderRadius:"5px",boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",backgroundColor:"green"}} disablePadding>
+                          <ListItemButton>
+                             
+                             <h5  style={{fontWeight:"200",fontSize:"15px",color:"white"}}>Contact Us </h5> 
+                          </ListItemButton>
+                        </ListItem>
+                     
                     </List>
 
                 </div>
