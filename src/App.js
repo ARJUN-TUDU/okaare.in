@@ -81,7 +81,7 @@ function App() {
       <Drawer sx = {{width:""}} open={showDrawer} onClose={e=>setShowDrawer(false)}>
       <Box sx = {{width:"280px",padding:"15px 15px 0px 15px",backgroundColor:"#adf794"}}> 
                
-      <Avatar src = {require("./pic2.jpg")} style = {{height:"150px",width:"150px",marginTop:"50px",marginBottom:"50px",marginLeft:"18%"}} />
+      <Avatar src = {require("./pic2.jpg")} style = {{height:"100px",width:"100px",marginTop:"25px",marginBottom:"50px",marginLeft:"26%"}} />
         
           </Box>
          
