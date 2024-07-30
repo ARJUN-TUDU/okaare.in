@@ -108,21 +108,21 @@ function App() {
                         <ListItem  style = {{backgroundColor:""}} disablePadding>
                           <ListItemButton>
                            
-                             <h5  style={{fontWeight:"200",fontSize:"15px"}}>Profile</h5> 
+                             <h5  style={{fontWeight:"800",fontSize:"11px"}}>Profile</h5> 
                           </ListItemButton>
                         </ListItem>
                         <p></p>
                         <ListItem  style = {{backgroundColor:""}} disablePadding>
                           <ListItemButton>
                            
-                             <h5  style={{fontWeight:"200",fontSize:"15px"}}>Privacy & Security </h5> 
+                             <h5  style={{fontWeight:"800",fontSize:"11px"}}>Privacy & Security </h5> 
                           </ListItemButton>
                         </ListItem>
                         <p></p>
                         <ListItem  style = {{backgroundColor:"",borderRadius:"5px",boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",backgroundColor:"green"}} disablePadding>
                           <ListItemButton>
                              
-                             <h5  style={{fontWeight:"200",fontSize:"15px",color:"white"}}>Contact Us </h5> 
+                             <h5  style={{fontWeight:"1000",fontSize:"11px",color:"white"}}>Contact Us </h5> 
                           </ListItemButton>
                         </ListItem>
                      
