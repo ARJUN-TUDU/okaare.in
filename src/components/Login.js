@@ -1,20 +1,24 @@
 import React, { useState } from 'react'
-import {Button, Form, Row,Col, Container, Card,Modal} from 'react-bootstrap';
+import { Form, Row,Col, Container, Card,Modal} from 'react-bootstrap';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import Home from '../pages/Home';
+import { useCookies } from 'react-cookie';
+import {Button} from '@mui/material'
 
 
 
 const Login = () => {
-    console.log(Home)
+    
+    const [cookie,setCookie] = useCookies("token")
+  
 
-     const navigate = useNavigate();
-
+    const navigate = useNavigate();
     const [data,setData] =  useState({
         name:"",
         age:0,
         password:"",
+        re_password:"",
         phone:"",
         profile_photo:"",
         photos:[],
@@ -26,27 +30,18 @@ const Login = () => {
     const [showFlag,setShowFlag] = useState(false)
 
 
-    const goHome = function(){
-
-        navigate("home/dwadawdwadwadwadwad")
-    }
-
+    
   
     const sendLogin = async function(){
          
         try{
 
-            const response = await axios.post("http://localhost:5000/login",data);
-            console.log(response)
-            if(response.data.status == "done"){
-
-                 navigate(`/home/${response.data.value[0]._id}`)
-
-            }else{
-
-                 setShowFlag(true);
-
+            const response = await axios.post("http://localhost:5000/login",{...data,token:cookie.token});
+            
+            if(response.data.status){
+               console.log('')
             }
+            
 
         }catch(e) 
         {
@@ -70,7 +65,8 @@ const Login = () => {
     <div className='mobile_view_up' style={{width:"100%",fontSize:"11px",textAlign:"center",padding:"",backgroundColor:""}}>
                                <h5 className='header_font'> Login</h5> 
                                <p></p>
-            <Form>
+                               <Button variant = "contained" >Hello</Button>
+                   <Form>
                     <Form.Group className="mb-3" controlId="">
                        
                         <Form.Control onChange={e=>setData((prev)=>{
@@ -81,7 +77,9 @@ const Login = () => {
 
                     <Form.Group className="mb-3" controlId="">
                         
-                        <Form.Control type="password" placeholder="Password" />
+                        <Form.Control onChange={e=>setData((prev)=>{
+                            return {...prev,password:e.target.value}
+                        })} type="password" placeholder="Password" />
                     </Form.Group>
                     <p></p>
                     <hr></hr>
@@ -91,7 +89,7 @@ const Login = () => {
                     <Button  onClick={sendLogin} size = "sm" variant = "outline-success"  className=' header_font button_view_change mobile_view_full ' style = {{width:"100%",marginBottom:"15px"}} type="submit">
                         Login
                     </Button>
-                    <Button  onClick={goHome} size = "sm" variant = "light"  className=' header_font button_view_change mobile_view_full ' style= {{width:"100%"}} type="submit">
+                    <Button   size = "sm" variant = "light"  className=' header_font button_view_change mobile_view_full ' style= {{width:"100%"}} type="submit">
                         Enter with demo
                     </Button>
                     

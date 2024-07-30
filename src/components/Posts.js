@@ -3,7 +3,9 @@ import React, { useState ,useEffect  } from 'react'
 import { Card, Col, Modal, Row,Button } from 'react-bootstrap'
 import { IoSend } from "react-icons/io5";
 import { BiLike } from "react-icons/bi";
-import {motion} from 'framer-motion'
+import {motion} from 'framer-motion';
+import { FaComment } from "react-icons/fa6";
+
 
 
 const Posts = ({profile_id}) => { 
@@ -52,7 +54,7 @@ const Posts = ({profile_id}) => {
   return (
 
 
-    <div className='horizontal mobile_height desc_font' style = {{width:"100%",marginBottom:"50px",overflowY:"scroll",padding:"5px",gap:"5px"}} > 
+    <div className='horizontal mobile_height desc_font' style = {{width:"100%",marginBottom:"50px",overflowY:"scroll",padding:"8px",gap:""}} > 
 
            
             <Row>
@@ -60,30 +62,20 @@ const Posts = ({profile_id}) => {
                  {
                     postList.map((x)=>{
                         return  <Col lg = {6} sm = {12} xs = {12} >
-                        <Card  style = {{minHeight:"180px"}} > 
-                              <Card.Header>{x.name}</Card.Header>
+                        <Card  style = {{minHeight:"",margin:"0px 0px 15px 0px"}} > 
+                              
+                              <Card.Img src = {require("../pic.jpg")}></Card.Img>
                             <Card.Body style = {{display:"",flexDirection:"",justifyContent:""}}>
                                 
-                                 <div>
-                                    <Card.Text><p className='desc_font'>{x.name}</p></Card.Text>
-                                <hr></hr>
-                              <p className='header_Font' style = {{fontWeight:"bold"}}  >   {x.desc}</p></div>
-                                   
-
-                                <p>{x.likes.length>0?x.likes.length:"0"}</p>
+                               <Card.Title>{x.desc}</Card.Title>
+                               <Card.Text>{x.likes.length}</Card.Text>
                                 
                             </Card.Body>
-                               <Card.Footer className='desc_font'> <Button disabled = { x.likes.includes( profile_id)? true:false }  onClick={e=>liking(x._id,profile_id,x.owner_id)}  variant ={ x.likes.includes( profile_id)? "outline-success":"success" }> <IoSend/> </Button>
-                               <motion.div
-                               
-                                initial = {{scale:1}}
-                                whileTap={{ scale: 1.2 }}
-
-                              >
-                              <BiLike size = {18}/>
-                              </motion.div>
+                               <Card.Footer className='desc_font' style = {{gap:"5px"}} > <Button disabled = { x.likes.includes( profile_id)? true:false }  onClick={e=>liking(x._id,profile_id,x.owner_id)} size="md"  variant ={ x.likes.includes( profile_id)? "outline-success":"success" }> <BiLike size = {20}/> </Button>
+                               <Button className='header_font' style  ={{width:"auto",marginLeft:"8px"}} variant = "outline-success" >comments</Button>
+                     
                                 </Card.Footer>
-                                    
+                                   
                                   
                             </Card>
                          

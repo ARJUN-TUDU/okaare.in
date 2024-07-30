@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { Container,Accordion, Row ,Col, Button ,Form,Tabs,Tab,Modal,Card} from 'react-bootstrap'
+import { Container,Accordion, Row ,Col, Button, Tab,Tabs ,Form,Modal,Card} from 'react-bootstrap'
+
 import { MdBroadcastOnHome } from "react-icons/md";
 import { IoNotificationsOutline } from "react-icons/io5";
 import { FaRegHeart } from "react-icons/fa6";
@@ -16,6 +17,14 @@ import { SlLike } from "react-icons/sl";
 import { AiOutlineLike } from "react-icons/ai";
 import Posts from '../components/Posts';
 import Matching from '../components/Matching';
+import { IoHomeSharp } from "react-icons/io5";
+import {motion} from 'framer-motion'
+import { BsFillCalendarDateFill } from "react-icons/bs";
+import { IoMdNotifications } from "react-icons/io";
+import { FaHeart } from "react-icons/fa";
+import { SlCalender } from "react-icons/sl";
+import { CgMail } from "react-icons/cg";
+
 
 
 
@@ -23,6 +32,11 @@ import Matching from '../components/Matching';
 const Home = () => {
    
     const[name,setName] = useState()
+    const [value, setValue] = React.useState(2);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
     const [result,setResult] = useState({
         name:"",
         place:"",
@@ -40,6 +54,8 @@ const Home = () => {
   const [setnot,setNoti] = useState(false);
   const [searchModal,setSearchModal] = useState(false);
   const [buttonFlag,setButtonFlag] = useState(false);
+
+  const [pageFlag,setPageFlag] = useState("posts")
  
 
   const refreshing = function(){
@@ -118,6 +134,21 @@ const Home = () => {
        }catch(e){}
 
        window.location.reload()
+
+    }
+
+    let curr ;
+
+    switch(pageFlag){
+       case  "home":
+               curr = <Home/>
+               break;
+       case  "posts":
+               curr = <Posts/>
+               break;
+       case  "matchings":
+               curr = <Matching/>
+               break;
 
     }
 
@@ -202,7 +233,7 @@ const Home = () => {
                          <Card style = {{borderRadius:"5px"}}>
                                 
                              
-                                <Card.Img src = {require("../pic2.jpg")} ></Card.Img>
+                                <Card.Img style = {{height:"215px",objectFit:"cover",width:"100%"}} src = {require("../pic2.jpg")} ></Card.Img>
                               
                          </Card>
 
@@ -214,23 +245,24 @@ const Home = () => {
                        
                           <Card.Body>
                          
-                          <p className='header_font' >Arjun Tudu</p>
-                          <p></p>
+                          <h3 className='header_font' >Arjun Tudu</h3>
+                           
+                           <hr></hr>
                           
-                          <div className='full_width' style= {{display:"flex"}} > 
+                          <div className='full_width' style= {{display:"flex",marginTop:"15px"}} > 
                               
                               <div style = {{width:"50%"}} >
-                                        <FaRegHeart size={20} style = {{color:"red"}} /> : 0 
+                                        <IoMdNotifications size={20} style = {{color:"blue"}} /> : 0 
                                 <p></p>
-                                  <FaRegHeart  size={20} /> : 0 
+                                  <CgMail color='green' size={20} /> : 0 
                                   <br></br>
                                   <p></p>
                               </div>
 
                               <div>
-                                    <FaRegHeart  size={20}  style = {{color:"red"}} /> : 0 
+                                    <FaHeart   size={20}  style = {{color:""}} /> : 0 
                                 <p></p>
-                              <FaRegHeart  size={20} /> : 0 
+                              <BsFillCalendarDateFill   size={20} /> : 0 
                               <br></br>
                               <p></p>
                               </div>
@@ -239,9 +271,16 @@ const Home = () => {
 
                           </Card.Body>
                           
-                         <Card.Footer> <div className='full_width' style = {{gap:"5px",display:"flex",justifyContent:"space-between"}} >
-                         <Button style = {{width:"50%"}} size = "sm" className = "full_width header_font" variant = "outline-success">see more</Button>
-                         <Button style = {{width:"50%"}} size = "sm" className = "full_width header_font" variant = "success">edit profile</Button>
+                         <Card.Footer> <div className='full_width' style = {{gap:"5px",display:"",justifyContent:""}} >
+                             
+                             <Row>
+                                   <Col lg = {6} sm = {12} xs ={12}>
+                                   <Button style = {{width:"100%"}} size = "sm" className = "full_width mobile_bigger_button  header_font" variant = "outline-success">see more</Button>
+                                 </Col>
+                                 <Col className='mobile_top_down_space' lg = {6} sm = {12} xs ={12}>
+                                   <Button style = {{width:"100%"}} size = "sm" className = "full_width mobile_bigger_button  header_font" variant = "success">edit profile</Button>
+                                 </Col>
+                              </Row>
 
                          </div></Card.Footer>
 
@@ -274,9 +313,7 @@ const Home = () => {
                                        
                                         <p></p>
                                         
-                                        <Button onClick = {e=>sendPost()} size = "sm" variant = "success"  className='full_width mt-3 header_font button_view_change mobile_view_full' style = {{width:"100%"}} type = "submit" >
-                                            Upload
-                                        </Button>
+                                        <Button style = {{width:"100%"}} size = "sm" className = "full_width mobile_bigger_button  header_font" variant = "success">Upload</Button>
                                         
                         </Form>
                            </Card.Body>
@@ -286,27 +323,43 @@ const Home = () => {
              </Col>
              
              <Col lg = {8} xs = {12} >
-                          <div className='full_view'>
-                          <Tabs
-                                                                defaultActiveKey="Posts"
-                                                                color='green'
-                                                                id="uncontrolled-tab-example"
-                                                                className="mb-3"
-                                                                style = {{border:"",position:"",zIndex:"1",padding:"9px",color:"white",backgroundColor:"green",borderRadius:"5px",height:"auto"}}
-                                                                >
+                          <div className='full_view '>
+                            
+                            <Row className='bg-white desc_font mobile_top_down_space ' style = {{boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",borderRadius:"5px",padding:"15px 0px 15px 0px"}} >
                                           
-                                            <Tab eventKey="Posts" title="Posts" color='white' style = {{color:"white"}} >
-                                                 <Posts profile_id = {params.id} />
-                                            </Tab>
-                                                              
-                                            <Tab eventKey="Events" title="Events" color='white'  >
-                                                 <Events profile_id = {params.id} />
-                                            </Tab>
-                                            <Tab eventKey="Matching" title="Matching" color='white'  >
-                                                 <Matching profile_id = {params.id} />
-                                            </Tab>
-                                            
-                                            </Tabs>
+                                          <Col onClick = {e=>setPageFlag("posts")} style = {{textAlign:"center",borderRight:"1px solid"}} lg = {4} sm = {4} xs = {4} >
+                                                  <motion.div
+                                                  
+                                                  whileHover={{scale:1.2}}
+                                                  >
+                                                  <IoHomeSharp color='green' opacity={1} size = {20}/> 
+                                                  </motion.div>
+                                          </Col>
+                                          <Col  onClick = {e=>setPageFlag("events")} style = {{textAlign:"center"}} lg = {4} sm = {4} xs = {4} >
+                                          <motion.div
+                                                  
+                                                  whileHover={{scale:1.2}}
+                                                  >
+                                                    <BsFillCalendarDateFill  color='brown' size = {20}/>
+                                                  </motion.div>
+                                         
+                                     
+                                          </Col>
+                                          <Col onClick = {e=>setPageFlag("matchings")} style = {{textAlign:"center",borderLeft:"1px solid"}} lg = {4} sm = {4} xs = {4} >
+                                          <motion.div
+                                                  
+                                                  whileHover={{scale:1.2}}
+                                                  >
+                                                       <FaHeart color= 'red' size = {20}/> 
+                                                  </motion.div>
+                                       
+                                          </Col>
+
+                                     </Row>
+
+                                   
+                                     
+                                      {curr}
                             
                           </div>
              </Col>

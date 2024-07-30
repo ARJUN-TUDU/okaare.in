@@ -3,9 +3,12 @@ import { Button ,Form} from 'react-bootstrap'
 import {Row,Col,Container,Card,Modal} from 'react-bootstrap'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import {useCookies} from 'react-cookie'
 
 const Register = () => {
     const [isButtonDisabled, setButtonDisabled] = useState(false);
+    const [errorLoader,setErrorLoader] = useState(false);
+    const [cookie,setCookie] = useCookies(["token"])
     
     const disableButton = () => {
         setButtonDisabled(true);
@@ -31,58 +34,65 @@ const Register = () => {
 
     const [loader,setLoader] = useState(false);
     const [msg,setMsg] = useState("")
+    
+    const [p1,setP1] = useState("");
+    const [p2,setP2] = useState("");
 
     const [data,setData] = useState({
         name:"",
         age:0,
         password:"",
+        re_password:"",
         phone:"",
         profile_photo:"",
         photos:[],
         date:"",
-        email:""
+        email:"",
 
     })
+ 
+     
 
     const send = async() => {
-        setLoader(true)
-         try{
+
+    if(p1===p2){
+            
+        setData((prev)=>{
+            return {...prev,password:p1}
+        })
+        try{
 
             setLoader(true)
             const response = await axios.post("http://localhost:5000/register",data)
+            setCookie("token",response.data.value);
+            console.log(cookie.token , "<==== got the token ")
             
-            if(response.data.status){
-                console.log(response.data.value,"<============================== current")
-                setMsg("Registration Successfull");
-                navigation(`/home/${response.data.value._id}`)
-
-
-                console.log(response.data);
-               
-
-
-
-                setLoader(false);
-            }else{
-
-                 setLoader(true)
-                 setMsg("Registration Failed")
+             
             
-            }
-            }
-
-            
-            
+        }  
 
          catch(e){
             console.log(e)
          }
+      
+    }else{
+        
+        console.log("error login")
+    
+
+    }
+      
+          
+       
+       
 
 
 
 
     }
 
+
+  
 
 
   
@@ -107,14 +117,12 @@ const Register = () => {
 
                             </Form.Group>
                          
-                            <Form.Control value={data.password} onChange={e=>setData((prev)=>{
-                                return {...prev,password:e.target.value}
-                            })} type="text" placeholder="password" />
+                            <Form.Control value={p1} onChange={e=>setP1(e.target.value)}    type="text" placeholder="password" />
 
-                                    
+                            <Form.Control value={p2} onChange={e=>setP2(e.target.value)}    type="text" placeholder="password" />
                                    
 
-                                    <Form.Control type="password" placeholder="re-enter Password" />
+                            
                                     
                             <p></p>
                             <hr></hr>
@@ -135,6 +143,15 @@ const Register = () => {
                                 
                                 }</Modal.Body>
                             </Modal>
+                            
+                                     
+                            <Modal  style = {{textAlign:"center"}}  centered show = {errorLoader} >
+                                   
+                                   <h5></h5>
+                                    Error
+                                 <Button onClick={()=>setErrorLoader(false)} >go back</Button>
+                            </Modal>
+                            
 
 
 

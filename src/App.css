@@ -78,6 +78,25 @@ ul {
 
 }
 
+@media (max-width: 768px) {
+  .mobile_bigger_button {
+      
+     padding:13px 0px 13px 0px
+
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .mobile_top_down_space {
+      
+    margin:15px 0px 15px 0px;
+
+  }
+}
+
+
 
 
 @media (max-width: 768px) {
