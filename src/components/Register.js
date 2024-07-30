@@ -55,11 +55,6 @@ const Register = () => {
 
     const send = async() => {
 
-    if(p1===p2){
-            
-        setData((prev)=>{
-            return {...prev,password:p1}
-        })
         try{
 
             setLoader(true)
@@ -74,13 +69,6 @@ const Register = () => {
          catch(e){
             console.log(e)
          }
-      
-    }else{
-        
-        console.log("error login")
-    
-
-    }
       
           
        

@@ -223,7 +223,7 @@ const Home = () => {
           <Row>
              <Col lg = {4} xs = {12} >
               <div className=' full_view'>
-                 <Row>
+                 <Row className='hide_in_mobile' >
 
                  
 

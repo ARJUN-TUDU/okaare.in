@@ -13,7 +13,7 @@ const Posts = ({profile_id}) => {
     const [eventShow,setEvenshow] = useState(false);
     const [postList,setPostList] = useState([]);
     const [buttonFlag,setButtonFlag] = useState(true)
-    const [clicked,setClick] = useState(false)
+    const [clicked,setClick] = useState(false);
 
 
     const liking = async(post_id,profile_id,owner_id) => {

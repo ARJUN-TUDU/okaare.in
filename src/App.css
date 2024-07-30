@@ -78,6 +78,61 @@ ul {
 
 }
 
+
+
+
+
+@media (max-width: 768px) {
+  .show_in_mobile {
+      
+     display: block;
+
+  }
+}
+@media (min-width: 768px) {
+  .show_in_mobile {
+      
+     display: none;
+
+  }
+}
+
+
+@media (min-width: 768px) {
+  .hide_in_mobile {
+      
+     display: block;
+
+  }
+}
+@media (max-width: 768px) {
+  .hide_in_mobile {
+      
+     display: none;
+
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 768px) {
   .mobile_bigger_button {
       
@@ -96,6 +151,20 @@ ul {
   }
 }
 
+@media (max-width: 768px) {
+  .mobile_margin_top {
+      
+    margin-top:70px;
+
+  }
+}
+@media (min-width: 768px) {
+  .mobile_margin_top {
+      
+    margin-top:8%;
+
+  }
+}
 
 
 
@@ -318,4 +387,15 @@ ul {
    
    
 
+}
+.fade {
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fade-in {
+  scale: 1;
+}
+
+.fade-out {
+  scale: 1.5;
 }
