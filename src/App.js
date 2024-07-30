@@ -108,7 +108,7 @@ function App() {
                         <ListItem  style = {{backgroundColor:""}} disablePadding>
                           <ListItemButton>
                            
-                             <h5  style={{fontWeight:"800",fontSize:"11px"}}>Profile</h5> 
+                             <h5  style={{fontWeight:"800",color:"green",fontSize:"11px"}}>Profile</h5> 
                           </ListItemButton>
                         </ListItem>
                         <p></p>
@@ -124,6 +124,15 @@ function App() {
                              
                              <h5  style={{fontWeight:"1000",fontSize:"11px",color:"white"}}>Contact Us </h5> 
                           </ListItemButton>
+                        
+                        </ListItem>
+                        <p></p>
+                        <ListItem style = {{backgroundColor:"green",borderRadius:"5px",padding:"15px"}} >
+                            <Form>
+                               <Form.Control placeholder='search'></Form.Control>
+                               <p></p>
+                               <Button variant = "light" >search</Button>
+                            </Form>
                         </ListItem>
                      
                     </List>
